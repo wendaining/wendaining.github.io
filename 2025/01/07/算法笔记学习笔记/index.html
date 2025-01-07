@@ -27,7 +27,7 @@
 <meta property="og:description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于$2^{31}-1$的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求$10^{9}$以内，就用int；$10^{18}$以内，就用longlong 浮点型：不要用float，只用double就可以了 char">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-07T04:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-07T05:30:38.792Z">
+<meta property="article:modified_time" content="2025-01-07T07:14:09.913Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -46,6 +46,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -627,7 +629,7 @@ sscanf与sprintf与上面的格式是相同的，只不过把 screen 换成了�
 </li>
 <li>
 <p><strong>引用作为函数参数</strong>：引用常用于函数参数传递，以避免拷贝大对象，并且可以直接修改传入的参数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                  <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                     <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>总结：</p>
@@ -1362,6 +1364,11 @@ mp.erase(first,last),传入的都是迭代器,删除[first,last)内的元素,时
 
 
   
+
+
+  
+  
+
 
 
 
