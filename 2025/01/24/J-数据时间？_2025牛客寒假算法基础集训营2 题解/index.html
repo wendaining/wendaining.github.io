@@ -19,15 +19,15 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="洛谷一道比较有意思的题目  P3612 [USACO17JAN] Secret Cow Code S 题面翻译 奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。 给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增">
+    <meta name="description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 AP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P3612 [USACO17JAN] Secret Cow Code S题解">
-<meta property="og:url" content="http://example.com/2025/01/23/P3612%20[USACO17JAN]%20Secret%20Cow%20Code%20S%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="J-数据时间？_2025牛客寒假算法基础集训营2 题解">
+<meta property="og:url" content="http://example.com/2025/01/24/J-%E6%95%B0%E6%8D%AE%E6%97%B6%E9%97%B4%EF%BC%9F_2025%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A52%20%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="洛谷一道比较有意思的题目  P3612 [USACO17JAN] Secret Cow Code S 题面翻译 奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。 给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增">
+<meta property="og:description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 AP">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-23T11:47:25.000Z">
-<meta property="article:modified_time" content="2025-01-24T02:13:02.622Z">
+<meta property="article:published_time" content="2025-01-24T02:47:25.000Z">
+<meta property="article:modified_time" content="2025-01-24T02:34:04.634Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -36,7 +36,7 @@
   
   
   
-  <title>P3612 [USACO17JAN] Secret Cow Code S题解 - Kiriao</title>
+  <title>J-数据时间？_2025牛客寒假算法基础集训营2 题解 - Kiriao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="P3612 [USACO17JAN] Secret Cow Code S题解"></span>
+            <span id="subtitle" data-typed-text="J-数据时间？_2025牛客寒假算法基础集训营2 题解"></span>
           
         </div>
 
@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-23 19:47" pubdate>
-          2025年1月23日 晚上
+        <time datetime="2025-01-24 10:47" pubdate>
+          2025年1月24日 上午
         </time>
       </span>
     
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.5k 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          10 分钟
+          13 分钟
         
       </span>
     
@@ -282,93 +282,66 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">P3612 [USACO17JAN] Secret Cow Code S题解</h1>
+            <h1 id="seo-header">J-数据时间？_2025牛客寒假算法基础集训营2 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <p>洛谷一道比较有意思的题目</p>
-<blockquote>
-<h1 id="p3612-usaco17jan-secret-cow-code-s">P3612 [USACO17JAN] Secret
-Cow Code S</h1>
-<h2 id="题面翻译">题面翻译</h2>
-<p>奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。</p>
-<p>给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增加当前字符串的长度。</p>
-<p>给定初始字符串和 <span
-class="math inline">\(N\)</span>，请帮助奶牛计算无限字符串中位置为 <span
-class="math inline">\(N\)</span> 的字符。</p>
-<p>第一行输入一个字符串。该字符串包含最多 <span
-class="math inline">\(30\)</span> 个大写字母，数据保证 <span
-class="math inline">\(N \leq 10^{18}\)</span>。</p>
-<p>第二行输入 一个整数 <span
-class="math inline">\(N\)</span>。请注意，数据可能很大，放进一个标准的
-<span class="math inline">\(32\)</span>
-位整数容器可能不够，所以你可能要使用一个 <span
-class="math inline">\(64\)</span> 位的整数容器（例如，在 C/C++ 中是
-<code>long long</code>）。</p>
-<p>请输出从初始字符串生成的无限字符串中的下标为 <span
-class="math inline">\(N\)</span> 的字符。第一个字符的下标是 <span
-class="math inline">\(N=1\)</span>。</p>
-<p>感谢 <span class="citation" data-cites="y">@y</span>_z_h 的翻译</p>
+                <blockquote>
+<p>链接：https://ac.nowcoder.com/acm/contest/95334/J 来源：牛客网</p>
 <h2 id="题目描述">题目描述</h2>
-<p>The cows are experimenting with secret codes, and have devised a
-method for creating an infinite-length string to be used as part of one
-of their codes.</p>
-<p>Given a string <span class="math inline">\(s\)</span>, let <span
-class="math inline">\(F(s)\)</span> be <span
-class="math inline">\(s\)</span> followed by <span
-class="math inline">\(s\)</span> "rotated" one character to the right
-(in a right rotation, the last character of <span
-class="math inline">\(s\)</span> rotates around and becomes the new
-first character). Given an initial string <span
-class="math inline">\(s\)</span>, the cows build their infinite-length
-code string by repeatedly applying <span
-class="math inline">\(F\)</span>; each step therefore doubles the length
-of the current string.</p>
-<p>Given the initial string and an index <span
-class="math inline">\(N\)</span>, please help the cows compute the
-character at the <span class="math inline">\(N\)</span>th position
-within the infinite code string.</p>
-<h2 id="输入格式">输入格式</h2>
-<p>The input consists of a single line containing a string followed by
-<span class="math inline">\(N\)</span>. The string consists of at most
-30 uppercase characters, and <span class="math inline">\(N \leq
-10^{18}\)</span>.</p>
-<p>Note that <span class="math inline">\(N\)</span> may be too large to
-fit into a standard 32-bit integer, so you may want to use a 64-bit
-integer type (e.g., a "long long" in C/C++).</p>
-<h2 id="输出格式">输出格式</h2>
-<p>Please output the <span class="math inline">\(N\)</span>th character
-of the infinite code built from the initial string. The first character
-is <span class="math inline">\(N=1\)</span>.</p>
-<h2 id="样例-1">样例 #1</h2>
-<h3 id="样例输入-1">样例输入 #1</h3>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">COW</span> <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-1">样例输出 #1</h3>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">C</span><br></code></pre></td></tr></table></figure>
-<h2 id="提示">提示</h2>
-<p>In this example, the initial string COW expands as follows:</p>
-<p>COW -&gt; COWWCO -&gt; COWWCOOCOWWC</p>
-<p>12345678</p>
+<p>牛可乐正在分析最近几个月用户登录牛客 APP
+的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户
+ID，login_date表示登录日期，login_time表示登录时间
+他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过
+APP。特别地，同一个人在同一时段多次登录视作一次。</p>
+<p>在本题中，通勤时间段为
+07:00:00-09:00:00和18:00:00-20:00:00；午休时间段为11:00:00-13:00:00；临睡时间段为
+22:00:00-01:00:00。时间段均包含左右边界值。</p>
+<h2 id="输入描述">输入描述:</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">第一行输入三个整数 n,h,m(1≦n≤105; 2000≦h≦2030; 1≦m≦12)代表你需要处理的数据总数目、查询的年份、查询的月份。 <br>此后n行，每行先输入一个整数 user<span class="hljs-emphasis">_id (1≦user_</span>id≦10^20)代表用户 ID；再输入一个 YYYY-MM-DD 模式的日期 login<span class="hljs-emphasis">_date代表用户登录日期；最后输入一个 hh:mm:ss 模式的时间 login_</span>time代表用户登录时间。<br><br>YYYY-MM-DD 模式的时间定义为：2000≦YYYY≦2030代表年份，1≦MM≦12代表月份，1≦DD≦31代表日期。日期遵照平闰年规则。<br>hh:mm:ss 模式的时间定义为：0≦hh≦23代表小时、0≦mm≦59代表分钟、0≦ss≦59代表秒。<br></code></pre></td></tr></table></figure>
+<h2 id="输出描述">输出描述:</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">在一行上输出三个整数代表通勤、午休、临睡三个时段的登录人次。注意，同一个人在同一时段多次登录视作一次。          <br></code></pre></td></tr></table></figure>
+<h2 id="输入">输入</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs markdown">13 2021 12<br>2 2021-11-08 20:00:00<br>2 2021-12-03 07:00:00<br>3 2021-12-03 11:00:00<br>3 2021-12-05 12:00:00<br>4 2024-11-08 20:00:00<br>2 2021-12-06 09:20:00<br>2 2021-12-06 18:20:00<br>2 2021-12-07 13:00:00<br>2 2021-12-31 22:00:00<br>3 2021-12-30 21:00:00<br>4 2021-12-30 00:50:00<br>4 2021-12-31 00:30:00<br>2 2021-11-09 17:00:00<br></code></pre></td></tr></table></figure>
+<h2 id="输出">输出</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1 2 2<br></code></pre></td></tr></table></figure>
+<p>​ 示例2</p>
+<h2 id="输入-1">输入</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">2 2025 1<br>1000 2024-12-31 23:59:59<br>1000 2025-01-01 00:00:00<br></code></pre></td></tr></table></figure>
+<h2 id="输出-1">输出</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">0 0 1<br></code></pre></td></tr></table></figure>
+<h2 id="说明">说明</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">先判定年份与月份，再判定时间。<br></code></pre></td></tr></table></figure>
+<p>​ 示例3</p>
+<h2 id="输入-2">输入</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">2 2025 1<br>1 2025-01-23 00:00:00<br>1 2025-01-22 00:00:00<br></code></pre></td></tr></table></figure>
+<h2 id="输出-2">输出</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">0 0 1<br></code></pre></td></tr></table></figure>
+<h2 id="说明-1">说明</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">同一时间段不作重复计算。<br></code></pre></td></tr></table></figure>
 </blockquote>
 <h1 id="题解">题解</h1>
-<p>直接暴力模拟会MLE，所以我们必须要考虑规律。</p>
-<p>设最开始，即原字符串的长度为<span
-class="math inline">\(len\)</span></p>
-<p>不难注意到，假设我们把一个字符串分割成A+B的部分，其中B是最后一个字符，那么经过一次操作之后，我们就会得到A+B+B+A的形式。</p>
-<p>我们设某一时刻字符串的长度已经扩增到了<span
-class="math inline">\(l\)</span>，且位置n恰好处于<span
-class="math inline">\(l\)</span>的后半部分，也即这个时候的<span
-class="math inline">\(l\)</span>恰好”扩增到了能够让s[n-1]有意义的情况“。</p>
-<p>考虑第n个字符处于后半部分的A的情况，这个时候根据对称性我们不难发现n处的字符==n-<span
-class="math inline">\(l\)</span>/2-1处的字符。</p>
-<p>考虑第n个字符处于后半部分的B的情况，那么根据对称性我们可以把n倒推回n-1。</p>
-<p>这样我们成功分治，把原问题转化成了多个子问题。</p>
-<p>现在我们就可以让n不断地减小，直到<span
-class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p>
-<p>也即使用一个while(len&lt;n)的循环即可</p>
-<p>代码实现如下</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ll long long</span><br>ll n,l;<br>string s;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;s&gt;&gt;n;<br>    <span class="hljs-type">int</span> len=s.<span class="hljs-built_in">length</span>();<br>    <span class="hljs-comment">//我们画个图可以发现，当字符串的长度l恰好递增到我们可以求出n的时候，有n处的字符与n-l/2-1处的相同</span><br>    <span class="hljs-comment">//并且n-l/2-1恰好就在len的范围之内</span><br>    <span class="hljs-comment">//如何实现将n不断往回倒成n-l/2-1？</span><br>    <span class="hljs-comment">//还需要特判，当n正好卡在中间的时候，也即n=l/2+1时，n往回倒成n-1（因为中间两个相同）</span><br><br>    <span class="hljs-comment">//我们需要的是一直往回倒，能倒到直接在最开始的字符串里面求出来</span><br>    <span class="hljs-comment">//也就是说，我们需要先把l求到</span><br>    <span class="hljs-comment">//然后这个时候的n-l/2-1可以保证一定是在开始的len范围之内的</span><br>    <span class="hljs-keyword">while</span>(len&lt;n)&#123;<span class="hljs-comment">//假设字符串的长度不够,n开始就超标使得我们无法直接求出</span><br>        l=len; <span class="hljs-comment">//l表示当前的字符串长度，这里开始递增</span><br>        <span class="hljs-keyword">while</span>(n&gt;l) l*=<span class="hljs-number">2</span>;<span class="hljs-comment">//当字符串的长度还不够整个包住n的时候，就一直翻倍</span><br>        <span class="hljs-comment">//上面的循环结束的时候，就是恰好能够包住n了（k&gt;=n）</span><br>        <span class="hljs-comment">//依据上面的思路，我们需要n-l/2-1</span><br>        n-=l/<span class="hljs-number">2</span><span class="hljs-number">+1</span>; <span class="hljs-comment">//这样就实现了迭代，n在不断地减小，通过外层的while循环可以反复倒回去</span><br>        <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) n=l/<span class="hljs-number">2</span>; <span class="hljs-comment">//即n=l/2+1时，n往回倒成n-1</span><br>    &#125;<br>    cout&lt;&lt;s[n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>本题实际上不难，是一道模拟，但是可以灵活使用多种STL容器来让本题的代码实现非常简单。</p>
+<p>首先为了统计每个人的登录次数，我们不需要把所有人的所有信息都记录下来之后再进行判断，而只需要在循环中的一次读入内判断完就可以了。</p>
+<p>其次，题目中的要求“同一个人在同一时段多次登录视作一次”，理解成是自动去重，我们不难考虑到unordered_set容器，可以自动去重。</p>
+<p>于是我们定义三个时间段的容器，分别存储在三个时间登录过APP的人数即可。</p>
+<p>即每次insert账号，最后输出size()。</p>
+<p>然后就是这几个时间。</p>
+<p>首先是年份和月份，我们可以读入login_date之后使用sscanf函数和最开始读入的h和m进行比较，如果未通过就continue。</p>
+<p>但是我们使用的是string进行读入，而sscanf函数只支持char[]，该如何是好呢？</p>
+<p>我们可以使用<code>std::string</code> 类的一个成员函数.c_str()，用于将
+<code>std::string</code> 对象转换为 C 风格的字符串（即以 <code>\0</code>
+结尾的字符数组）。</p>
+<p>再之后就是login_time的问题了，我们注意到由于格式都一样，我们可以直接使用字典序进行比较来确定是否落在我们需要的时间里面。</p>
+<p>也就是可以定义一个这样的函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">P</span><span class="hljs-params">(string time,string start,string end)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> time&gt;=start&amp;&amp;time&lt;=end;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果落在我们需要的范围内就会返回true。</p>
+<p>接下来如果只是这样暴力的<code>if(P(login_time,"07:00:00","09:00:00")||P(login_time,"18:00:00","20:00:00"))</code>当然也是可以的，但是我们可以有更好的选择，</p>
+<p>我们注意到一个时间段由两个部分组成：开始和结束，这让我们不禁考虑到使用pair来存储一个时间段，而通勤时间和临睡时间由两个时间段组成，这样我们可以使用vector来存储pair，再使用based循环来解决问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 定义时间段</span><br>vector&lt;pair&lt;string, string&gt;&gt; rushHours = &#123;&#123;<span class="hljs-string">&quot;07:00:00&quot;</span>, <span class="hljs-string">&quot;09:00:00&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;18:00:00&quot;</span>, <span class="hljs-string">&quot;20:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; lunchHours = &#123;&#123;<span class="hljs-string">&quot;11:00:00&quot;</span>, <span class="hljs-string">&quot;13:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; sleepHours = &#123;&#123;<span class="hljs-string">&quot;22:00:00&quot;</span>, <span class="hljs-string">&quot;23:59:59&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;00:00:00&quot;</span>, <span class="hljs-string">&quot;01:00:00&quot;</span>&#125;&#125;; <span class="hljs-comment">//记得拆分</span><br></code></pre></td></tr></table></figure>
+<p>最终的代码实现如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_set&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn=<span class="hljs-number">1e5</span><span class="hljs-number">+10</span>;<br><span class="hljs-type">int</span> n,h,m;<br>string user_id,login_date,login_time;<br>unordered_set&lt;string&gt; tongqing,wuxiu,lingshui;<br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">P</span><span class="hljs-params">(string time,string s,string e)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> time&gt;=s&amp;&amp;time&lt;=e;<br>&#125;<br><span class="hljs-comment">// 定义时间段</span><br>vector&lt;pair&lt;string, string&gt;&gt; rushHours = &#123;&#123;<span class="hljs-string">&quot;07:00:00&quot;</span>, <span class="hljs-string">&quot;09:00:00&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;18:00:00&quot;</span>, <span class="hljs-string">&quot;20:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; lunchHours = &#123;&#123;<span class="hljs-string">&quot;11:00:00&quot;</span>, <span class="hljs-string">&quot;13:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; sleepHours = &#123;&#123;<span class="hljs-string">&quot;22:00:00&quot;</span>, <span class="hljs-string">&quot;23:59:59&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;00:00:00&quot;</span>, <span class="hljs-string">&quot;01:00:00&quot;</span>&#125;&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;n&gt;&gt;h&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        cin&gt;&gt;user_id&gt;&gt;login_date&gt;&gt;login_time;<br>        <span class="hljs-type">int</span> year,month;<br>        <span class="hljs-built_in">sscanf</span>(login_date.<span class="hljs-built_in">c_str</span>(),<span class="hljs-string">&quot;%d-%d&quot;</span>,&amp;year,&amp;month);<br>        <span class="hljs-keyword">if</span>(year!=h||month!=m) <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">const</span> <span class="hljs-keyword">auto</span>&amp; x:rushHours)&#123;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">P</span>(login_time,x.first,x.second))&#123;<br>                tongqing.<span class="hljs-built_in">insert</span>(user_id);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">const</span> <span class="hljs-keyword">auto</span>&amp; x:lunchHours)&#123;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">P</span>(login_time,x.first,x.second))&#123;<br>                wuxiu.<span class="hljs-built_in">insert</span>(user_id);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">const</span> <span class="hljs-keyword">auto</span>&amp; x:sleepHours)&#123;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">P</span>(login_time,x.first,x.second))&#123;<br>                lingshui.<span class="hljs-built_in">insert</span>(user_id);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;tongqing.<span class="hljs-built_in">size</span>()&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;wuxiu.<span class="hljs-built_in">size</span>()&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;lingshui.<span class="hljs-built_in">size</span>()&lt;&lt;endl;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -418,8 +391,8 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>P3612 [USACO17JAN] Secret Cow Code S题解</div>
-      <div>http://example.com/2025/01/23/P3612 [USACO17JAN] Secret Cow Code S题解/</div>
+      <div>J-数据时间？_2025牛客寒假算法基础集训营2 题解</div>
+      <div>http://example.com/2025/01/24/J-数据时间？_2025牛客寒假算法基础集训营2 题解/</div>
     </div>
     <div class="license-meta">
       
@@ -431,7 +404,7 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月23日</div>
+          <div>2025年1月24日</div>
         </div>
       
       
@@ -463,18 +436,12 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《算法笔记》学习笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">《算法笔记》学习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/07/%E5%86%99%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%A4%A7%E4%B8%80%E4%B8%8A%E6%9C%9F%E6%9C%AB/" title="德语大一上期末写作范例">
-                        <span class="hidden-mobile">德语大一上期末写作范例</span>
+                      <a href="/2025/01/24/G-%E4%B8%80%E8%B5%B7%E9%93%B8%E6%9C%80%E5%A5%BD%E7%9A%84%E5%89%91%EF%BC%81_2025%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A52%20%E9%A2%98%E8%A7%A3/" title="G-一起铸最好的剑！_2025牛客寒假算法基础集训营2 题解">
+                        <span class="hidden-mobile">G-一起铸最好的剑！_2025牛客寒假算法基础集训营2 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
