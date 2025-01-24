@@ -19,15 +19,15 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong #### 浮点型：不要用float">
+    <meta name="description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong 浮点型：不要用float，只用do">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《算法笔记》学习笔记">
 <meta property="og:url" content="http://example.com/2025/01/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong #### 浮点型：不要用float">
+<meta property="og:description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong 浮点型：不要用float，只用do">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-23T15:47:25.000Z">
-<meta property="article:modified_time" content="2025-01-24T02:34:11.238Z">
+<meta property="article:modified_time" content="2025-01-24T02:48:02.624Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -235,7 +235,7 @@
         
         
         
-          360 分钟
+          359 分钟
         
       </span>
     
@@ -295,33 +295,77 @@ class="math inline">\(2^{31}-1\)</span>的初值，需要在初值后面加LL，
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">long</span> <span class="hljs-type">long</span> bignum = <span class="hljs-number">1234567890123456LL</span>;<br></code></pre></td></tr></table></figure>
 <p>简而言之，题目要求<span
 class="math inline">\(10^{9}\)</span>以内，就用int；<span
-class="math inline">\(10^{18}\)</span>以内，就用longlong<br />
-#### 浮点型：不要用float，只用double就可以了<br />
-#### char：小写字母比大写字母的ASCII值大32<br />
-字符常量必须用单引号标注，以区分是作为字符变量还是字符常量<br />
-#### 转义字符<br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">\n 代表换行<br>\<span class="hljs-number">0</span> 代表空字符<span class="hljs-literal">NULL</span>，其ASCII码为<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure> ####
-字符串常量：由双引号标记的字符集，可以作为初值赋值给字符数组并使用%s的形式输出<br />
-不能把字符串常量赋值给字符变量 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">char</span> c=<span class="hljs-string">&quot;abcd&quot;</span><br></code></pre></td></tr></table></figure> 的写法是不允许的 ####
-布尔型 只有0才是False，别的整数都是True ### 2.1.3 强制类型转换
+class="math inline">\(10^{18}\)</span>以内，就用longlong</p>
+<p>浮点型：不要用float，只用double就可以了</p>
+<h4
+id="char小写字母比大写字母的ascii值大32">char：小写字母比大写字母的ASCII值大32</h4>
+<p>字符常量必须用单引号标注，以区分是作为字符变量还是字符常量</p>
+<h4 id="转义字符">转义字符</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">\n 代表换行<br>\<span class="hljs-number">0</span> 代表空字符<span class="hljs-literal">NULL</span>，其ASCII码为<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<h4
+id="字符串常量由双引号标记的字符集可以作为初值赋值给字符数组并使用s的形式输出">字符串常量：由双引号标记的字符集，可以作为初值赋值给字符数组并使用%s的形式输出</h4>
+<p>不能把字符串常量赋值给字符变量</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">char</span> c=<span class="hljs-string">&quot;abcd&quot;</span><br></code></pre></td></tr></table></figure>
+<p>的写法是不允许的</p>
+<h4 id="布尔型">布尔型</h4>
+<p>只有0才是False，别的整数都是True</p>
+<h3 id="强制类型转换">2.1.3 强制类型转换</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">(新类型名)变量名<br></code></pre></td></tr></table></figure>
-如果把一个类型的变量赋值给另一个类型的变量却没有写强转，那么IDE会自动强转
-但是计算的时候需要强转，那就不能等到算完再强转 ### 2.1.4
-符号常量和const常量 <strong>格式为</strong></p>
+<p>如果把一个类型的变量赋值给另一个类型的变量却没有写强转，那么IDE会自动强转</p>
+<p>但是计算的时候需要强转，那就不能等到算完再强转</p>
+<h3 id="符号常量和const常量">2.1.4 符号常量和const常量</h3>
+<p><strong>格式为</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> 标识符 常量</span><br></code></pre></td></tr></table></figure>
 <p>或者 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> 数据类型 变量名 = 常量;<br></code></pre></td></tr></table></figure> 常量的值一旦确定之后就不能改变了。</p>
 <p><strong>define除了定义常量以外，还可以定义任何语句或者片段（宏定义），格式如下</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> 标识符 任何语句或者片段</span><br></code></pre></td></tr></table></figure>
 <p>比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ADD(a,b) ((a)+(b)) <span class="hljs-comment">//为什么要加这么多括号？是因为宏定义是直接将对应的部分替换，然后才进行编译和运行</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> num1 =<span class="hljs-number">3</span>, num2 =<span class="hljs-number">5</span>;<br>    <span class="hljs-built_in">prints</span>(<span class="hljs-string">&quot;%d&quot;</span>, <span class="hljs-built_in">ADD</span>(num1,num2)); <span class="hljs-comment">//8</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<strong>所以，尽量不要用宏定义来做除了定义常量以外的事情</strong> ###
-2.1.5 运算符 只复习位运算符 <a
-target="_blank" rel="noopener" href="https://oi-wiki.org/math/bit/">详见Oiwiki</a> ## 2.2 顺序结构 ####
-常见数据类型变量的scanf格式符 | 数据类型 | 格式符 | |------|------| |
-int | %d | | long long | %lld | | float | %f | | double | %lf | | char |
-%c | | 字符串(char数组) | %s | <em>录入字符串不需要加&amp;</em></p>
-<p>另外，如果要输入“3 4”这种用空格隔开的两个数字，两个%d直接可以不加空格
+<strong>所以，尽量不要用宏定义来做除了定义常量以外的事情</strong></p>
+<h3 id="运算符">2.1.5 运算符</h3>
+<p>只复习位运算符 <a
+target="_blank" rel="noopener" href="https://oi-wiki.org/math/bit/">详见Oiwiki</a></p>
+<h2 id="顺序结构">2.2 顺序结构</h2>
+<h4
+id="常见数据类型变量的scanf格式符">常见数据类型变量的scanf格式符</h4>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>格式符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>%d</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>%lld</td>
+</tr>
+<tr>
+<td>float</td>
+<td>%f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>%lf</td>
+</tr>
+<tr>
+<td>char</td>
+<td>%c</td>
+</tr>
+<tr>
+<td>字符串(char数组)</td>
+<td>%s</td>
+</tr>
+</tbody>
+</table>
+<p><em>录入字符串不需要加&amp;</em></p>
+<p>另外，如果要输入“3
+4”这种用空格隔开的两个数字，两个%d直接可以不加空格</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a, b;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);<br></code></pre></td></tr></table></figure>
-原因：除了%c以外，scanf对于其他格式符(如%d)的输入是以空白符（空格、tab）座位结束判断标志的<br />
+<p>原因：除了%c以外，scanf对于其他格式符(如%d)的输入是以空白符（空格、tab）座位结束判断标志的<br />
 <em>另外，字符数组使用%s读入的时候以空格和换行座位读入结束的标识</em><br />
 <strong>即scanf的%c格式是可以读入空格和换行的！</strong></p>
 <h4
@@ -360,12 +404,15 @@ id="常见数据类型变量的printf格式符">常见数据类型变量的print
 </tr>
 </tbody>
 </table>
-<p>与scanf的区别只在于double<br />
-#### 三种实用的输出格式 1. %md<br />
+<p>与scanf的区别只在于double</p>
+<h4 id="三种实用的输出格式">三种实用的输出格式</h4>
+<ol type="1">
+<li>%md<br />
 %md可以使不足m位的int型变量以m位进行右对齐输出，其中高位用空格补齐，如果变量本身超过m位则保持原样（不会截断）
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">123</span>, b=<span class="hljs-number">1234567</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%5d\n&quot;</span>,a);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%5d\n&quot;</span>,b);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出格式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">  <span class="hljs-number">123</span><br><span class="hljs-number">1234567</span><br></code></pre></td></tr></table></figure> 在123的前面补了两个空格<br />
-2. %0md 补上前导0 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">123</span>, b=<span class="hljs-number">1234567</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%05d\n&quot;</span>,a);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%05d\n&quot;</span>,b);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出格式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">00123</span><br><span class="hljs-number">1234567</span><br></code></pre></td></tr></table></figure> 3. %.mf
-保留m位小数输出（不等价于四舍五入） ### 2.2.3
+</li>
+<li>%0md 补上前导0 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">123</span>, b=<span class="hljs-number">1234567</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%05d\n&quot;</span>,a);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%05d\n&quot;</span>,b);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出格式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">00123</span><br><span class="hljs-number">1234567</span><br></code></pre></td></tr></table></figure></li>
+<li>%.mf 保留m位小数输出（不等价于四舍五入） ### 2.2.3
 使用getchar和putchar来输入/输出字符
 getchar用来输入单个字符，putchar用来输出单个字符，在某些scanf函数使用不便的场合可以使用
 getchar 来输入字符。 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">char</span> cl，c2，c3;<br>c1 =<span class="hljs-built_in">getchar</span>();<br><span class="hljs-built_in">getchar</span>();<br>c2 =<span class="hljs-built_in">getchar</span>();<br>c3 = <span class="hljs-built_in">getchar</span>();<br><span class="hljs-built_in">putchar</span>(c1);<br><span class="hljs-built_in">putchar</span>(c2);<span class="hljs-built_in">putchar</span>(c3);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure> 输入数据 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">abcd<br></code></pre></td></tr></table></figure> 输出结果
@@ -374,26 +421,39 @@ getchar 来输入字符。 <figure class="highlight cpp"><table><tr><td class="g
 c2 接收;第四个字符'd"被 c3 接收。之后，连续三次 putchar 将把 c1、c2、c3
 连续输出。而如果输入"ab"，然后按Enter键，再输入c，再按Enter键，输出结果会是这样:
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span><br>c<br></code></pre></td></tr></table></figure> 这是因为 getchar 可以识别换行符，所以
-c2实际上储存的是换行符，因此在a和c之间会有一个换行出现。 ### 2.2.4注释
-### 2.2.5 typedef 可以给复杂的数据类型取一个别名 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br>Ltypedef <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<span class="hljs-comment">//给1ong 1ong起个别名</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>LL a=<span class="hljs-number">123456789012345</span>，b=<span class="hljs-number">234567890123456</span>;<span class="hljs-comment">//直接使用 LL</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;lld\n&quot;</span>，a+b);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> ###
-2.2.6 常用math函数 1. fabs(double x)<br />
-用于对double型变量取绝对值 2. floor(double x) ceil(double x) 3.
-pow(double r, double p)<br />
-返回<span class="math inline">\(r^{p}\)</span> 4. sqrt(double x) 5.
-log(double x)<br />
+c2实际上储存的是换行符，因此在a和c之间会有一个换行出现。 ###
+2.2.4注释</li>
+</ol>
+<h3 id="typedef">2.2.5 typedef</h3>
+<p>可以给复杂的数据类型取一个别名 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br>Ltypedef <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<span class="hljs-comment">//给1ong 1ong起个别名</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>LL a=<span class="hljs-number">123456789012345</span>，b=<span class="hljs-number">234567890123456</span>;<span class="hljs-comment">//直接使用 LL</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;lld\n&quot;</span>，a+b);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> ### 2.2.6
+常用math函数</p>
+<ol type="1">
+<li><p>fabs(double x)<br />
+用于对double型变量取绝对值</p></li>
+<li><p>floor(double x) ceil(double x)</p></li>
+<li><p>pow(double r, double p)<br />
+返回<span class="math inline">\(r^{p}\)</span></p></li>
+<li><p>sqrt(double x)</p></li>
+<li><p>log(double x)<br />
 返回lnx<br />
-<strong>C语言中不能指定底数，因此必须通过换底公式来求。</strong> 6.
-sin(double x) cso(double x) tan(double x)<br />
-要求参数是<strong>弧度制</strong> 7. asin(double x) acos(double x)
-atan(double x)<br />
-反三角函数 8. round(double x)<br />
-将double型变量四舍五入，<strong>返回值仍然是double类型</strong> ## 2.3
-选择结构 ### 2.3.1 if语句 ### 2.3.3 switch语句<br />
-记得什么是break穿透 ## 2.4 循环结构 ### 2.4.1 while语句 ### 2.4.2
-do...while语句<br />
+<strong>C语言中不能指定底数，因此必须通过换底公式来求。</strong></p></li>
+<li><p>sin(double x) cso(double x) tan(double x)<br />
+要求参数是<strong>弧度制</strong></p></li>
+<li><p>asin(double x) acos(double x) atan(double x)<br />
+反三角函数</p></li>
+<li><p>round(double x)<br />
+将double型变量四舍五入，<strong>返回值仍然是double类型</strong></p></li>
+</ol>
+<h2 id="选择结构">2.3 选择结构</h2>
+<h3 id="if语句">2.3.1 if语句</h3>
+<h3 id="switch语句">2.3.3 switch语句</h3>
+<p>记得什么是break穿透</p>
+<h2 id="循环结构">2.4 循环结构</h2>
+<h3 id="while语句">2.4.1 while语句</h3>
+<h3 id="do...while语句">2.4.2 do...while语句</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;<br><br>    <span class="hljs-keyword">do</span> &#123;<br>        sum += i;<br>        i++;<br>    &#125; <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">100</span>);<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;The sum of numbers from 1 to 100 is: &quot;</span> &lt;&lt; sum &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<strong>do...while会先执行循环体一次，再去判断循环条件是不是为真</strong><br />
-### 2.4.3 for语句</p>
+<p><strong>do...while会先执行循环体一次，再去判断循环条件是不是为真</strong></p>
+<h3 id="for语句">2.4.3 for语句</h3>
 <blockquote>
 <p><code>for (int x : s)</code> 是 C++11 引入的一种范围-based for
 循环（range-based for loop）语法。它的作用是遍历容器 <code>s</code>
@@ -472,10 +532,10 @@ memset——对数组中每一个元素赋相同的值</h3>
 <strong>在C11之后被弃用</strong><br />
 现在想要读取一行字符串可以使用while c!= #### 字符数组的存放方式<br />
 结尾是一个'\0
-<strong>只有char型数组要注意，千万要注意长度要比实际存储字符串的长度至少多1</strong><br />
-### 2.5.6 string.h头文件 1.
-strlen()，得到字符数组中第一个\0前字符的个数</p>
-<ol start="2" type="1">
+<strong>只有char型数组要注意，千万要注意长度要比实际存储字符串的长度至少多1</strong></p>
+<h3 id="string.h头文件">2.5.6 string.h头文件</h3>
+<ol type="1">
+<li><p>strlen()，得到字符数组中第一个\0前字符的个数</p></li>
 <li><p>strcmp(), 返回两个字符串大小的比较结果，比较原则是按照字典序</p>
 <blockquote>
 <p>在 C++ 中，字符串的字典序比较是基于字符的 ASCII
@@ -539,7 +599,7 @@ strlen()，得到字符数组中第一个\0前字符的个数</p>
 <li><code>&lt;=</code>：判断第一个字符串是否小于或等于第二个字符串。</li>
 <li><code>&gt;=</code>：判断第一个字符串是否大于或等于第二个字符串。</li>
 </ul></li>
-<li><strong>示例代码</strong>： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>                        <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s1 = <span class="hljs-string">&quot;apple&quot;</span>;<br>    string s2 = <span class="hljs-string">&quot;banana&quot;</span>;<br>                        <br>    <span class="hljs-keyword">if</span> (s1 &lt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is less than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s1 &gt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is greater than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is equal to &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125;<br>                        <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><strong>示例代码</strong>： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>                                 <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s1 = <span class="hljs-string">&quot;apple&quot;</span>;<br>    string s2 = <span class="hljs-string">&quot;banana&quot;</span>;<br>                                 <br>    <span class="hljs-keyword">if</span> (s1 &lt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is less than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s1 &gt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is greater than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is equal to &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125;<br>                                 <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="输出"><strong>输出</strong></h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">apple is less than banana<br></code></pre></td></tr></table></figure>
@@ -592,12 +652,12 @@ strlen()，得到字符数组中第一个\0前字符的个数</p>
 <li><p>strcpy() <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">strcpy</span>(字符数组<span class="hljs-number">1</span>， 字符数组<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
 <strong>注意：是把字符数组2赋值给字符数组1，这里的复制也包括了\0</strong></p></li>
 <li><p>strcat() <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">strcat</span>(字符数组<span class="hljs-number">1</span>， 字符数组<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
-<strong>注意：是把字符数组2接到字符数组1后面去</strong> ### 2.5.7
-sscanf与sprintf sscanf从单词上可以理解为
-string+scanf,sprintf则可以理解为 string+printf,均在 stdio.h
-头文件下。<br />
-先来回顾一下scanf与printf，其实可以写成这种形式</p></li>
+<strong>注意：是把字符数组2接到字符数组1后面去</strong></p></li>
 </ol>
+<h3 id="sscanf与sprintf">2.5.7 sscanf与sprintf</h3>
+<p>sscanf从单词上可以理解为 string+scanf,sprintf则可以理解为
+string+printf,均在 stdio.h 头文件下。<br />
+先来回顾一下scanf与printf，其实可以写成这种形式</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">scanf</span>(screen, <span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br><span class="hljs-built_in">printf</span>(screen, <span class="hljs-string">&quot;%d&quot;</span>, n);<br></code></pre></td></tr></table></figure>
 <p>可以发现，scanf的输入其实是把
 screen的内容以"%d"的格式传输到n中(即从左至右)<br />
@@ -613,21 +673,27 @@ sscanf与sprintf与上面的格式是相同的，只不过把 screen
 <p>输出结果 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">233</span><br></code></pre></td></tr></table></figure>
 上面只是一些简单的应用，事实上，可以像使用scanf与printf那样进行复杂的格式输入和输出。例如下面的代码使用sscanf将字符数组str中的内容按"%d:%lf,%s"的格式写到int型变量n、double型变量db、char型数组str2中。
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-type">double</span> db;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>] = <span class="hljs-string">&quot;2048:3.14,hello&quot;</span>, str2[<span class="hljs-number">100</span>];<br>    <span class="hljs-built_in">sscanf</span>(str, <span class="hljs-string">&quot;%d:%lf,%s&quot;</span>,&amp;n, &amp;db, str2);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;n=%d,db=%.2f,str2=%s\n&quot;</span>,n,db,str2);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出结果为 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">n=<span class="hljs-number">2048</span>,db=<span class="hljs-number">3.14</span>,str2=hello<br></code></pre></td></tr></table></figure> 类似的 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n=<span class="hljs-number">12</span>;<br>    <span class="hljs-type">double</span> db=<span class="hljs-number">3.1415</span>;<br>    <span class="hljs-type">char</span> str[<span class="hljs-number">1000</span>], str2[<span class="hljs-number">100</span>]=<span class="hljs-string">&quot;good&quot;</span>;<br>    <span class="hljs-built_in">sprintf</span>(str, <span class="hljs-string">&quot;%d:%.2f,%s&quot;</span>,n, db, str2);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str=%s\n&quot;</span>,str);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出结果
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">str=<span class="hljs-number">12</span>:<span class="hljs-number">3.14</span>,good<br></code></pre></td></tr></table></figure> ## 2.6 函数 ### 2.6.1 函数的定义 -
-全局变量：定义在所有函数之前，对于定义之后的所有程序段之内都有效的变量<br />
--
-局部变量：定义在函数内部且只在函数内部生效，函数结束之后局部变量销毁<br />
--
-函数定义内的小括号内的参数被称为<strong>形式参数</strong>简称<strong>形参</strong>，而在实际调用时小括号之内的参数称为<strong>实际参数</strong>或者<strong>实参</strong>
-### 2.6.2 再谈main函数 return 0；是告知系统，程序正常终止 ### 2.6.3
-以数组作为函数参数
-数组作为参数时，数组中的第一维不需要填写长度（如果是二维数组，那么第二维需要填写长度），实际调用时也只需要填写数组名。<br />
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">str=<span class="hljs-number">12</span>:<span class="hljs-number">3.14</span>,good<br></code></pre></td></tr></table></figure> ## 2.6 函数</p>
+<h3 id="函数的定义">2.6.1 函数的定义</h3>
+<ul>
+<li>全局变量：定义在所有函数之前，对于定义之后的所有程序段之内都有效的变量<br />
+</li>
+<li>局部变量：定义在函数内部且只在函数内部生效，函数结束之后局部变量销毁<br />
+</li>
+<li>函数定义内的小括号内的参数被称为<strong>形式参数</strong>简称<strong>形参</strong>，而在实际调用时小括号之内的参数称为<strong>实际参数</strong>或者<strong>实参</strong>
+### 2.6.2 再谈main函数</li>
+</ul>
+<p>return 0；是告知系统，程序正常终止</p>
+<h3 id="以数组作为函数参数">2.6.3 以数组作为函数参数</h3>
+<p>数组作为参数时，数组中的第一维不需要填写长度（如果是二维数组，那么第二维需要填写长度），实际调用时也只需要填写数组名。<br />
 <strong>数组作为参数时，在函数中对数组元素的修改就等同是对原数组元素的修改（这与普通的局部变量不同）</strong>
-比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(<span class="hljs-type">int</span> b[][<span class="hljs-number">5</span>])</span></span>&#123; <span class="hljs-comment">//第二维要注明长度</span><br><br>&#125; <br></code></pre></td></tr></table></figure> 数组可以作为参数传入，但是不能作为返回类型。 ###
-2.6.4 函数的嵌套调用 ### 2.6.5 函数的递归调用
-递归是函数自己调用自身的过程，会在第四章详细介绍 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">F</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">F</span>(n<span class="hljs-number">-1</span>)*n;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n=<span class="hljs-number">12</span>;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> ## 2.7
-指针 <strong>指针是一个unsigned类型的int</strong><br />
-### 2.7.2 指针变量</p>
+比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(<span class="hljs-type">int</span> b[][<span class="hljs-number">5</span>])</span></span>&#123; <span class="hljs-comment">//第二维要注明长度</span><br><br>&#125; <br></code></pre></td></tr></table></figure> 数组可以作为参数传入，但是不能作为返回类型。</p>
+<h3 id="函数的嵌套调用">2.6.4 函数的嵌套调用</h3>
+<h3 id="函数的递归调用">2.6.5 函数的递归调用</h3>
+<p>递归是函数自己调用自身的过程，会在第四章详细介绍 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">F</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">F</span>(n<span class="hljs-number">-1</span>)*n;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n=<span class="hljs-number">12</span>;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> ##
+2.7 指针</p>
+<p><strong>指针是一个unsigned类型的int</strong></p>
+<h3 id="指针变量">2.7.2 指针变量</h3>
 <p><strong>指针变量用来存放指针（或者可以理解成地址）</strong>，意思是把地址当做常量，然后专门定义了一种指针变量来存放它，在某种数据类型后加型号*来表示这是一个指针变量</p>
 <p>如果要同时定义几个指针变量，星号只会结合于第一个变量名 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span>* p1, p2; <span class="hljs-comment">//p1是int*类型的 p2是int类型的</span><br></code></pre></td></tr></table></figure>
 一种给指针变量赋值的方式，<strong>给指针变量赋值的方式一般是把变量的地址取出来(使用取地址运算符&amp;)，然后赋值给对应的指针变量</strong>：
@@ -645,9 +711,9 @@ sscanf与sprintf与上面的格式是相同的，只不过把 screen
 且有**a+i==&amp;a[i], *(a+i)==a[i];<strong>
 </strong>两个int类型的指针相减，等价于求这两个指针之间相差了几个int**，比如下面这段代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a[<span class="hljs-number">5</span>];<br><span class="hljs-type">int</span> *p=a;<br><span class="hljs-type">int</span> *q=a<span class="hljs-number">+5</span>;<br>cout&lt;&lt;q-p;<br></code></pre></td></tr></table></figure>
-<p>会输出5，这个解释对于其他类型的指针同样适用 ### 2.7.4
-使用指针变量作为函数参数
-这时视为把变量的地址传入函数，如果在函数中对这个地址的元素进行改变，那么原先的数据就确实地会被改变。<br />
+<p>会输出5，这个解释对于其他类型的指针同样适用</p>
+<h3 id="使用指针变量作为函数参数">2.7.4 使用指针变量作为函数参数</h3>
+<p>这时视为把变量的地址传入函数，如果在函数中对这个地址的元素进行改变，那么原先的数据就确实地会被改变。<br />
 经典例子，使用指针作为参数交换两个数。 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span> *a, <span class="hljs-type">int</span> *b)&#123;<br>    <span class="hljs-type">int</span> temp=*a; <br>    *a=*b;<br>    *b=temp;<br>&#125;<br></code></pre></td></tr></table></figure> 经典错误1
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span> *a, <span class="hljs-type">int</span> *b)&#123;<br>    <span class="hljs-type">int</span> *temp; <br>    *temp=*a;<br>    *a=*b;<br>&#125;<br></code></pre></td></tr></table></figure>
 错因：指针temp没有初始化，是野指针，很大可能指向系统工作区间，随机地址出错概率特别大。</p>
@@ -656,13 +722,17 @@ sscanf与sprintf与上面的格式是相同的，只不过把 screen
 <p>经典错误2 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span> *a, <span class="hljs-type">int</span> *b)&#123;<br>    <span class="hljs-type">int</span> *temp=a;<br>    a=b;<br>    b=temp;<br>&#125;<br></code></pre></td></tr></table></figure>
 错因：回顾前面所说的，函数参数的传送方式是单向一次性的，main函数传给swap函数的“地址”其实只是一个unsigned
 int，swap对地址本身修改并不能对main函数里面的地址进行修改，<strong>能够使main函数里面的数据发生变化的只能是swap函数中对地址指向的数据进行的修改</strong>。这个函数其实就很类似于为什么不可以写一个这样的函数
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)&#123;<br>    <span class="hljs-type">int</span> temp=a; <br>    a=b;<br>    b=temp;<br>&#125;<br></code></pre></td></tr></table></figure> 因为其实都只是副本罢了。 ### 2.7.5 引用 #### 引用的含义
-C++中特有的语法，给原变量起一个别名，且对引用变量的操作就是对于原变量的操作
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)&#123;<br>    <span class="hljs-type">int</span> temp=a; <br>    a=b;<br>    b=temp;<br>&#125;<br></code></pre></td></tr></table></figure> 因为其实都只是副本罢了。</p>
+<h3 id="引用">2.7.5 引用</h3>
+<h4 id="引用的含义">引用的含义</h4>
+<p>C++中特有的语法，给原变量起一个别名，且对引用变量的操作就是对于原变量的操作
 <strong>引用不产生副本</strong><br />
 方法：在函数的参数类型后面加一个&amp;就可以了<br />
 <strong>注意与取地址运算符的&amp;区分开</strong><br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(<span class="hljs-type">int</span>&amp;x)</span></span>&#123;<br>    x=<span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n=<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">change</span>(n);<br>    cout&lt;&lt;n;<br>&#125;<br></code></pre></td></tr></table></figure> #### 指针的引用 可以运用引用，改造上面的经典错误2
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span>* &amp;p1, <span class="hljs-type">int</span>* &amp;p2)&#123;<br>    <span class="hljs-type">int</span> *temp=p1;<br>    p1=p2;<br>    p2=temp;<br>&#125;<br></code></pre></td></tr></table></figure> 这里相当于把int<em>视作一个unsigned
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;   <br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">change</span><span class="hljs-params">(<span class="hljs-type">int</span>&amp;x)</span></span>&#123;<br>    x=<span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n=<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">change</span>(n);<br>    cout&lt;&lt;n;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="指针的引用">指针的引用</h4>
+<p>可以运用引用，改造上面的经典错误2 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">void</span> _swap(<span class="hljs-type">int</span>* &amp;p1, <span class="hljs-type">int</span>* &amp;p2)&#123;<br>    <span class="hljs-type">int</span> *temp=p1;<br>    p1=p2;<br>    p2=temp;<br>&#125;<br></code></pre></td></tr></table></figure>
+这里相当于把int<em>视作一个unsigned
 int类型，而对这样的两个整型变量进行交换是需要加引用的<br />
 传入的是指针的别名。<br />
 </em><strong>常量不可以使用引用</strong>*</p>
@@ -690,17 +760,18 @@ int类型，而对这样的两个整型变量进行交换是需要加引用的<b
 <li><p><strong>常量引用</strong>：你可以声明一个常量引用，这样引用就不能修改被引用的变量。
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> &amp;ref = a;  <span class="hljs-comment">// 常量引用</span><br>ref = <span class="hljs-number">20</span>;  <span class="hljs-comment">// 错误，常量引用不能修改被引用的变量</span><br></code></pre></td></tr></table></figure></p></li>
 <li><p><strong>引用作为函数参数</strong>：引用常用于函数参数传递，以避免拷贝大对象，并且可以直接修改传入的参数。
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                                                                                                                  <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p></li>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                                                                                                                           <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p></li>
 </ol>
 <p>总结：</p>
 <p>引用在C++中是一个非常强大的工具，它允许你以更直观的方式操作变量，避免了指针的复杂性。
 通过引用，你可以直接修改被引用的变量，而不需要通过指针来间接访问。
-引用在函数参数传递、返回值等方面都有广泛的应用。 ## 2.8 结构体的使用 ###
-2.8.1 结构体的定义 一个例子 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;spot;<br></code></pre></td></tr></table></figure> 定义结构体变量的方式
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;spot;<br>spot A;<br>spot B;<br>spot str[<span class="hljs-number">100</span>];<br></code></pre></td></tr></table></figure> 或者 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">spot</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;A, B, str[<span class="hljs-number">100</span>];<br></code></pre></td></tr></table></figure>
+引用在函数参数传递、返回值等方面都有广泛的应用。 ## 2.8 结构体的使用</p>
+</blockquote>
+<h3 id="结构体的定义">2.8.1 结构体的定义</h3>
+<p>一个例子 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;spot;<br></code></pre></td></tr></table></figure> 定义结构体变量的方式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;spot;<br>spot A;<br>spot B;<br>spot str[<span class="hljs-number">100</span>];<br></code></pre></td></tr></table></figure> 或者
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">spot</span><br>&#123;<br>    <span class="hljs-type">char</span> name;<br>    <span class="hljs-type">int</span> count;<br>&#125;A, B, str[<span class="hljs-number">100</span>];<br></code></pre></td></tr></table></figure>
 <strong>结构体里面不能定义自己本身，但是可以定义自身类型的指针变量</strong><br />
 一个例子</p>
-</blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-comment">// 定义一个链表节点结构体</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span> &#123;<br> <span class="hljs-type">int</span> data;           <span class="hljs-comment">// 节点数据</span><br> Node* next;         <span class="hljs-comment">// 指向下一个节点的指针</span><br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br> <span class="hljs-comment">// 创建链表节点</span><br> Node* head = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>();<br> head-&gt;data = <span class="hljs-number">1</span>;<br> head-&gt;next = <span class="hljs-literal">nullptr</span>;<br><br> Node* second = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>();<br> second-&gt;data = <span class="hljs-number">2</span>;<br> second-&gt;next = <span class="hljs-literal">nullptr</span>;<br><br> Node* third = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>();<br> third-&gt;data = <span class="hljs-number">3</span>;<br> third-&gt;next = <span class="hljs-literal">nullptr</span>;<br><br> <span class="hljs-comment">// 将节点连接起来</span><br> head-&gt;next = second;<br> second-&gt;next = third;<br><br> <span class="hljs-comment">// 遍历链表并输出数据</span><br> Node* current = head;<br> <span class="hljs-keyword">while</span> (current != <span class="hljs-literal">nullptr</span>) &#123;<br>     std::cout &lt;&lt; current-&gt;data &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>     current = current-&gt;next;<br> &#125;<br><br> <span class="hljs-comment">// 释放链表内存</span><br> <span class="hljs-keyword">delete</span> head;<br> <span class="hljs-keyword">delete</span> second;<br> <span class="hljs-keyword">delete</span> third;<br><br> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="访问结构体内的元素">2.8.2 访问结构体内的元素</h3>
 <p>两种方法 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">StudentInfo</span>&#123;<br>    <span class="hljs-type">int</span> id;<br>    <span class="hljs-type">char</span> name[<span class="hljs-number">20</span>];<br>    studentInto *next;<br>&#125;stu, *p;<br></code></pre></td></tr></table></figure> 访问变量写法 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">stu.id<br>stu.name<br>stu.next<br></code></pre></td></tr></table></figure> 而访问指针变量p
@@ -769,8 +840,11 @@ char str[100]; cin.getline(str,100); 2. cout
 引入一个小量eps来对计算机的浮点误差进行修正，再通过一系列的宏定义来实现修正误差的程序
 一般取 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-8</span>;<br></code></pre></td></tr></table></figure> 核心部分(画几个数轴来理解) <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps=<span class="hljs-number">1e-8</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">double</span> PI=<span class="hljs-built_in">acos</span>(<span class="hljs-number">-1.0</span>)<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> Equ(a,b) ((fabs((a)-(b)))&lt;(eps))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> More(a,b) (((a)-(b))&gt;(eps))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> Less(a,b) (((a)-(b))&lt;(-eps))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MoreEqu(a,b) (((a)-(b))&gt;(-eps))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LessEqu(a,b) (((a)-(b))&lt;(eps))</span><br></code></pre></td></tr></table></figure>
 <strong>由于精度问题，可能一个0在经过一系列运算之后变为一个很小的负数了，那么这个时候进行一些运算比如sqrt就会报错，那么这个时候就需要用eps保证变量本身在定义域内</strong>
-比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><br><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-9</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">double</span> x = <span class="hljs-number">-1e-15</span>;<br><br>    <span class="hljs-comment">// 确保 x 在定义域内</span><br>    <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">0</span>) &#123;<br>        x = eps;<br>    &#125;<br><br>    <span class="hljs-comment">// 计算平方根</span><br>    <span class="hljs-type">double</span> result = std::<span class="hljs-built_in">sqrt</span>(x);<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;sqrt(&quot;</span> &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot;) = &quot;</span> &lt;&lt; result &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> ### 2.9.3 复杂度 #### 时间复杂度
-定义：算法需要执行基本运算的次数所处的等级<br />
+比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><br><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-9</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">double</span> x = <span class="hljs-number">-1e-15</span>;<br><br>    <span class="hljs-comment">// 确保 x 在定义域内</span><br>    <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">0</span>) &#123;<br>        x = eps;<br>    &#125;<br><br>    <span class="hljs-comment">// 计算平方根</span><br>    <span class="hljs-type">double</span> result = std::<span class="hljs-built_in">sqrt</span>(x);<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;sqrt(&quot;</span> &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot;) = &quot;</span> &lt;&lt; result &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="复杂度">2.9.3 复杂度</h3>
+<h4 id="时间复杂度">时间复杂度</h4>
+<p>定义：算法需要执行基本运算的次数所处的等级<br />
 基本运算：加减乘除之类可以直接执行的运算 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    sum+=i;<br>&#125;<br></code></pre></td></tr></table></figure>
 for循环执行了n次，时间复杂度为O(n)，也就是线性增长 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>        sum+=arr[i][j];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 基本运算次数为<span
@@ -779,13 +853,14 @@ class="math inline">\(n^{2}\)</span>)<br />
 类似无穷小，高等级的幂次会覆盖低等级的幂次<br />
 评估时间复杂度：一般OJ系统一秒能承受的运算次数大概是<span
 class="math inline">\(10^{7}\)</span>到<span
-class="math inline">\(10^{8}\)</span>，以此作为判断依据 ####　空间复杂度
-表示算法需要消耗的最大空间，但是一般都是空间够时间不够，所以可以以时间换空间
-#### 编码复杂度
-就是看你觉得代码是不是很复杂了，比较泛泛而又定性的一个概念<br />
-## 2.10 黑盒测试 建议直接回去看书，不过这里有一点是值得提一下的<br />
+class="math inline">\(10^{8}\)</span>，以此作为判断依据</p>
+<p>####　空间复杂度</p>
+<p>表示算法需要消耗的最大空间，但是一般都是空间够时间不够，所以可以以时间换空间</p>
+<h4 id="编码复杂度">编码复杂度</h4>
+<p>就是看你觉得代码是不是很复杂了，比较泛泛而又定性的一个概念<br />
+## 2.10 黑盒测试</p>
+<p>建议直接回去看书，不过这里有一点是值得提一下的<br />
 scanf()函数其实是有返回值的，返回值也就是传入参数的数量，而当没有参数传入时会返回-1，而且可以用EOF来代表-1</p>
-</blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a)!=EOF)&#123;<br>    ......<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="第4章-入门篇2算法初步">第4章 入门篇（2）——算法初步</h1>
 <h2 id="排序">4.1 排序</h2>
@@ -1435,22 +1510,29 @@ n\)</span>)</p>
 <h2 id="vector的常见用法详解">6.1 vector的常见用法详解</h2>
 <h3 id="定义方式举例">定义方式举例</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; name;<br>vector&lt;<span class="hljs-type">char</span>&gt; name;<br>vector&lt;vector&lt;<span class="hljs-type">int</span>&gt; &gt; name; <span class="hljs-comment">//两个&gt;&gt;之间加上空格以防止被识别成移位操作</span><br><span class="hljs-comment">//这个可以理解成两个维度都可以变成的二维数组</span><br></code></pre></td></tr></table></figure>
-<p>定义vector数组的方式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; arr[<span class="hljs-number">100</span>]; <span class="hljs-comment">//这种定义方式就是一维的长度被固定成100了</span><br></code></pre></td></tr></table></figure> ### vector容器内元素的访问 ####
-通过下标访问 就类似普通的数组 #### 通过迭代器访问
-迭代器(iterator)可以理解成一种类似指针的东西 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-keyword">typename</span>&gt;::iterator it; <span class="hljs-comment">//it是一个vector&lt;typename&gt;::iterator型的变量</span><br></code></pre></td></tr></table></figure>
+<p>定义vector数组的方式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; arr[<span class="hljs-number">100</span>]; <span class="hljs-comment">//这种定义方式就是一维的长度被固定成100了</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="vector容器内元素的访问">vector容器内元素的访问</h3>
+<h4 id="通过下标访问">通过下标访问</h4>
+<p>就类似普通的数组</p>
+<h4 id="通过迭代器访问">通过迭代器访问</h4>
+<p>迭代器(iterator)可以理解成一种类似指针的东西 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-keyword">typename</span>&gt;::iterator it; <span class="hljs-comment">//it是一个vector&lt;typename&gt;::iterator型的变量</span><br></code></pre></td></tr></table></figure>
 这样就得到了迭代器it，并且可以通过<em>it来访问vector中的元素，举例如下
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; vi;<br><span class="hljs-keyword">for</span>(inti=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>    vi.<span class="hljs-built_in">push_back</span>(i); <span class="hljs-comment">//push_back(i)在vi的末尾添加元素i，即依次添加1 2 3 4 5</span><br>&#125;<br></code></pre></td></tr></table></figure> 可以使用类似下标和指针访问数组的方式来访问容器中的元素
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; vi;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>        vi.<span class="hljs-built_in">push_back</span>(i);<br>    &#125;<br>    <span class="hljs-comment">//vi.begin()为取vi的首元素地址，而it指向这个地址</span><br>    vector&lt;<span class="hljs-type">int</span>&gt;::iterator it=vi.<span class="hljs-built_in">begin</span>();<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,*(it+i));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 这里可以看出vi[i]==</em>(vi.begin()+i)<br />
 再提一下end()函数：取尾元素地址的下一个地址，end()作为迭代器末尾标志不存储任何元素。（美国人思维习惯左闭右开）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; vi;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>        vi.<span class="hljs-built_in">push_back</span>(i);<br>    &#125;<br>    <span class="hljs-comment">//vector的迭代器不支持it&lt;vi.end()的元素，循环条件只能用it!=vi.end()</span><br>    <span class="hljs-keyword">for</span>(vector&lt;<span class="hljs-type">int</span>&gt;::iterator it=vi.<span class="hljs-built_in">begin</span>();it!=vi.<span class="hljs-built_in">end</span>();it++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,*it);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>强调一下，STL容器中只有在vector和string中才允许vi.begin()+3这种迭代器带上整数的写法</strong>
-### vector常用函数实例解析 #### push_back()
-在vector后面增加一个元素(x),时间复杂度O(1),实例见上文 #### pop_back()
-直接使用不需要传参,用以删除vector的尾元素,时间复杂度O(1) #### size()
-用以获取vector中元素的个数,返回值unsigned不过一般用%d就可以了，时间复杂度O(1)
-#### clear() 清空vector中的所有元素，时间复杂度O(N),N为vector中元素个数
-#### insert()
-insert(it,x)用以向vector的任意迭代器it处插入一个元素x，时间复杂度O(N)
+<p><strong>强调一下，STL容器中只有在vector和string中才允许vi.begin()+3这种迭代器带上整数的写法</strong></p>
+<h3 id="vector常用函数实例解析">vector常用函数实例解析</h3>
+<h4 id="push_back">push_back()</h4>
+<p>在vector后面增加一个元素(x),时间复杂度O(1),实例见上文</p>
+<h4 id="pop_back">pop_back()</h4>
+<p>直接使用不需要传参,用以删除vector的尾元素,时间复杂度O(1)</p>
+<h4 id="size">size()</h4>
+<p>用以获取vector中元素的个数,返回值unsigned不过一般用%d就可以了，时间复杂度O(1)</p>
+<h4 id="clear">clear()</h4>
+<p>清空vector中的所有元素，时间复杂度O(N),N为vector中元素个数</p>
+<h4 id="insert">insert()</h4>
+<p>insert(it,x)用以向vector的任意迭代器it处插入一个元素x，时间复杂度O(N)
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; vi;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>        vi.<span class="hljs-built_in">push_back</span>(i);<br>    &#125;<br>    vi.<span class="hljs-built_in">insert</span>(vi.<span class="hljs-built_in">begin</span>()<span class="hljs-number">+2</span>,<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;vi.<span class="hljs-built_in">size</span>();i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,vi[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p>
 <blockquote>
 <p>是的，对于 <code>std::vector&lt;int&gt; vi</code>
@@ -1489,28 +1571,33 @@ insert(it,x)用以向vector的任意迭代器it处插入一个元素x，时间�
 <p>在 <code>std::vector</code> 中： - <code>vi[i]</code>
 是通过索引访问元素的合法操作。 - <code>vi + i</code> 是非法的，因为
 <code>vi</code> 是一个对象而不是指针。 如果需要实现类似
-<code>vi[i]</code> 的操作，应使用迭代器或下标索引。 #### erase()
-有两种用法：删除单个元素，删除一个区间内的所有元素，时间复杂度均为O(N)
+<code>vi[i]</code> 的操作，应使用迭代器或下标索引。</p>
+</blockquote>
+<h4 id="erase">erase()</h4>
+<p>有两种用法：删除单个元素，删除一个区间内的所有元素，时间复杂度均为O(N)
 1. 删除单个元素<br />
 erase(it)即删除迭代器处的元素 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; vi;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>        vi.<span class="hljs-built_in">push_back</span>(i); <span class="hljs-comment">//1 2 3 4 5</span><br>    &#125;<br>    vi.<span class="hljs-built_in">erase</span>(vi.<span class="hljs-built_in">begin</span>()<span class="hljs-number">+1</span>); <span class="hljs-comment">//删除2 不是vi.begin()+1因为*(vi.begin())==vi[0]</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;vi.<span class="hljs-built_in">size</span>();i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,vi[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 2.
 删除一个区间之内的所有元素<br />
 erase(first,last)即删除[first,last)内的所有元素<br />
-由此可见vi.clear()等价于vi.erase(vi.begin(),vi.end())<br />
-## 6.2 set的常见用法详解
-set，也就是集合，是一个<strong>内部自动有序</strong>而且<strong>不含重复元素</strong>的容器
-### set的定义 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">set&lt;<span class="hljs-keyword">typename</span>&gt; name;<br></code></pre></td></tr></table></figure>
-类似vector,或者说绝大部分STL的定义方式都是这样的 ### set容器内元素的访问
-set只能通过迭代器访问 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">set&lt;<span class="hljs-type">int</span>&gt;::iterator it;<br></code></pre></td></tr></table></figure>
+由此可见vi.clear()等价于vi.erase(vi.begin(),vi.end())</p>
+<h2 id="set的常见用法详解">6.2 set的常见用法详解</h2>
+<p>set，也就是集合，是一个<strong>内部自动有序</strong>而且<strong>不含重复元素</strong>的容器</p>
+<h3 id="set的定义">set的定义</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">set&lt;<span class="hljs-keyword">typename</span>&gt; name;<br></code></pre></td></tr></table></figure>
+<p>类似vector,或者说绝大部分STL的定义方式都是这样的</p>
+<h3 id="set容器内元素的访问">set容器内元素的访问</h3>
+<p>set只能通过迭代器访问 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">set&lt;<span class="hljs-type">int</span>&gt;::iterator it;<br></code></pre></td></tr></table></figure>
 <strong>除vector和string以外的STL容器都不支持*(it+i)的访问方式</strong>所以只能这样枚举
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    set&lt;<span class="hljs-type">int</span>&gt; st;<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">2</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">1</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">3</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">1</span>);<br>    <span class="hljs-comment">//不支持it&lt;st.end()</span><br>    <span class="hljs-keyword">for</span>(set&lt;<span class="hljs-type">int</span>&gt;::iterator it=st.<span class="hljs-built_in">begin</span>();it!=st.<span class="hljs-built_in">end</span>();it++)&#123;<br>        cout&lt;&lt;*it;<br>    &#125; <span class="hljs-comment">//要理解迭代器，不是针对一个对象，而是这个类中的一种数据类型</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出结果 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-由此可见set内的元素<strong>自动升序排序</strong>而且自动<strong>去除重复元素</strong>
-### set常用函数实例解析 #### insert()
-会有自动递增排序和去重，时间复杂度O(logN) #### find()
-find(value)返回set中对应值为value的迭代器，时间复杂度O(logN)
+由此可见set内的元素<strong>自动升序排序</strong>而且自动<strong>去除重复元素</strong></p>
+<h3 id="set常用函数实例解析">set常用函数实例解析</h3>
+<h4 id="insert-1">insert()</h4>
+<p>会有自动递增排序和去重，时间复杂度O(logN)</p>
+<h4 id="find">find()</h4>
+<p>find(value)返回set中对应值为value的迭代器，时间复杂度O(logN)
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    set&lt;<span class="hljs-type">int</span>&gt; st;<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">2</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">1</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">3</span>);<br>    st.<span class="hljs-built_in">insert</span>(<span class="hljs-number">1</span>);<br>    set&lt;<span class="hljs-type">int</span>&gt;::iterator it=st.<span class="hljs-built_in">find</span>(<span class="hljs-number">2</span>);<br>    cout&lt;&lt;*it&lt;&lt;endl; <span class="hljs-comment">//输出2</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 如果查找不到就会返回st.end()，可以用这个功能搭配set<string>实现复杂的hash</p>
-</blockquote>
-<h4 id="erase">erase()</h4>
+<h4 id="erase-1">erase()</h4>
 <ol type="1">
 <li><ul>
 <li>st.erase(it) 删除单个元素(对应迭代器处的)，可以结合find函数来使用
@@ -1519,49 +1606,66 @@ find(value)返回set中对应值为value的迭代器，时间复杂度O(logN)
 <li>为什么可以这样？因为value的类型是typename，而it的类型是set<typename>::iterator</li>
 </ul></li>
 <li>删除一个区间之内的所有元素
-st.erase(first,last)，其中first和last都是迭代器，时间复杂度为O(last-first)
-#### size() 略了，O(1) #### clear() O(N) ## 6.3 string的常见用法详解 ###
-string的定义 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">string str;<br>string str1=<span class="hljs-string">&quot;abcd&quot;</span>;<br></code></pre></td></tr></table></figure> ### string中内容的访问 #### 通过下标访问
-就像访问字符数组那样去访问string <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;abcd&quot;</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;str.<span class="hljs-built_in">length</span>();i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, str[i]); <span class="hljs-comment">//输出abcd</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+st.erase(first,last)，其中first和last都是迭代器，时间复杂度为O(last-first)</li>
+</ol>
+<h4 id="size-1">size()</h4>
+<p>略了，O(1)</p>
+<h4 id="clear-1">clear()</h4>
+<p>O(N)</p>
+<h2 id="string的常见用法详解">6.3 string的常见用法详解</h2>
+<h3 id="string的定义">string的定义</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">string str;<br>string str1=<span class="hljs-string">&quot;abcd&quot;</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="string中内容的访问">string中内容的访问</h3>
+<h4 id="通过下标访问-1">通过下标访问</h4>
+<p>就像访问字符数组那样去访问string <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;abcd&quot;</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;str.<span class="hljs-built_in">length</span>();i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, str[i]); <span class="hljs-comment">//输出abcd</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 如果要读入和输出整个字符串那就<strong>只能用cin和cout</strong>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str;<br>    cin&gt;&gt;str;<br>    cout&lt;&lt;str;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 不过真的要使用printf也可以使用c_str()强转
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;abcd&quot;</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, str.<span class="hljs-built_in">c_str</span>());<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> #### 通过迭代器访问
-主要是有些函数比如insert()和erase()要求迭代器为参数<br />
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;abcd&quot;</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, str.<span class="hljs-built_in">c_str</span>());<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="通过迭代器访问-1">通过迭代器访问</h4>
+<p>主要是有些函数比如insert()和erase()要求迭代器为参数<br />
 由于定义string的时候并没有&lt;typename&gt;这一项，因此可以直接这样定义
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">string::iterator it;<br></code></pre></td></tr></table></figure> 那么就可以使用迭代器来对string进行遍历了 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;abcd&quot;</span>;<br>    <span class="hljs-keyword">for</span>(string::iterator it=str.<span class="hljs-built_in">begin</span>();it!=<span class="hljs-built_in">end</span>();it++)&#123;<br>        cout&lt;&lt;*it;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-这里循环条件也可以写成it&lt;str.end()，<strong>因为只有vector和string支持这样的对迭代器比如str.begin()+3直接加减某个数字的操作</strong>
-### string常用函数实例解析 #### operator+= 可以把两个string直接拼接起来
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;xyz&quot;</span>,str3;<br>    str3=str1+str2;<br>    cout&lt;&lt;str3; <span class="hljs-comment">//abcxyz</span><br>&#125;<br></code></pre></td></tr></table></figure> #### compare operator
-两个string类型直接用比较运算符比较大小，依据是字典序 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">if</span>(str1&gt;str2)&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-#### length() 或 size() <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">str.<span class="hljs-built_in">length</span>();<br>str.<span class="hljs-built_in">size</span>();<br></code></pre></td></tr></table></figure>
-均返回string的长度且基本相同，时间复杂度O(1) #### insert()
-string的insert()函数有多种写法，时间复杂度均为O(N)<br />
-</li>
-<li>insert(pos,string),在pos号位置插入字符串string<br />
-<strong>这个pos号位可以是0</strong> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;opq&quot;</span>;<br>str<span class="hljs-number">1.</span><span class="hljs-built_in">insert</span>(<span class="hljs-number">3</span>,str2); <span class="hljs-comment">//往str[3]处插入opq，这里也可以直接写&quot;opq&quot;</span><br>cout&lt;&lt;str1&lt;&lt;endl; <span class="hljs-comment">//abcopq</span><br></code></pre></td></tr></table></figure></li>
-<li>insert(it,it2,it3),
+这里循环条件也可以写成it&lt;str.end()，<strong>因为只有vector和string支持这样的对迭代器比如str.begin()+3直接加减某个数字的操作</strong></p>
+<h3 id="string常用函数实例解析">string常用函数实例解析</h3>
+<h4 id="operator">operator+=</h4>
+<p>可以把两个string直接拼接起来 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;xyz&quot;</span>,str3;<br>    str3=str1+str2;<br>    cout&lt;&lt;str3; <span class="hljs-comment">//abcxyz</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="compare-operator">compare operator</h4>
+<p>两个string类型直接用比较运算符比较大小，依据是字典序
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">if</span>(str1&gt;str2)&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="length-或-size">length() 或 size()</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">str.<span class="hljs-built_in">length</span>();<br>str.<span class="hljs-built_in">size</span>();<br></code></pre></td></tr></table></figure>
+<p>均返回string的长度且基本相同，时间复杂度O(1)</p>
+<h4 id="insert-2">insert()</h4>
+<p>string的insert()函数有多种写法，时间复杂度均为O(N)<br />
+1. insert(pos,string),在pos号位置插入字符串string<br />
+<strong>这个pos号位可以是0</strong> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;opq&quot;</span>;<br>str<span class="hljs-number">1.</span><span class="hljs-built_in">insert</span>(<span class="hljs-number">3</span>,str2); <span class="hljs-comment">//往str[3]处插入opq，这里也可以直接写&quot;opq&quot;</span><br>cout&lt;&lt;str1&lt;&lt;endl; <span class="hljs-comment">//abcopq</span><br></code></pre></td></tr></table></figure> 2.
+insert(it,it2,it3),
 it为原字符串的欲插入位置，it2和it3为待插入字符串的首尾迭代器，用以表示[it2,it3)将被插入it的位置上
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;opq&quot;</span>;<br>str.<span class="hljs-built_in">insert</span>(str.<span class="hljs-built_in">begin</span>(),str<span class="hljs-number">2.</span>begin,str<span class="hljs-number">2.</span><span class="hljs-built_in">end</span>());<br>cout&lt;&lt;str1&lt;&lt;endl; <span class="hljs-comment">//abcopq</span><br></code></pre></td></tr></table></figure> #### erase() 时间复杂度均为O(N)</li>
-<li>删除单个元素 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">str.<span class="hljs-built_in">erase</span>(it);<br></code></pre></td></tr></table></figure></li>
-<li>删除一个区间内的所有元素 两种方法
-<ul>
-<li>str.erase(first,last) <strong>均为迭代器</strong></li>
-<li>str.erase(pos,length)
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str1=<span class="hljs-string">&quot;abc&quot;</span>,str2=<span class="hljs-string">&quot;opq&quot;</span>;<br>str.<span class="hljs-built_in">insert</span>(str.<span class="hljs-built_in">begin</span>(),str<span class="hljs-number">2.</span>begin,str<span class="hljs-number">2.</span><span class="hljs-built_in">end</span>());<br>cout&lt;&lt;str1&lt;&lt;endl; <span class="hljs-comment">//abcopq</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="erase-2">erase()</h4>
+<p>时间复杂度均为O(N) 1. 删除单个元素 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">str.<span class="hljs-built_in">erase</span>(it);<br></code></pre></td></tr></table></figure> 1.
+删除一个区间内的所有元素 两种方法 - str.erase(first,last)
+<strong>均为迭代器</strong> - str.erase(pos,length)
 pos为起始位置(<strong>不是迭代器</strong>),length为删除的字符个数
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str=<span class="hljs-string">&quot;abcdefg&quot;</span>;<br>str.<span class="hljs-built_in">erase</span>(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">//删除c和d，从第三位开始的两个(包括第三位)</span><br></code></pre></td></tr></table></figure> <strong>这个pos号位可以是0</strong> #### clear() O(1)
-#### substr()
-substr(pos,len)返回从pos号位开始、长度为len的子串，时间复杂度为O(len)，示例如下、
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;Thank you for your smile.&quot;</span>;<br>    cout&lt;&lt;str.<span class="hljs-built_in">substr</span>(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)&lt;&lt;endl; <span class="hljs-comment">//Thank</span><br>    cout&lt;&lt;str.<span class="hljs-built_in">substr</span>(<span class="hljs-number">14</span>,<span class="hljs-number">4</span>)&lt;&lt;endl; <span class="hljs-comment">//Your</span><br>&#125;<br></code></pre></td></tr></table></figure> <strong>这个pos号位可以是0</strong> #### string::npos
-string::npos是一个常数其本身的值为-1，但是由于其本身是unsigned_int类型，也可以认为是unsigned_int类型的最大值。string::npos作为find函数失配时候的返回值，可以认为string::npos=-1或4294967295
-#### find()</li>
-</ul></li>
-</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">string str=<span class="hljs-string">&quot;abcdefg&quot;</span>;<br>str.<span class="hljs-built_in">erase</span>(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">//删除c和d，从第三位开始的两个(包括第三位)</span><br></code></pre></td></tr></table></figure> <strong>这个pos号位可以是0</strong></p>
+<h4 id="clear-2">clear()</h4>
+<p>O(1)</p>
+<h4 id="substr">substr()</h4>
+<p>substr(pos,len)返回从pos号位开始、长度为len的子串，时间复杂度为O(len)，示例如下、
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string str=<span class="hljs-string">&quot;Thank you for your smile.&quot;</span>;<br>    cout&lt;&lt;str.<span class="hljs-built_in">substr</span>(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)&lt;&lt;endl; <span class="hljs-comment">//Thank</span><br>    cout&lt;&lt;str.<span class="hljs-built_in">substr</span>(<span class="hljs-number">14</span>,<span class="hljs-number">4</span>)&lt;&lt;endl; <span class="hljs-comment">//Your</span><br>&#125;<br></code></pre></td></tr></table></figure> <strong>这个pos号位可以是0</strong></p>
+<h4 id="stringnpos">string::npos</h4>
+<p>string::npos是一个常数其本身的值为-1，但是由于其本身是unsigned_int类型，也可以认为是unsigned_int类型的最大值。string::npos作为find函数失配时候的返回值，可以认为string::npos=-1或4294967295</p>
+<h4 id="find-1">find()</h4>
 <ul>
 <li>str.find(str2),当str2是str的子串的时候，返回其在str中第一次出现的位置（不是迭代器）；如果str2不是str的子串，返回string::npos<br />
 </li>
 <li>str.find(str2,pos)从pos位开始匹配str2，返回值与上面的相同
-时间复杂度O(mn)，m和n分别是两个数组的长度 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> main&#123;<br>string str =<span class="hljs-string">&quot;Thank you for your smile.&quot;</span><br>string str2 <span class="hljs-string">&quot;you&quot;</span>;<br>string str3 <span class="hljs-string">&quot;me&quot;</span>;<br><span class="hljs-keyword">if</span> (str.<span class="hljs-built_in">find</span> (str2) string!=npos)<br>cout &lt;&lt; str.få<span class="hljs-built_in">nd</span> (str2) &lt;&lt; endl;<br><span class="hljs-keyword">if</span> (str.<span class="hljs-built_in">find</span>(str2, <span class="hljs-number">7</span>) String:!=npos) (<br>cout str.<span class="hljs-built_in">find</span> (str2, <span class="hljs-number">7</span>) endl;<br><span class="hljs-keyword">if</span> (str. <span class="hljs-built_in">find</span> (str3) String:!=npos)<br>cout &lt;&lt; Str. <span class="hljs-built_in">find</span>(str3) endl;<br>) <span class="hljs-keyword">else</span> &#123;<br>cout <span class="hljs-string">&quot;I know there is no position for me.&quot;</span> &lt;&lt; endl;&#125;<br><span class="hljs-keyword">return</span> O;<br>&#125;<br></code></pre></td></tr></table></figure> 输出结果
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-number">6</span><br><span class="hljs-number">14</span><br>I know there is no position <span class="hljs-keyword">for</span> me.<br></code></pre></td></tr></table></figure> #### replace()</li>
+时间复杂度O(mn)，m和n分别是两个数组的长度</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> main&#123;<br>string str =<span class="hljs-string">&quot;Thank you for your smile.&quot;</span><br>string str2 <span class="hljs-string">&quot;you&quot;</span>;<br>string str3 <span class="hljs-string">&quot;me&quot;</span>;<br><span class="hljs-keyword">if</span> (str.<span class="hljs-built_in">find</span> (str2) string!=npos)<br>cout &lt;&lt; str.få<span class="hljs-built_in">nd</span> (str2) &lt;&lt; endl;<br><span class="hljs-keyword">if</span> (str.<span class="hljs-built_in">find</span>(str2, <span class="hljs-number">7</span>) String:!=npos) (<br>cout str.<span class="hljs-built_in">find</span> (str2, <span class="hljs-number">7</span>) endl;<br><span class="hljs-keyword">if</span> (str. <span class="hljs-built_in">find</span> (str3) String:!=npos)<br>cout &lt;&lt; Str. <span class="hljs-built_in">find</span>(str3) endl;<br>) <span class="hljs-keyword">else</span> &#123;<br>cout <span class="hljs-string">&quot;I know there is no position for me.&quot;</span> &lt;&lt; endl;&#125;<br><span class="hljs-keyword">return</span> O;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出结果 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-number">6</span><br><span class="hljs-number">14</span><br>I know there is no position <span class="hljs-keyword">for</span> me.<br></code></pre></td></tr></table></figure></p>
+<h4 id="replace">replace()</h4>
+<ul>
 <li>str.replace(pos,len,str2)将str从pos号位开始、长度为len的子串替换为str2<br />
 </li>
 <li>str.replace(it1,it2,str2)把str的迭代器[it1,it2)范围内的子串替换为st2</li>
@@ -1572,34 +1676,52 @@ string::npos是一个常数其本身的值为-1，但是由于其本身是unsign
 <h2 id="map的常用用法详解">6.4 map的常用用法详解</h2>
 <p>map翻译为映射(<strong>其实这里只能是一个单射</strong>),比如数组
 typename
-arr[]就是int类型向其他类型的一个映射，但是map可以将任何基本类型（包括STL容器）映射到任何基本类型（包括STL容器）,比如string到int的映射
-### map的定义 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;typename1,typename2&gt; mp;<br></code></pre></td></tr></table></figure>
-前一个是映射前类型(键key)，后一个是映射后类型(value)<br />
+arr[]就是int类型向其他类型的一个映射，但是map可以将任何基本类型（包括STL容器）映射到任何基本类型（包括STL容器）,比如string到int的映射</p>
+<h3 id="map的定义">map的定义</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;typename1,typename2&gt; mp;<br></code></pre></td></tr></table></figure>
+<p>前一个是映射前类型(键key)，后一个是映射后类型(value)<br />
 如果是字符串到整型的映射，<strong>必须使用string而不能使用char数组</strong>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;string,<span class="hljs-type">int</span>&gt; mp;<br></code></pre></td></tr></table></figure>
 这是因为char作为数组是不能作为键值的，所以只能使用string<br />
-也有这样的map <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;set&lt;<span class="hljs-type">int</span>&gt;,string&gt; mp;<br></code></pre></td></tr></table></figure> ### map容器内元素的访问
-map有两种访问方式<br />
-#### 通过下标访问 和访问普通的数组的方式一样，比如对于一个定义为
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br></code></pre></td></tr></table></figure> 的map来说，就可以使用 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">mp[<span class="hljs-string">&#x27;c&#x27;</span>]<br></code></pre></td></tr></table></figure>
-的方式来访问它的对应的int<br />
-但是需要注意，和函数一样，map中的键是唯一的，比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;c&#x27;</span>]=<span class="hljs-number">20</span>;<br>mp[<span class="hljs-string">&#x27;c&#x27;</span>]=<span class="hljs-number">30</span>; <span class="hljs-comment">//20被覆盖</span><br>cout&lt;&lt;mp[<span class="hljs-string">&#x27;c&#x27;</span>]; <span class="hljs-comment">//输出30</span><br></code></pre></td></tr></table></figure> ####
-通过迭代器访问 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;typename1,typename2&gt;::iterator it;<br></code></pre></td></tr></table></figure>
-由于map的每一对映射都有两个typename，因此一个it必须可以同时访问键和值
+也有这样的map <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;set&lt;<span class="hljs-type">int</span>&gt;,string&gt; mp;<br></code></pre></td></tr></table></figure></p>
+<h3 id="map容器内元素的访问">map容器内元素的访问</h3>
+<p>map有两种访问方式</p>
+<h4 id="通过下标访问-2">通过下标访问</h4>
+<p>和访问普通的数组的方式一样，比如对于一个定义为 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br></code></pre></td></tr></table></figure>
+的map来说，就可以使用 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">mp[<span class="hljs-string">&#x27;c&#x27;</span>]<br></code></pre></td></tr></table></figure> 的方式来访问它的对应的int<br />
+但是需要注意，和函数一样，map中的键是唯一的，比如 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;c&#x27;</span>]=<span class="hljs-number">20</span>;<br>mp[<span class="hljs-string">&#x27;c&#x27;</span>]=<span class="hljs-number">30</span>; <span class="hljs-comment">//20被覆盖</span><br>cout&lt;&lt;mp[<span class="hljs-string">&#x27;c&#x27;</span>]; <span class="hljs-comment">//输出30</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="通过迭代器访问-2">通过迭代器访问</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;typename1,typename2&gt;::iterator it;<br></code></pre></td></tr></table></figure>
+<p>由于map的每一对映射都有两个typename，因此一个it必须可以同时访问键和值
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">it-&gt;first <span class="hljs-comment">//访问键</span><br>it-&gt;second <span class="hljs-comment">//访问值</span><br></code></pre></td></tr></table></figure> 比如下面这个例子 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>    mp[<span class="hljs-string">&#x27;m&#x27;</span>]=<span class="hljs-number">20</span>;<br>    mp[<span class="hljs-string">&#x27;r&#x27;</span>]=<span class="hljs-number">30</span>;<br>    mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">40</span>;<br>    <span class="hljs-keyword">for</span>(map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it=mp.<span class="hljs-built_in">begin</span>();it!=mp.<span class="hljs-built_in">end</span>();it++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c %d\n&quot;</span>,it-&gt;first,it-&gt;second);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure> 输出如下：
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP">a <span class="hljs-number">40</span><br>m <span class="hljs-number">20</span><br>r <span class="hljs-number">30</span><br></code></pre></td></tr></table></figure>
-其实由此可见，map会按照键从小到大的顺序自动排序（因为a&lt;m&lt;r）,这个就是类似set的（因为他的底层原理和set一样都是红黑树）
-### map常用函数实例解析 #### find()
-find(key)返回键为key的映射的迭代器,时间复杂度O(logN),N为map中映射的个数
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it=mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;b&#x27;</span>);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c %d&quot;</span>, it-&gt;first,it-&gt;second);<br></code></pre></td></tr></table></figure> 输出结果为 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">b <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure> #### erase()
-可以类比set的学习 1. 删除单个元素 -
-mp.erase(it),it为需要删除的元素的迭代器，时间复杂度O(1)，可以搭配find()函数使用
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it=mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;b&#x27;</span>);<br>mp.<span class="hljs-built_in">erase</span>(it); <span class="hljs-comment">//删除b 2</span><br></code></pre></td></tr></table></figure> - mp.erase(key),key为欲删除的映射的键,时间复杂度O(logN)
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>mp.<span class="hljs-built_in">erase</span>(<span class="hljs-string">&#x27;b&#x27;</span>); <span class="hljs-comment">//删除b 2</span><br></code></pre></td></tr></table></figure> 2. 删除一个区间之内的所有元素<br />
-mp.erase(first,last),传入的都是迭代器,删除[first,last)内的元素,时间复杂度O(last-first)
-#### size() O(1)，获得映射的对数 #### clear() O(N) ### 常见用途 1.
-建立char或者string与int之间的映射 2. 把map当bool数组使用 ## 6.5
-queue的常见用法详解</p>
+其实由此可见，map会按照键从小到大的顺序自动排序（因为a&lt;m&lt;r）,这个就是类似set的（因为他的底层原理和set一样都是红黑树）</p>
+<h3 id="map常用函数实例解析">map常用函数实例解析</h3>
+<h4 id="find-2">find()</h4>
+<p>find(key)返回键为key的映射的迭代器,时间复杂度O(logN),N为map中映射的个数
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it=mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;b&#x27;</span>);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c %d&quot;</span>, it-&gt;first,it-&gt;second);<br></code></pre></td></tr></table></figure> 输出结果为 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP">b <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="erase-可以类比set的学习">erase() 可以类比set的学习</h4>
+<ol type="1">
+<li>删除单个元素
+<ul>
+<li>mp.erase(it),it为需要删除的元素的迭代器，时间复杂度O(1)，可以搭配find()函数使用
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it=mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;b&#x27;</span>);<br>mp.<span class="hljs-built_in">erase</span>(it); <span class="hljs-comment">//删除b 2</span><br></code></pre></td></tr></table></figure></li>
+<li>mp.erase(key),key为欲删除的映射的键,时间复杂度O(logN)
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-string">&#x27;a&#x27;</span>]=<span class="hljs-number">1</span>;<br>mp[<span class="hljs-string">&#x27;b&#x27;</span>]=<span class="hljs-number">2</span>;<br>mp.<span class="hljs-built_in">erase</span>(<span class="hljs-string">&#x27;b&#x27;</span>); <span class="hljs-comment">//删除b 2</span><br></code></pre></td></tr></table></figure></li>
+</ul></li>
+<li>删除一个区间之内的所有元素<br />
+mp.erase(first,last),传入的都是迭代器,删除[first,last)内的元素,时间复杂度O(last-first)</li>
+</ol>
+<h4 id="size-2">size()</h4>
+<p>O(1)，获得映射的对数</p>
+<h4 id="clear-3">clear()</h4>
+<p>O(N)</p>
+<h3 id="常见用途">常见用途</h3>
+<ol type="1">
+<li>建立char或者string与int之间的映射</li>
+<li>把map当bool数组使用</li>
+</ol>
+<h2 id="queue的常见用法详解">6.5 queue的常见用法详解</h2>
 <h3 id="queue的定义">queue的定义</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">queue &lt;<span class="hljs-keyword">typename</span>&gt; name;<br></code></pre></td></tr></table></figure>
 <h3 id="queue容器内元素的访问">queue容器内元素的访问</h3>
@@ -1615,7 +1737,7 @@ queue的常见用法详解</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    queue&lt;<span class="hljs-type">int</span>&gt; q;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)&#123;<br>        q.<span class="hljs-built_in">push</span>(i);<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">3</span>;i++)&#123;<br>        q.<span class="hljs-built_in">pop</span>(); <span class="hljs-comment">//弹出1 2 3</span><br>    &#125;<br>    cout&lt;&lt;q.<span class="hljs-built_in">front</span>()&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;q.<span class="hljs-built_in">back</span>(); <span class="hljs-comment">//输出4 5</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="empty">empty()</h4>
 <p>返回true则为空，返回false则为非空</p>
-<h4 id="size">size()</h4>
+<h4 id="size-3">size()</h4>
 <p>返回queue内元素的个数</p>
 <h3 id="queue的常见用途">queue的常见用途</h3>
 <p>广度优先搜索</p>
@@ -1648,7 +1770,7 @@ id="priority_queue常见函数实例解析">priority_queue常见函数实例解�
 <h4 id="empty-1">empty()</h4>
 <p>返回true则空，返回false则非空</p>
 <p>O(1)</p>
-<h4 id="size-1">size()</h4>
+<h4 id="size-4">size()</h4>
 <p>返回优先队列内的元素个数</p>
 <p>O(1)</p>
 <h3
@@ -1713,7 +1835,7 @@ double set也是可以的</strong></p>
 <h4 id="empty-2">empty()</h4>
 <p>检测stack是否为空，返回true为空，返回false为非空</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">st.<span class="hljs-built_in">empty</span>()<br></code></pre></td></tr></table></figure>
-<h4 id="size-2">size()</h4>
+<h4 id="size-5">size()</h4>
 <p>返回stack中元素的个数 O(1)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">st.<span class="hljs-built_in">size</span>()<br></code></pre></td></tr></table></figure>
 <h4 id="如何清空栈">如何清空栈</h4>
@@ -2294,6 +2416,7 @@ class="math inline">\(2^k\)</span>的数组存放所有结点的信息，其中k
 <p>把一颗二叉树分为3个部分：根结点、左子树、右子树，然后这样就可以递归遍历。</p>
 <p>前三种遍历无论是哪一种，都有左子树一定先于右子树遍历，且所谓的”先中后“都是指根结点root在遍历中的位置。</p>
 <h3 id="先序遍历">9.2.1 先序遍历</h3>
+<h4 id="先序遍历的实现">先序遍历的实现</h4>
 <h3 id="中序遍历">9.2.2 中序遍历</h3>
 <h3 id="后序遍历">9.2.3 后序遍历</h3>
 <h3 id="层序遍历">9.2.4 层序遍历</h3>
