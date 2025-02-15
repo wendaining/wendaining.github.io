@@ -22,12 +22,12 @@
     <meta name="description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong 浮点型：不要用float，只用do">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《算法笔记》学习笔记">
-<meta property="og:url" content="http://example.com/2025/02/13/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://example.com/2025/02/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Kiriao">
 <meta property="og:description" content="第2章 C&#x2F;C++快速入门 2.1 基本数据类型 2.1.2 变量类型 long long类型赋大于\(2^{31}-1\)的初值，需要在初值后面加LL，否则会CE 1long long bignum &#x3D; 1234567890123456LL; 简而言之，题目要求\(10^{9}\)以内，就用int；\(10^{18}\)以内，就用longlong 浮点型：不要用float，只用do">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-13T02:47:25.000Z">
-<meta property="article:modified_time" content="2025-02-13T05:09:35.010Z">
+<meta property="article:published_time" content="2025-02-15T08:47:25.000Z">
+<meta property="article:modified_time" content="2025-02-15T08:50:04.864Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -212,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-13 10:47" pubdate>
-          2025年2月13日 上午
+        <time datetime="2025-02-15 16:47" pubdate>
+          2025年2月15日 下午
         </time>
       </span>
     
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          55k 字
+          58k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          459 分钟
+          487 分钟
         
       </span>
     
@@ -599,7 +599,7 @@ memset——对数组中每一个元素赋相同的值</h3>
 <li><code>&lt;=</code>：判断第一个字符串是否小于或等于第二个字符串。</li>
 <li><code>&gt;=</code>：判断第一个字符串是否大于或等于第二个字符串。</li>
 </ul></li>
-<li><strong>示例代码</strong>： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>                                                                                                               <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s1 = <span class="hljs-string">&quot;apple&quot;</span>;<br>    string s2 = <span class="hljs-string">&quot;banana&quot;</span>;<br>                                                                                                               <br>    <span class="hljs-keyword">if</span> (s1 &lt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is less than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s1 &gt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is greater than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is equal to &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125;<br>                                                                                                               <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><strong>示例代码</strong>： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>                                                                                                                        <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s1 = <span class="hljs-string">&quot;apple&quot;</span>;<br>    string s2 = <span class="hljs-string">&quot;banana&quot;</span>;<br>                                                                                                                        <br>    <span class="hljs-keyword">if</span> (s1 &lt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is less than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s1 &gt; s2) &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is greater than &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        cout &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot; is equal to &quot;</span> &lt;&lt; s2 &lt;&lt; endl;<br>    &#125;<br>                                                                                                                        <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="输出"><strong>输出</strong></h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">apple is less than banana<br></code></pre></td></tr></table></figure>
@@ -760,7 +760,7 @@ int类型，而对这样的两个整型变量进行交换是需要加引用的<b
 <li><p><strong>常量引用</strong>：你可以声明一个常量引用，这样引用就不能修改被引用的变量。
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> &amp;ref = a;  <span class="hljs-comment">// 常量引用</span><br>ref = <span class="hljs-number">20</span>;  <span class="hljs-comment">// 错误，常量引用不能修改被引用的变量</span><br></code></pre></td></tr></table></figure></p></li>
 <li><p><strong>引用作为函数参数</strong>：引用常用于函数参数传递，以避免拷贝大对象，并且可以直接修改传入的参数。
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                                                                                                                                                                                                         <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p></li>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;value)</span> </span>&#123;<br>    value++;<br>&#125;<br>                                                                                                                                                                                                                  <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">increment</span>(a);<br>    std::cout &lt;&lt; a &lt;&lt; std::endl;  <span class="hljs-comment">// 输出: 11</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></p></li>
 </ol>
 <p>总结：</p>
 <p>引用在C++中是一个非常强大的工具，它允许你以更直观的方式操作变量，避免了指针的复杂性。
@@ -2223,6 +2223,76 @@ id="实例3快速查找目标和对"><strong>实例3：快速查找目标和对<
 <code>std::set</code>（基于红黑树实现，操作复杂度为 O(log⁡n)O(n)）。</li>
 </ul>
 </blockquote>
+<h2 id="list的使用">6.11 list的使用</h2>
+<blockquote>
+<p><code>std::list</code> 是 C++
+标准模板库（STL）中的一个容器，它实现了一个双向链表（doubly linked
+list）。与向量（<code>std::vector</code>）不同，<code>std::list</code>
+在以下场景中非常有用：</p>
+<ul>
+<li><strong>高效的插入与删除</strong>：在链表中，你可以在任意位置进行常数时间复杂度（O(1)）的插入和删除操作，而不需要像
+<code>std::vector</code> 那样可能涉及大量数据的移动。</li>
+<li><strong>不支持随机访问</strong>：由于底层是链表，<code>std::list</code>
+不支持下标访问（例如
+<code>list[i]</code>），只能通过迭代器进行顺序遍历。</li>
+</ul>
+<p>下面介绍一些常用的 <code>std::list</code> 操作，并附上示例代码：</p>
+<hr />
+<h3 id="创建与初始化">1. 创建与初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;list&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// 创建一个空的 list，元素类型为 int</span><br>    list&lt;<span class="hljs-type">int</span>&gt; myList;<br><br>    <span class="hljs-comment">// 使用初始化列表创建 list</span><br>    list&lt;<span class="hljs-type">int</span>&gt; numbers = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>&#125;;<br><br>    <span class="hljs-comment">// 输出 numbers 中的元素</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : numbers) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="插入元素-1">2. 插入元素</h3>
+<ul>
+<li><strong>在末尾插入</strong>：使用 <code>push_back()</code></li>
+<li><strong>在开头插入</strong>：使用 <code>push_front()</code></li>
+<li><strong>在任意位置插入</strong>：使用
+<code>insert()</code>，insert(it,
+val)成员函数用于在链表中插入元素。it为该链表的一个迭代器，val为待插入的值，插入后val位于it所指位置的<strong>前一位</strong>。返回值为一个迭代器，表示val插入到了哪个位置。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;list&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    list&lt;<span class="hljs-type">int</span>&gt; myList;<br><br>    <span class="hljs-comment">// 在末尾插入元素</span><br>    myList.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">10</span>);<br>    myList.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">20</span>);<br><br>    <span class="hljs-comment">// 在开头插入元素</span><br>    myList.<span class="hljs-built_in">push_front</span>(<span class="hljs-number">5</span>);<br><br>    <span class="hljs-comment">// 通过迭代器在第二个位置插入元素 15</span><br>    <span class="hljs-keyword">auto</span> it = myList.<span class="hljs-built_in">begin</span>();<br>    ++it; <span class="hljs-comment">// 指向原来的第一个元素后面的位置</span><br>    myList.<span class="hljs-built_in">insert</span>(it, <span class="hljs-number">15</span>);<br><br>    <span class="hljs-comment">// 输出 list 中的元素</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : myList) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="删除元素-1">3. 删除元素</h3>
+<ul>
+<li><strong>删除开头元素</strong>：使用 <code>pop_front()</code></li>
+<li><strong>删除末尾元素</strong>：使用 <code>pop_back()</code></li>
+<li><strong>删除指定位置的元素</strong>：使用
+<code>erase()</code>，传入对应的迭代器</li>
+<li><strong>remove(it)成员函数用于删除某个迭代器所指的节点</strong>。注意在删除之后it就失效了，除非给it重新赋值，否则对它的任何操作都会导致错误！</li>
+<li><strong>清空所有元素</strong>：使用 <code>clear()</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;list&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    list&lt;<span class="hljs-type">int</span>&gt; myList = &#123;<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>&#125;;<br><br>    <span class="hljs-comment">// 删除第一个元素</span><br>    myList.<span class="hljs-built_in">pop_front</span>();<br><br>    <span class="hljs-comment">// 删除最后一个元素</span><br>    myList.<span class="hljs-built_in">pop_back</span>();<br><br>    <span class="hljs-comment">// 删除中间的元素（例如，删除当前 list 中的第一个元素）</span><br>    <span class="hljs-keyword">auto</span> it = myList.<span class="hljs-built_in">begin</span>();<br>    myList.<span class="hljs-built_in">erase</span>(it);<br><br>    <span class="hljs-comment">// 此时 list 为空，或者可以再次添加元素</span><br>    myList.<span class="hljs-built_in">clear</span>(); <span class="hljs-comment">// 清空所有元素</span><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="遍历与访问">4. 遍历与访问</h3>
+<p>由于 <code>std::list</code>
+不支持随机访问（不能用下标访问），所以必须使用迭代器或范围 for
+循环来遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;list&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    list&lt;<span class="hljs-type">int</span>&gt; myList = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>&#125;;<br><br>    <span class="hljs-comment">// 使用范围 for 循环遍历</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : myList) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 使用迭代器遍历</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = myList.<span class="hljs-built_in">begin</span>(); it != myList.<span class="hljs-built_in">end</span>(); ++it) &#123;<br>        cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="常用算法成员函数">5. 常用算法成员函数</h3>
+<ul>
+<li><strong>sort()</strong>：对链表排序</li>
+<li><strong>reverse()</strong>：将链表中的元素反转</li>
+<li><strong>unique()</strong>：移除连续重复的元素</li>
+<li><strong>merge()</strong>：合并两个已排序的
+<code>std::list</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;list&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    list&lt;<span class="hljs-type">int</span>&gt; myList = &#123;<span class="hljs-number">30</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20</span>, <span class="hljs-number">40</span>&#125;;<br><br>    <span class="hljs-comment">// 排序</span><br>    myList.<span class="hljs-built_in">sort</span>();  <span class="hljs-comment">// 排序后：10, 20, 20, 30, 40</span><br><br>    <span class="hljs-comment">// 移除连续重复的元素</span><br>    myList.<span class="hljs-built_in">unique</span>(); <span class="hljs-comment">// 结果：10, 20, 30, 40</span><br><br>    <span class="hljs-comment">// 反转链表</span><br>    myList.<span class="hljs-built_in">reverse</span>(); <span class="hljs-comment">// 结果：40, 30, 20, 10</span><br><br>    <span class="hljs-comment">// 输出结果</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : myList) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 合并两个已排序的 list</span><br>    list&lt;<span class="hljs-type">int</span>&gt; list1 = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;;<br>    list&lt;<span class="hljs-type">int</span>&gt; list2 = &#123;<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>&#125;;<br><br>    <span class="hljs-comment">// 确保两个 list 都已经排序</span><br>    list<span class="hljs-number">1.</span><span class="hljs-built_in">sort</span>();<br>    list<span class="hljs-number">2.</span><span class="hljs-built_in">sort</span>();<br>    list<span class="hljs-number">1.</span><span class="hljs-built_in">merge</span>(list2);  <span class="hljs-comment">// list1 合并了 list2，且 list2 变为空</span><br><br>    <span class="hljs-comment">// 输出合并后的 list1</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : list1) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="注意事项-3">6. 注意事项</h3>
+<ul>
+<li><strong>迭代器失效</strong>：在对 <code>std::list</code>
+进行插入或删除操作时，其他迭代器通常不会失效（与
+<code>std::vector</code> 不同），但被删除元素对应的迭代器将无效。</li>
+<li><strong>内存使用</strong>：由于链表的每个节点都需要额外的指针存储前后节点的信息，因此在内存使用上可能比连续存储的容器（如
+<code>std::vector</code>）稍高。</li>
+<li><strong>不支持随机访问</strong>：如果需要频繁地进行随机访问（例如，直接访问第
+n 个元素），建议使用 <code>std::vector</code> 或
+<code>std::deque</code>。</li>
+</ul>
+<hr />
+<p>总的来说，<code>std::list</code>
+提供了在任意位置快速插入和删除的能力，适用于对数据进行频繁修改的场景，但在需要随机访问和高空间效率时，应考虑其他容器。</p>
+</blockquote>
 <h1 id="第7章-提高篇1数据结构专题1">第7章
 提高篇（1）——数据结构专题（1）</h1>
 <h2 id="栈的应用">7.1 栈的应用</h2>
@@ -2482,14 +2552,14 @@ Expression）</strong></h3>
 <h4 id="查找元素-1">查找元素</h4>
 <p>从第一个结点开始，不断判断当前结点的数据域是否等于x，如果等于就cnt++，这样结尾的时候cnt的值就是列表中元素x的个数</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">search</span><span class="hljs-params">(node *head,<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>    node *p=head-&gt;next; <span class="hljs-comment">//从第一个节点开始</span><br>    <span class="hljs-keyword">while</span>(p!=<span class="hljs-literal">NULL</span>)&#123;<br>        <span class="hljs-keyword">if</span>(p-&gt;data==x) cnt++;<br>        p=p-&gt;next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> cnt;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="插入元素-1">插入元素</h4>
+<h4 id="插入元素-2">插入元素</h4>
 <p><strong>“在第3个位置插入元素4”的意思是在插入完成之后第3个位置的元素是4</strong>，意思是把原先第三个位置的元素让开（在第2和3之间插入）</p>
 <p>假设原本是6 7 8 9 10</p>
 <p>在第三个位置插入4之后，就是7指向4，而4指向8，依此思路进行代码实现</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//将x插入以head为头结点的链表的第pos个位置上</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(node *head,<span class="hljs-type">int</span> pos,<span class="hljs-type">int</span> x)</span></span>&#123;<br>    node* p=head;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;pos<span class="hljs-number">-1</span>;i++)&#123;<br>        p=p-&gt;next; <span class="hljs-comment">//pos-1是为了插入位置的前一个结点，这里相当于移动p的指针</span><br>    &#125;<br>    node *q=<span class="hljs-keyword">new</span> node;<br>    q-&gt;data=x; <span class="hljs-comment">//这个时候q还是野指针</span><br>    q-&gt;next=p-&gt;next;<br>    p-&gt;next=q;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>这份代码可以直接写在“创建链表”部分的代码中进行使用，把create函数返回的头指针L直接作为第一个参数传入即可</p>
 <p>顺序<strong>必须是</strong>先把新节点的指针域next指向后继结点，之后才能把前一个元素所在节点的指针指向新节点的地址</p>
-<h4 id="删除元素-1">删除元素</h4>
+<h4 id="删除元素-2">删除元素</h4>
 <p>对链表来说，删除元素是指删除链表上所有值为给定的数x，操作是这样进行的：</p>
 <ol type="1">
 <li>由指针变量p枚举结点，指针变量pre作为p指向的结点的前驱结点</li>
@@ -2773,10 +2843,61 @@ Weight</h4>
 <h3 id="平衡二叉树的基本操作">9.5.2 平衡二叉树的基本操作</h3>
 <h2 id="并查集">9.6 并查集</h2>
 <h3 id="并查集的定义">9.6.1 并查集的定义</h3>
+<p>并查集是一种维护集合的数据结构。</p>
 <p>“并”“查”“集”分别取自合并、查找、集合。</p>
 <p>并查集支持以下两个操作</p>
+<ol type="1">
+<li>合并：合并两个集合</li>
+<li>查找：判断两个元素是否在一个集合</li>
+</ol>
+<p>实现方式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> father[N];<br></code></pre></td></tr></table></figure>
+<p>其中<code>father[i]</code>表示元素<code>i</code>的父亲结点，而父亲结点本身也是这个集合内的元素。比如<code>father[1]=2</code>表示元素1的父亲结点是元素2，以这种父系关系来表示元素所属的集合。另外如果<code>father[i]==i</code>则说明元素i是该集合的根结点，<strong>但对于同一个集合来说只存在一个根结点，且将其作为所属集合的标识。</strong></p>
 <h3 id="并查集的基本操作">9.6.2 并查集的基本操作</h3>
+<h4 id="初始化">1.初始化</h4>
+<p>一开始每个元素都是独立的一个集合，只需要全令<code>father[i]=i</code>或令<code>father[i]=-1</code></p>
+<h4 id="查找">2.查找</h4>
+<p>由于规定了同一个集合只存在一个根结点，因此查找操作就是对给定的结点去寻找其根结点的过程，实现的方式可以是递推或者递推。思路都是反复寻找父亲结点直到寻找到根结点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findFather</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-keyword">while</span>(x!=father[x])&#123;<br>        x=father[x];<br>    &#125;<br>    <span class="hljs-keyword">return</span> x;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findFather</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(x==father[x]) <span class="hljs-keyword">return</span> x;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">findFather</span>(father[x]);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="合并">3.合并</h4>
+<p>合并指的是把两个集合并成一个集合。题目中一般给出两个元素然后要求把这两个元素所在的集合合并。具体实现是先判断两个元素是否属于一个集合，只有当两个元素属于不同集合的时候才合并，而合并的过程一般是把其中一个集合的根结点的父亲指向另一个集合的根结点。思路如下：</p>
+<ol type="1">
+<li>对于给定的两个元素a
+b，先判断他们是否属于同一个集合，调用查找函数判断根结点是否相同即可。</li>
+<li>合并两个集合：在1中已经获得了两个元素的根结点faA和faB，因此只需要把其中一个的父亲结点指向另一个结点。比如令<code>father[faA]=faB</code>或者反过来都可以。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Union</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<br>    <span class="hljs-type">int</span> faA=<span class="hljs-built_in">findFather</span>(a);<br>    <span class="hljs-type">int</span> faB=<span class="hljs-built_in">findFather</span>(b);<br>    <span class="hljs-keyword">if</span>(faA!=faB)&#123;<br>        father[faA]=faB;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="路径压缩">9.6.3 路径压缩</h3>
+<p>上面提到的函数都没有进行优化。下面考虑一种极端情况，即题目给出的元素数量很多而且形成一条链，那么这个查找函数的效率就会很低。下面提出一种优化思路。</p>
+<p>因为我们<code>findFather()</code>函数就只是为了寻找根结点，我们完全可以<strong>把当前查询结点的路径上的所有结点的父亲都指向根结点</strong>，查找的时候就不需要一直回溯去寻找父亲，时间复杂度降为<span
+class="math inline">\(O(1)\)</span>。</p>
+<p>进行转换的步骤可以这样概括：</p>
+<ol type="1">
+<li>按照原来的写法获得x的根结点r</li>
+<li>重新从x开始走一遍寻找根结点的过程，把路径上经过的所有结点的父亲全部改为根结点r。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findFather</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> a=x; <span class="hljs-comment">//由于x在下面的while循环会变成根结点，先存一下原来的x</span><br>    <span class="hljs-keyword">while</span>(x!=father[x])&#123;<br>        x=father[x];<br>    &#125;<br>    <span class="hljs-comment">//到这里x存放的是根结点，下面把路径上所有结点的father都改成根结点。</span><br>    <span class="hljs-keyword">while</span>(a!=father[a])&#123;<br>        <span class="hljs-type">int</span> z=a;<br>        a=father[a];<br>        father[z]=x;<br>    &#125;<br>    <span class="hljs-keyword">return</span> x;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>也有递归写法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findFather</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(x==father[x]) <span class="hljs-keyword">return</span> x;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-type">int</span> F=<span class="hljs-built_in">findFather</span>(father[x]);<br>        father[x]=F;<br>        <span class="hljs-keyword">return</span> F;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>下面给出一个简单使用并查集的题目</p>
+<h3 id="例题-好朋友">例题 好朋友</h3>
+<blockquote>
+<h2 id="题目描述-1">题目描述</h2>
+<p>有一个叫作“数码世界”的奇异空间，在数码世界里生活着许许多多的数码宝贝，其中有些数码宝贝之间可能是好朋友。并且数码世界有两条不成文的规定:</p>
+<p>第一，数码宝贝A和数码宝贝B是好朋友等价于数码宝贝B和数码宝贝A是好朋友。</p>
+<p>第二，如果数码宝贝A和数码宝贝C是好朋友，而数码宝贝B和数码宝贝C也是好朋友，那么A和B也是好朋友。
+现在给出这些数码宝贝中所有好朋友的信息，问:可以把这些数码宝贝分成多少组，满足每组中的任意两只数码宝贝都是好朋友，且任意两组之间的数码宝贝都不是好朋友。</p>
+<h2 id="输入格式-1">输入格式</h2>
+<p>输入的第一行有两个正整数n(n&lt;=100)和m(m&lt;=100)，分别表示数码宝贝的个数和好朋友的组数，其中数码宝贝编号为1~n。
+接下来有m行，每行两个正整数a和b，表示数码宝贝a和数码宝贝b是好朋友。</p>
+<h2 id="样例输入">样例输入</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-number">1</span> <span class="hljs-number">4</span><br><span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<h2 id="样例输出">样例输出</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>本题是一个并查集模型，可以把题目中的“组”视为集合，而题目中给出的好朋友关系视为两个结点之间的边，那么在输入这些好朋友关系时就可以同时对它们进行并查集的合并操作。</p>
+<p>对于集合个数的求解，需要用到这条规则：<strong>对于同一个集合来说只存在一个根结点，且将其作为所属集合的标识</strong>。因此开一个<code>bool flag[n]</code>来记录每个结点是否作为某个集合的根结点，这样在处理完输入数据之后就可以遍历所有元素，令它所在的集合的根结点的<code>flag</code>设置为<code>true</code>，最后累加<code>flag</code>中的元素即可。代码如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn=<span class="hljs-number">110</span>;<br><span class="hljs-type">int</span> father[maxn];<br><span class="hljs-type">bool</span> flag[maxn];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findFather</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> a=x;<br>    <span class="hljs-keyword">while</span>(x!=father[x])&#123;<br>        x=father[x];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(a!=father[a])&#123;<br>        <span class="hljs-type">int</span> z=a;<br>        a=father[a];<br>        father[z]=x;<br>    &#125;<br>    <span class="hljs-keyword">return</span> x;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Union</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<br>    <span class="hljs-type">int</span> faA=father[a];<br>    <span class="hljs-type">int</span> faB=father[b];<br>    <span class="hljs-keyword">if</span>(faA!=faB)&#123;<br>        father[faA]=faB;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n,m,a,b;<br>    cin&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>        father[i]=i;<br>        <span class="hljs-comment">//flag[i]=false; 全局变量默认是false</span><br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)&#123;<br>        cin&gt;&gt;a&gt;&gt;b;<br>        <span class="hljs-built_in">Union</span>(a,b);<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>        flag[<span class="hljs-built_in">findFather</span>(i)]=<span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>        ans+=(<span class="hljs-type">int</span>)flag[i];<br>    &#125;<br>    cout&lt;&lt;ans;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="堆">9.7 堆</h2>
 <h3 id="堆的定义与基本操作">9.7.1 堆的定义与基本操作</h3>
 <h3 id="堆排序">9.7.2 堆排序</h3>
@@ -2810,6 +2931,18 @@ Weight</h4>
 <h2 id="图的遍历">10.3 图的遍历</h2>
 <h3 id="采用深度优先搜索dfs法遍历图">10.3.1
 采用深度优先搜索（DFS）法遍历图</h3>
+<p>首先介绍两个概念：</p>
+<ol type="1">
+<li><strong>连通分量</strong>：在无向图中，如果两个顶点之间可以相互到达（可以是通过一定路径间接到达），那么就称这两个顶点连通。如果图G(V,E)的任意两个顶点均连通，则称图G为连通图，否则为非连通图，且称其中的极大连通子图为连通分量。</li>
+<li><strong>强连通分量</strong>：在有向图中，如果两个顶点可以各自通过一条有向路径到达另一个顶点，就称这两个顶点强连通。如果图G(V,E)的任意两个顶点都强连通，则称图G为强连通图；否则称为非强连通图，且称其中的极大强连通子图为强连通分量。</li>
+</ol>
+<p>为了叙述上的方便下面把连通分量和强连通分量统称为<strong>连通块</strong>。</p>
+<p>所以要遍历整个图就是要对所有连通块进行遍历。DFS遍历图的基本思路就是把以及访问过的顶点设置为已访问，在下次递归碰到这个顶点时就不再处理，直到整个图的顶点都被标记为已访问。</p>
+<p>下面是一份DFS的伪代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">DFS</span>(u)&#123; <span class="hljs-comment">//访问顶点u</span><br>vis[u]=<span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">for</span>(从u出发能到达的所有顶点v)&#123;<br>        <span class="hljs-keyword">if</span>(!vis[v]) <span class="hljs-built_in">DFS</span>(v);<br>    &#125;<br>    DFSTraveG&#123; <span class="hljs-comment">//遍历图G</span><br>        <span class="hljs-keyword">for</span>(G的所有顶点u)&#123;<br>            <span class="hljs-keyword">if</span>(!vis[u]) <span class="hljs-built_in">DFS</span>(u); <span class="hljs-comment">//访问u所在的连通块</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>在这份代码的基础上可以代入邻接矩阵和邻接表的代码，得到如下模板：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//邻接矩阵版本</span><br>cosnt <span class="hljs-type">int</span> maxv=<span class="hljs-number">1000</span>; <span class="hljs-comment">//最大顶点数</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf=<span class="hljs-number">0x3f3f3f3f</span>;<br><br><span class="hljs-type">int</span> n,G[maxv][maxv];<br><span class="hljs-type">bool</span> vis[maxv]=&#123;<span class="hljs-literal">false</span>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u,<span class="hljs-type">int</span> depth)</span></span>&#123;<br>    vis[u]=<span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">//如果需要对u进行一些操作可以在这里进行</span><br>    <span class="hljs-comment">//下面对所有从u出发能到达的分支顶点进行枚举</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v=<span class="hljs-number">0</span>;v&lt;n;v++)&#123;<br>        <span class="hljs-keyword">if</span>(!vis[v]&amp;&amp;G[u][v]!=inf)&#123;<br>            <span class="hljs-built_in">dfs</span>(v,depth<span class="hljs-number">+1</span>); <span class="hljs-comment">//访问v，深度++</span><br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">DFSTrave</span><span class="hljs-params">()</span></span>&#123; <span class="hljs-comment">//遍历图G</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> u=<span class="hljs-number">0</span>;u&lt;n;u++)&#123;<br>        <span class="hljs-keyword">if</span>(!vis[u])&#123;<br>            <span class="hljs-built_in">dfs</span>(u<span class="hljs-number">+1</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//邻接表版本</span><br>cosnt <span class="hljs-type">int</span> maxv=<span class="hljs-number">1000</span>; <span class="hljs-comment">//最大顶点数</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf=<span class="hljs-number">0x3f3f3f3f</span>;<br><br>vector&lt;<span class="hljs-type">int</span>&gt; Adj[maxv];<br><span class="hljs-type">int</span> n; <span class="hljs-comment">//顶点数</span><br><span class="hljs-type">bool</span> vis[maxv]=&#123;<span class="hljs-literal">false</span>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u,<span class="hljs-type">int</span> depth)</span></span>&#123;<br>    vis[u]=<span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">//如果要对u进行一些操作可以在这里</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;(<span class="hljs-type">int</span>)Adj[u].<span class="hljs-built_in">size</span>();i++)&#123;<br>        <span class="hljs-type">int</span> v=Adj[u][i];<br>        <span class="hljs-keyword">if</span>(!vis[v]) <span class="hljs-built_in">dfs</span>(v,depth<span class="hljs-number">+1</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">DFSTrave</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> u=<span class="hljs-number">0</span>;u&lt;n;u++)&#123;<br>        <span class="hljs-keyword">if</span>(!vis[u]) <span class="hljs-built_in">dfs</span>(u,<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="采用广度优先搜索bfs法遍历图">10.3.2
 采用广度优先搜索（BFS）法遍历图</h3>
 <h2 id="最短路径">10.4 最短路径</h2>
@@ -3100,7 +3233,7 @@ class="math inline">\(O(nV)\)</span>，但是空间复杂度还可以继续优�
   <div class="license-box my-3">
     <div class="license-title">
       <div>《算法笔记》学习笔记</div>
-      <div>http://example.com/2025/02/13/算法笔记学习笔记/</div>
+      <div>http://example.com/2025/02/15/算法笔记学习笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -3112,7 +3245,7 @@ class="math inline">\(O(nV)\)</span>，但是空间复杂度还可以继续优�
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月13日</div>
+          <div>2025年2月15日</div>
         </div>
       
       
@@ -3144,18 +3277,12 @@ class="math inline">\(O(nV)\)</span>，但是空间复杂度还可以继续优�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/13/2025-02-13-%E5%85%B3%E4%BA%8EC++20%E4%B8%AD%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-ranges%E5%92%8Cviews%E7%9A%84%E5%AD%A6%E4%B9%A0/" title="关于C++20中的新特性 ranges和views的学习">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">关于C++20中的新特性 ranges和views的学习</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/12/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/" title="面向对象编程初步">
-                        <span class="hidden-mobile">面向对象编程初步</span>
+                      <a href="/2025/02/13/2025-02-13-%E5%85%B3%E4%BA%8EC++20%E4%B8%AD%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-ranges%E5%92%8Cviews%E7%9A%84%E5%AD%A6%E4%B9%A0/" title="关于C++20中的新特性 ranges和views的学习">
+                        <span class="hidden-mobile">关于C++20中的新特性 ranges和views的学习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
