@@ -27,7 +27,7 @@
 <meta property="og:description" content="题目 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。 子数组是数组中元素的连续非空序列。 示例 1： 12输入：nums &#x3D; [1,1,1], k &#x3D; 2输出：2 示例 2： 12输入：nums &#x3D; [1,2,3], k &#x3D; 3输出：2 提示：  1 &lt;&#x3D; nums.length &lt;&#x3D; 2 * 104 -1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-17T12:47:25.000Z">
-<meta property="article:modified_time" content="2025-03-17T14:32:09.363Z">
+<meta property="article:modified_time" content="2025-03-17T14:39:25.457Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          505 字
+          514 字
         
       </span>
     
@@ -324,7 +324,7 @@ target="_blank" rel="noopener" href="https://kiriaotj.github.io/2025/03/04/2025-
 k=0时，会错误返回2。这是因为：将所有的前缀和一次性存入哈希表，包括当前处理的前缀和<code>sum</code>本身，这样会导致当sum
 -k等于sum时（比如k=0），会统计到自身，从而产生错误的计数。例如，当sum=0时，在第一次遍历presum数组时，哈希表中已经有了这个sum=0，当处理到它时，x-k=0，这时候会统计到至少一次，即使这个sum对应的位置可能没有更早的前缀和。</p>
 <p>对代码进行修正：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">subarraySum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; ans;<br>        <span class="hljs-type">int</span> pre=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; cnt;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x:nums)&#123;<br>            pre+=x;<br>            ans+=cnt[x-k];<br>            cnt[pre]++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">subarraySum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> pre=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; cnt;<br>        mp[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>; <span class="hljs-comment">//！！初始化前缀和为0的次数为1</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x:nums)&#123;<br>            pre+=x;<br>            ans+=cnt[x-k];<br>            cnt[pre]++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <p>重点是<strong>避免自匹配</strong>：在计算<code>ans+=cnt[pre-k]</code>时，哈希表中仅包含遍历到当前元素<strong>之前</strong>的前缀和，确保不会将当前前缀和自身计入结果。</p>
 
                 
