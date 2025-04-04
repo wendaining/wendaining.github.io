@@ -19,12 +19,12 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="共3题，每题100分，考试时间3小时。 第一题  题目描述 给定一个字符串\(s\)和一个整数\(k\)，从字符串开头算起，每计数至\(2k\)个字符，就反转这\(2k\)字符中的前\(k\)个字符。 如果剩余字符少于\(k\)个，则将剩余字符全部反转。 如果剩余字符小于\(2k\)但大于或等于\(k\)个，则反转前\(k\)个字符，其余字符保持原样。 输入格式 输入为\(1\)行">
+    <meta name="description" content="共3题，每题100分，考试时间3小时。 第一题  题目描述 给定一个字符串$s$和一个整数$k$，从字符串开头算起，每计数至$2k$个字符，就反转这$2k$字符中的前$k$个字符。 如果剩余字符少于$k$个，则将剩余字符全部反转。 如果剩余字符小于$2k$但大于或等于$k$个，则反转前$k$个字符，其余字符保持原样。 输入格式 输入为$1$行，由一个纯字母组成的字符串和一个非负整数组成，字符串和整">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同济大学2022年转专业（软件工程）机试">
 <meta property="og:url" content="http://example.com/2025/02/10/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A62022%E5%B9%B4%E8%BD%AC%E8%BD%AF%E6%9C%BA%E8%AF%95/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="共3题，每题100分，考试时间3小时。 第一题  题目描述 给定一个字符串\(s\)和一个整数\(k\)，从字符串开头算起，每计数至\(2k\)个字符，就反转这\(2k\)字符中的前\(k\)个字符。 如果剩余字符少于\(k\)个，则将剩余字符全部反转。 如果剩余字符小于\(2k\)但大于或等于\(k\)个，则反转前\(k\)个字符，其余字符保持原样。 输入格式 输入为\(1\)行">
+<meta property="og:description" content="共3题，每题100分，考试时间3小时。 第一题  题目描述 给定一个字符串$s$和一个整数$k$，从字符串开头算起，每计数至$2k$个字符，就反转这$2k$字符中的前$k$个字符。 如果剩余字符少于$k$个，则将剩余字符全部反转。 如果剩余字符小于$2k$但大于或等于$k$个，则反转前$k$个字符，其余字符保持原样。 输入格式 输入为$1$行，由一个纯字母组成的字符串和一个非负整数组成，字符串和整">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-10T09:47:25.000Z">
 <meta property="article:modified_time" content="2025-02-10T09:26:51.778Z">
@@ -298,139 +298,99 @@
               <div class="markdown-body">
                 
                 <p><strong>共3题，每题100分，考试时间3小时。</strong></p>
-<h1 id="第一题">第一题</h1>
+<h1>第一题</h1>
 <blockquote>
 <h2 id="题目描述">题目描述</h2>
-<p>给定一个字符串<span class="math inline">\(s\)</span>和一个整数<span
-class="math inline">\(k\)</span>，从字符串开头算起，每计数至<span
-class="math inline">\(2k\)</span>个字符，就反转这<span
-class="math inline">\(2k\)</span>字符中的前<span
-class="math inline">\(k\)</span>个字符。</p>
-<p>如果剩余字符少于<span
-class="math inline">\(k\)</span>个，则将剩余字符全部反转。</p>
-<p>如果剩余字符小于<span
-class="math inline">\(2k\)</span>但大于或等于<span
-class="math inline">\(k\)</span>个，则反转前<span
-class="math inline">\(k\)</span>个字符，其余字符保持原样。</p>
+<p>给定一个字符串$s$和一个整数$k$，从字符串开头算起，每计数至$2k$个字符，就反转这$2k$字符中的前$k$个字符。</p>
+<p>如果剩余字符少于$k$个，则将剩余字符全部反转。</p>
+<p>如果剩余字符小于$2k$但大于或等于$k$个，则反转前$k$个字符，其余字符保持原样。</p>
 <h2 id="输入格式">输入格式</h2>
-<p>输入为<span
-class="math inline">\(1\)</span>行，由一个纯字母组成的字符串和一个非负整数组成，字符串和整数之间用空格分隔开。</p>
+<p>输入为$1$行，由一个纯字母组成的字符串和一个非负整数组成，字符串和整数之间用空格分隔开。</p>
 <h2 id="输出格式">输出格式</h2>
-<p>输出为<span
-class="math inline">\(1\)</span>行，只需要输出反转后的字符串即可</p>
+<p>输出为$1$行，只需要输出反转后的字符串即可</p>
 <h2 id="样例-1">样例 #1</h2>
 <h3 id="样例输入">样例输入</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">abcdefg <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 <h3 id="样例输出">样例输出</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">bacdfeg<br></code></pre></td></tr></table></figure>
 <h2 id="样例-2">样例 #2</h2>
-<h3 id="样例输入-1">样例输入</h3>
+<h3 id="样例输入-2">样例输入</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">abcd <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-1">样例输出</h3>
+<h3 id="样例输出-2">样例输出</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">bacd<br></code></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="题解">题解</h2>
-<p>这个问题等价于将字符串<code>s</code>分成<span
-class="math inline">\(k\)</span>段，最后不足<span
-class="math inline">\(k\)</span>的部分也计为一段，然后以每一段作为下标(从<span
-class="math inline">\(0\)</span>开始)，第奇数段(即<code>(i+1)%!=0</code>或者<code>(i+1)&amp;1</code>）的字符串进行反转，注意最后不足<span
-class="math inline">\(k\)</span>的部分可以通过一个取小函数来实现。</p>
+<p>这个问题等价于将字符串<code>s</code>分成$k$段，最后不足$k$的部分也计为一段，然后以每一段作为下标(从$0$开始)，第奇数段(即<code>(i+1)%!=0</code>或者<code>(i+1)&amp;1</code>）的字符串进行反转，注意最后不足$k$的部分可以通过一个取小函数来实现。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  string s;<br>  <span class="hljs-type">int</span> k;<br>  cin&gt;&gt;s&gt;&gt;k;<br>  <span class="hljs-type">int</span> len=(<span class="hljs-type">int</span>)s.<span class="hljs-built_in">size</span>();<br>  <span class="hljs-type">int</span> num=len/k;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;num;i++)&#123;<br>    <span class="hljs-keyword">if</span>((i<span class="hljs-number">+1</span>)&amp;<span class="hljs-number">1</span>) <span class="hljs-built_in">reverse</span>(s.<span class="hljs-built_in">begin</span>()+i*k,<span class="hljs-built_in">min</span>(s.<span class="hljs-built_in">begin</span>()+i*k+k,s.<span class="hljs-built_in">end</span>()));<br>  &#125;<br>  cout&lt;&lt;s;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="第二题">第二题</h1>
+<h1>第二题</h1>
 <blockquote>
-<h2 id="题目描述-1">题目描述</h2>
+<h2 id="题目描述-2">题目描述</h2>
 <p>毛哥买了一些糖果<code>candies</code>，打算把它们分给排好队的<code>n = num_people</code>个小朋友。</p>
-<p>给第一个小朋友<span
-class="math inline">\(1\)</span>颗糖果，第二个小朋友<span
-class="math inline">\(2\)</span>颗，依此类推，直到给最后一个小朋友<span
-class="math inline">\(n\)</span>颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友<span
-class="math inline">\(n + 1\)</span>颗糖果，第二个小朋友<span
-class="math inline">\(n +
-2\)</span>颗，依此类推，直到给最后一个小朋友<span
-class="math inline">\(2 * n\)</span>颗糖果。</p>
+<p>给第一个小朋友$1$颗糖果，第二个小朋友$2$颗，依此类推，直到给最后一个小朋友$n$颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友$n + 1$颗糖果，第二个小朋友$n + 2$颗，依此类推，直到给最后一个小朋友$2 * n$颗糖果。</p>
 <p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为<code>num_people</code>、元素之和为<code>candies</code>的数组（我们用<code>ans</code>来表示），以表示糖果的最终分发情况（即<code>ans[i]</code>表示第<span
-class="math inline">\(i\)</span>个小朋友分到的糖果数）。</p>
-<h2 id="输入格式-1">输入格式</h2>
-<p>输入为<span
-class="math inline">\(1\)</span>行，两个非负整数糖果数量（<code>candies</code>）
-和 小朋友数量（<code>num_people</code>），他们之间用空格分隔开</p>
-<h2 id="输出格式-1">输出格式</h2>
-<p>输出为<span
-class="math inline">\(1\)</span>行，<code>num_people</code>个整数，中间用空格分开。每个整数代表小朋友分到的糖果数。</p>
-<h2 id="样例-1-1">样例 #1</h2>
-<h3 id="样例输入-2">样例输入</h3>
+<p>返回一个长度为<code>num_people</code>、元素之和为<code>candies</code>的数组（我们用<code>ans</code>来表示），以表示糖果的最终分发情况（即<code>ans[i]</code>表示第$i$个小朋友分到的糖果数）。</p>
+<h2 id="输入格式-2">输入格式</h2>
+<p>输入为$1$行，两个非负整数糖果数量（<code>candies</code>） 和 小朋友数量（<code>num_people</code>），他们之间用空格分隔开</p>
+<h2 id="输出格式-2">输出格式</h2>
+<p>输出为$1$行，<code>num_people</code>个整数，中间用空格分开。每个整数代表小朋友分到的糖果数。</p>
+<h2 id="样例-1-2">样例 #1</h2>
+<h3 id="样例输入-3">样例输入</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">7</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-2">样例输出</h3>
+<h3 id="样例输出-3">样例输出</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 <h3 id="样例解释">样例解释</h3>
-<p>第一次，<code>ans[0] += 1</code>，数组变为
-<code>[1,0,0,0]</code>。</p>
-<p>第二次，<code>ans[1] += 2</code>，数组变为
-<code>[1,2,0,0]</code>。</p>
-<p>第三次，<code>ans[2] += 3</code>，数组变为
-<code>[1,2,3,0]</code>。</p>
-<p>第四次，<code>ans[3] += 1</code>（因为此时只剩下 1
-颗糖果），最终数组变为<code>[1,2,3,1]</code>。</p>
-<h2 id="样例-2-1">样例 #2</h2>
-<h3 id="样例输入-3">样例输入</h3>
+<p>第一次，<code>ans[0] += 1</code>，数组变为 <code>[1,0,0,0]</code>。</p>
+<p>第二次，<code>ans[1] += 2</code>，数组变为 <code>[1,2,0,0]</code>。</p>
+<p>第三次，<code>ans[2] += 3</code>，数组变为 <code>[1,2,3,0]</code>。</p>
+<p>第四次，<code>ans[3] += 1</code>（因为此时只剩下 1 颗糖果），最终数组变为<code> [1,2,3,1]</code>。</p>
+<h2 id="样例-2-2">样例 #2</h2>
+<h3 id="样例输入-4">样例输入</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">10</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-3">样例输出</h3>
+<h3 id="样例输出-4">样例输出</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例解释-1">样例解释</h3>
+<h3 id="样例解释-2">样例解释</h3>
 <p>第一次，<code>ans[0] += 1</code>，数组变为 <code>[1,0,0]</code>。</p>
 <p>第二次，<code>ans[1] += 2</code>，数组变为 <code>[1,2,0]</code>。</p>
 <p>第三次，<code>ans[2] += 3</code>，数组变为 <code>[1,2,3]</code>。</p>
-<p>第四次，<code>ans[0] += 4</code>，最终数组变为<code>[5,2,3]</code>。</p>
+<p>第四次，<code>ans[0] += 4</code>，最终数组变为<code> [5,2,3]</code>。</p>
 <h2 id="数据范围">数据范围</h2>
-<p><span class="math inline">\(1\)</span> ≤ <code>candies</code> ≤ <span
-class="math inline">\(10^9\)</span></p>
-<p><span class="math inline">\(1\)</span> ≤<code>num_people</code>≤
-<span class="math inline">\(1000\)</span></p>
+<p>$1$ ≤ <code>candies</code> ≤ $10^9$</p>
+<p>$1$ ≤<code>num_people</code>≤ $1000$</p>
 </blockquote>
-<h1 id="题解-1">题解</h1>
+<h1>题解</h1>
 <p>依据题意模拟即可</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  <span class="hljs-type">int</span> candies,num_people;<br>  cin&gt;&gt;candies&gt;&gt;num_people;<br>  <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(num_people,<span class="hljs-number">0</span>)</span></span>;<br>  <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>  <span class="hljs-type">int</span> cnt=<span class="hljs-number">1</span>;<br>  <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">while</span>(sum+cnt&lt;=candies)&#123;<br>    ans[i%num_people]+=cnt;<br>    sum+=cnt;<br>    cnt++;<br>    i++;<br>  &#125;<br>  ans[i%num_people]+=candies-sum;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x:ans) cout&lt;&lt;x&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="第三题">第三题</h1>
+<h1>第三题</h1>
 <blockquote>
-<h2 id="题目描述-2">题目描述</h2>
-<p>给你一个由 '1'（陆地）和
-'0'（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
+<h2 id="题目描述-3">题目描述</h2>
+<p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
 <p>岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。</p>
 <p>此外，你可以假设该网格的四条边均被水包围。</p>
-<h2 id="输入格式-2">输入格式</h2>
-<p>输入为<span class="math inline">\(n+1\)</span>行</p>
-<p>第一行为两个用空格隔开的整数<span
-class="math inline">\(n\)</span>和<span
-class="math inline">\(m\)</span></p>
-<p>第<span class="math inline">\(1\)</span> - <span
-class="math inline">\(n+1\)</span>行为<span class="math inline">\(n ×
-m\)</span>矩阵，其中每行有<span
-class="math inline">\(m\)</span>个用空格隔开的非负整数。</p>
-<h2 id="输出格式-2">输出格式</h2>
+<h2 id="输入格式-3">输入格式</h2>
+<p>输入为$n+1$行</p>
+<p>第一行为两个用空格隔开的整数$n$和$m$</p>
+<p>第$1$ - $n+1$行为$n × m$矩阵，其中每行有$m$个用空格隔开的非负整数。</p>
+<h2 id="输出格式-3">输出格式</h2>
 <p>输出为一个整数，即岛屿数量。</p>
-<h2 id="样例-1-2">样例 #1</h2>
-<h3 id="样例输入-4">样例输入</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-4">样例输出</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<h2 id="样例-2-2">样例 #2</h2>
+<h2 id="样例-1-3">样例 #1</h2>
 <h3 id="样例输入-5">样例输入</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 <h3 id="样例输出-5">样例输出</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例解释-2">样例解释</h3>
-<p>没有'0'（水），全都是'1'（陆地），也按一个岛屿计算。</p>
-<h2 id="数据范围-1">数据范围</h2>
-<p><span class="math inline">\(1\)</span> ≤ <span
-class="math inline">\(m,n\)</span>≤ <span
-class="math inline">\(200\)</span></p>
+<h2 id="样例-2-3">样例 #2</h2>
+<h3 id="样例输入-6">样例输入</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<h3 id="样例输出-6">样例输出</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<h3 id="样例解释-3">样例解释</h3>
+<p>没有’0’（水），全都是’1’（陆地），也按一个岛屿计算。</p>
+<h2 id="数据范围-2">数据范围</h2>
+<p>$1$ ≤ $m,n$≤ $200$</p>
 </blockquote>
-<h1 id="题解-2">题解</h1>
+<h1>题解</h1>
 <p>深搜板子题。</p>
-<p>使用bfs的思想：枚举每一个位置的元素，如果是0就跳过，如果是1就使用bfs查询与该位置相邻的4个元素（前提是不出界），判断是否为1，如果是1那么继续查询，直到整个1块访问完毕。而为了避免走回头路可以定义一个bool数组inq(即in
-queue的缩写)来记录每个位置是否在bfs中已经入过队。</p>
+<p>使用bfs的思想：枚举每一个位置的元素，如果是0就跳过，如果是1就使用bfs查询与该位置相邻的4个元素（前提是不出界），判断是否为1，如果是1那么继续查询，直到整个1块访问完毕。而为了避免走回头路可以定义一个bool数组inq(即in queue的缩写)来记录每个位置是否在bfs中已经入过队。</p>
 <blockquote>
 <p>[!TIP]</p>
 <p>对于当前位置(x,y)而言，可以设置两个增量数组来访问相邻的4个位置。</p>
