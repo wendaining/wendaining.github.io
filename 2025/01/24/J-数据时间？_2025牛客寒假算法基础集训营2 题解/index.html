@@ -19,12 +19,12 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 APP。特别地，同">
+    <meta name="description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 AP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="J-数据时间？_2025牛客寒假算法基础集训营2 题解">
 <meta property="og:url" content="http://example.com/2025/01/24/J-%E6%95%B0%E6%8D%AE%E6%97%B6%E9%97%B4%EF%BC%9F_2025%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A52%20%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 APP。特别地，同">
+<meta property="og:description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;J 来源：牛客网 题目描述 牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间 他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 AP">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-24T02:47:25.000Z">
 <meta property="article:modified_time" content="2025-01-24T02:34:04.634Z">
@@ -299,12 +299,16 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/95334/J">https://ac.nowcoder.com/acm/contest/95334/J</a><br>
-来源：牛客网</p>
+<p>链接：https://ac.nowcoder.com/acm/contest/95334/J 来源：牛客网</p>
 <h2 id="题目描述">题目描述</h2>
-<p>牛可乐正在分析最近几个月用户登录牛客 APP 的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户 ID，login_date表示登录日期，login_time表示登录时间<br>
-他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过 APP。特别地，同一个人在同一时段多次登录视作一次。</p>
-<p>在本题中，通勤时间段为 07:00:00-09:00:00和18:00:00-20:00:00；午休时间段为11:00:00-13:00:00；临睡时间段为 22:00:00-01:00:00。时间段均包含左右边界值。</p>
+<p>牛可乐正在分析最近几个月用户登录牛客 APP
+的情况，他所收集的数据由三个字段构成，分别为：user_id表示用户
+ID，login_date表示登录日期，login_time表示登录时间
+他想请你帮助他统计h年m月份通勤、午休、临睡这三个时段各有多少人登录过
+APP。特别地，同一个人在同一时段多次登录视作一次。</p>
+<p>在本题中，通勤时间段为
+07:00:00-09:00:00和18:00:00-20:00:00；午休时间段为11:00:00-13:00:00；临睡时间段为
+22:00:00-01:00:00。时间段均包含左右边界值。</p>
 <h2 id="输入描述">输入描述:</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">第一行输入三个整数 n,h,m(1≦n≤105; 2000≦h≦2030; 1≦m≦12)代表你需要处理的数据总数目、查询的年份、查询的月份。 <br>此后n行，每行先输入一个整数 user<span class="hljs-emphasis">_id (1≦user_</span>id≦10^20)代表用户 ID；再输入一个 YYYY-MM-DD 模式的日期 login<span class="hljs-emphasis">_date代表用户登录日期；最后输入一个 hh:mm:ss 模式的时间 login_</span>time代表用户登录时间。<br><br>YYYY-MM-DD 模式的时间定义为：2000≦YYYY≦2030代表年份，1≦MM≦12代表月份，1≦DD≦31代表日期。日期遵照平闰年规则。<br>hh:mm:ss 模式的时间定义为：0≦hh≦23代表小时、0≦mm≦59代表分钟、0≦ss≦59代表秒。<br></code></pre></td></tr></table></figure>
 <h2 id="输出描述">输出描述:</h2>
@@ -313,22 +317,22 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs markdown">13 2021 12<br>2 2021-11-08 20:00:00<br>2 2021-12-03 07:00:00<br>3 2021-12-03 11:00:00<br>3 2021-12-05 12:00:00<br>4 2024-11-08 20:00:00<br>2 2021-12-06 09:20:00<br>2 2021-12-06 18:20:00<br>2 2021-12-07 13:00:00<br>2 2021-12-31 22:00:00<br>3 2021-12-30 21:00:00<br>4 2021-12-30 00:50:00<br>4 2021-12-31 00:30:00<br>2 2021-11-09 17:00:00<br></code></pre></td></tr></table></figure>
 <h2 id="输出">输出</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1 2 2<br></code></pre></td></tr></table></figure>
-<p>​                            示例2</p>
-<h2 id="输入-2">输入</h2>
+<p>​ 示例2</p>
+<h2 id="输入-1">输入</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">2 2025 1<br>1000 2024-12-31 23:59:59<br>1000 2025-01-01 00:00:00<br></code></pre></td></tr></table></figure>
-<h2 id="输出-2">输出</h2>
+<h2 id="输出-1">输出</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">0 0 1<br></code></pre></td></tr></table></figure>
 <h2 id="说明">说明</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">先判定年份与月份，再判定时间。<br></code></pre></td></tr></table></figure>
-<p>​                            示例3</p>
-<h2 id="输入-3">输入</h2>
+<p>​ 示例3</p>
+<h2 id="输入-2">输入</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">2 2025 1<br>1 2025-01-23 00:00:00<br>1 2025-01-22 00:00:00<br></code></pre></td></tr></table></figure>
-<h2 id="输出-3">输出</h2>
+<h2 id="输出-2">输出</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">0 0 1<br></code></pre></td></tr></table></figure>
-<h2 id="说明-2">说明</h2>
+<h2 id="说明-1">说明</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">同一时间段不作重复计算。<br></code></pre></td></tr></table></figure>
 </blockquote>
-<h1>题解</h1>
+<h1 id="题解">题解</h1>
 <p>本题实际上不难，是一道模拟，但是可以灵活使用多种STL容器来让本题的代码实现非常简单。</p>
 <p>首先为了统计每个人的登录次数，我们不需要把所有人的所有信息都记录下来之后再进行判断，而只需要在循环中的一次读入内判断完就可以了。</p>
 <p>其次，题目中的要求“同一个人在同一时段多次登录视作一次”，理解成是自动去重，我们不难考虑到unordered_set容器，可以自动去重。</p>
@@ -337,12 +341,14 @@
 <p>然后就是这几个时间。</p>
 <p>首先是年份和月份，我们可以读入login_date之后使用sscanf函数和最开始读入的h和m进行比较，如果未通过就continue。</p>
 <p>但是我们使用的是string进行读入，而sscanf函数只支持char[]，该如何是好呢？</p>
-<p>我们可以使用<code>std::string</code> 类的一个成员函数.c_str()，用于将 <code>std::string</code> 对象转换为 C 风格的字符串（即以 <code>\0</code> 结尾的字符数组）。</p>
+<p>我们可以使用<code>std::string</code> 类的一个成员函数.c_str()，用于将
+<code>std::string</code> 对象转换为 C 风格的字符串（即以 <code>\0</code>
+结尾的字符数组）。</p>
 <p>再之后就是login_time的问题了，我们注意到由于格式都一样，我们可以直接使用字典序进行比较来确定是否落在我们需要的时间里面。</p>
 <p>也就是可以定义一个这样的函数</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">P</span><span class="hljs-params">(string time,string start,string end)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> time&gt;=start&amp;&amp;time&lt;=end;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>如果落在我们需要的范围内就会返回true。</p>
-<p>接下来如果只是这样暴力的<code>if(P(login_time,&quot;07:00:00&quot;,&quot;09:00:00&quot;)||P(login_time,&quot;18:00:00&quot;,&quot;20:00:00&quot;))</code>当然也是可以的，但是我们可以有更好的选择，</p>
+<p>接下来如果只是这样暴力的<code>if(P(login_time,"07:00:00","09:00:00")||P(login_time,"18:00:00","20:00:00"))</code>当然也是可以的，但是我们可以有更好的选择，</p>
 <p>我们注意到一个时间段由两个部分组成：开始和结束，这让我们不禁考虑到使用pair来存储一个时间段，而通勤时间和临睡时间由两个时间段组成，这样我们可以使用vector来存储pair，再使用based循环来解决问题。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 定义时间段</span><br>vector&lt;pair&lt;string, string&gt;&gt; rushHours = &#123;&#123;<span class="hljs-string">&quot;07:00:00&quot;</span>, <span class="hljs-string">&quot;09:00:00&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;18:00:00&quot;</span>, <span class="hljs-string">&quot;20:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; lunchHours = &#123;&#123;<span class="hljs-string">&quot;11:00:00&quot;</span>, <span class="hljs-string">&quot;13:00:00&quot;</span>&#125;&#125;;<br>vector&lt;pair&lt;string, string&gt;&gt; sleepHours = &#123;&#123;<span class="hljs-string">&quot;22:00:00&quot;</span>, <span class="hljs-string">&quot;23:59:59&quot;</span>&#125;, &#123;<span class="hljs-string">&quot;00:00:00&quot;</span>, <span class="hljs-string">&quot;01:00:00&quot;</span>&#125;&#125;; <span class="hljs-comment">//记得拆分</span><br></code></pre></td></tr></table></figure>
 <p>最终的代码实现如下</p>

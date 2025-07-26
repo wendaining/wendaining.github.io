@@ -19,12 +19,12 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="P5076 【深基16.例7】普通二叉树（简化版） 题目描述 您需要写一种数据结构，来维护一些数（都是绝对值 $10^9$ 以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数 $q$ 不超过 $10^4$：  定义数 $x$ 的排名为集合中小于 $x$ 的数的个数 $+1$。查询数 $x$ 的排名。注意 $x$ 不一定在集合里。 查询排名为 $x(x\ge 1)$ 的数。保证集">
+    <meta name="description" content="P5076 【深基16.例7】普通二叉树（简化版） 题目描述 您需要写一种数据结构，来维护一些数（都是绝对值 \(10^9\) 以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数 \(q\) 不超过 \(10^4\)：  定义数 \(x\) 的排名为集合中小于 \(x\) 的数的个数 \(+1\)。查询数 \(x\) 的排名。注意 \(x\) 不一定在集合里。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洛谷P5076 【深基16.例7】普通二叉树（简化版） 题解">
 <meta property="og:url" content="http://example.com/2025/03/02/2025-03-02-%E6%B4%9B%E8%B0%B7P5076-%E3%80%90%E6%B7%B1%E5%9F%BA16.%E4%BE%8B7%E3%80%91%E6%99%AE%E9%80%9A%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E7%AE%80%E5%8C%96%E7%89%88%EF%BC%89-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="P5076 【深基16.例7】普通二叉树（简化版） 题目描述 您需要写一种数据结构，来维护一些数（都是绝对值 $10^9$ 以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数 $q$ 不超过 $10^4$：  定义数 $x$ 的排名为集合中小于 $x$ 的数的个数 $+1$。查询数 $x$ 的排名。注意 $x$ 不一定在集合里。 查询排名为 $x(x\ge 1)$ 的数。保证集">
+<meta property="og:description" content="P5076 【深基16.例7】普通二叉树（简化版） 题目描述 您需要写一种数据结构，来维护一些数（都是绝对值 \(10^9\) 以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数 \(q\) 不超过 \(10^4\)：  定义数 \(x\) 的排名为集合中小于 \(x\) 的数的个数 \(+1\)。查询数 \(x\) 的排名。注意 \(x\) 不一定在集合里。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-02T08:15:25.000Z">
 <meta property="article:modified_time" content="2025-03-02T08:38:00.426Z">
@@ -299,29 +299,51 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<h1>P5076 【深基16.例7】普通二叉树（简化版）</h1>
+<h1 id="p5076-深基16.例7普通二叉树简化版">P5076
+【深基16.例7】普通二叉树（简化版）</h1>
 <h2 id="题目描述">题目描述</h2>
-<p>您需要写一种数据结构，来维护一些数（都是绝对值 $10^9$ 以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数 $q$ 不超过 $10^4$：</p>
-<ol>
-<li>定义数 $x$ 的排名为集合中小于 $x$ 的数的个数 $+1$。查询数 $x$ 的排名。<strong>注意 $x$ 不一定在集合里</strong>。</li>
-<li>查询排名为 $x(x\ge 1)$ 的数。<strong>保证集合里至少有 $x$ 个数</strong>。</li>
-<li>求 $x$ 的前驱（前驱定义为小于 $x$，且最大的数）。若不存在则输出 $-2147483647$。</li>
-<li>求 $x$ 的后继（后继定义为大于 $x$，且最小的数）。若不存在则输出 $2147483647$。</li>
-<li>插入一个数 $x$，本题的数据保证插入前 $x$ 不在集合中。</li>
+<p>您需要写一种数据结构，来维护一些数（都是绝对值 <span
+class="math inline">\(10^9\)</span>
+以内的数）的集合，最开始时集合是空的。其中需要提供以下操作，操作次数
+<span class="math inline">\(q\)</span> 不超过 <span
+class="math inline">\(10^4\)</span>：</p>
+<ol type="1">
+<li>定义数 <span class="math inline">\(x\)</span> 的排名为集合中小于
+<span class="math inline">\(x\)</span> 的数的个数 <span
+class="math inline">\(+1\)</span>。查询数 <span
+class="math inline">\(x\)</span> 的排名。<strong>注意 <span
+class="math inline">\(x\)</span> 不一定在集合里</strong>。</li>
+<li>查询排名为 <span class="math inline">\(x(x\ge 1)\)</span>
+的数。<strong>保证集合里至少有 <span class="math inline">\(x\)</span>
+个数</strong>。</li>
+<li>求 <span class="math inline">\(x\)</span> 的前驱（前驱定义为小于
+<span class="math inline">\(x\)</span>，且最大的数）。若不存在则输出
+<span class="math inline">\(-2147483647\)</span>。</li>
+<li>求 <span class="math inline">\(x\)</span> 的后继（后继定义为大于
+<span class="math inline">\(x\)</span>，且最小的数）。若不存在则输出
+<span class="math inline">\(2147483647\)</span>。</li>
+<li>插入一个数 <span
+class="math inline">\(x\)</span>，本题的数据保证插入前 <span
+class="math inline">\(x\)</span> 不在集合中。</li>
 </ol>
-<p>保证执行 $1,3,4$ 操作时，集合中有至少一个元素。</p>
+<p>保证执行 <span class="math inline">\(1,3,4\)</span>
+操作时，集合中有至少一个元素。</p>
 <h2 id="输入格式">输入格式</h2>
-<p>第一行是一个整数 $q$，表示操作次数。</p>
-<p>接下来 $q$ 行，每行两个整数 $op,x$，分别表示操作序号以及操作的参数 $x$。</p>
+<p>第一行是一个整数 <span
+class="math inline">\(q\)</span>，表示操作次数。</p>
+<p>接下来 <span class="math inline">\(q\)</span> 行，每行两个整数 <span
+class="math inline">\(op,x\)</span>，分别表示操作序号以及操作的参数
+<span class="math inline">\(x\)</span>。</p>
 <h2 id="输出格式">输出格式</h2>
-<p>输出有若干行。对于操作 $1,2,3,4$，输出一个整数，表示该操作的结果。</p>
+<p>输出有若干行。对于操作 <span
+class="math inline">\(1,2,3,4\)</span>，输出一个整数，表示该操作的结果。</p>
 <h2 id="输入输出样例-1">输入输出样例 #1</h2>
 <h3 id="输入-1">输入 #1</h3>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
 <h3 id="输出-1">输出 #1</h3>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>3<br>1<br>5<br></code></pre></td></tr></table></figure>
 </blockquote>
-<h1>题解</h1>
+<h1 id="题解">题解</h1>
 <h2 id="方法1">方法1</h2>
 <p>使用BST</p>
 <p>一个实现如下</p>
@@ -333,7 +355,9 @@
 <blockquote>
 <h2 id="multiset的常见用法详解">multiset的常见用法详解</h2>
 <h3 id="multiset的定义">multiset的定义</h3>
-<p><code>multiset</code> 是一个集合容器，它可以存储多个相同的元素。换句话说，如果你有一堆重复的数，比如 3、5、5、5、7，你可以用<code>multiset</code>来妥善管理它们。与<code>set</code>不同的是，<code>set</code>不会允许重复的元素，而<code>multiset</code>非常欢迎重复元素的加入。</p>
+<p><code>multiset</code>
+是一个集合容器，它可以存储多个相同的元素。换句话说，如果你有一堆重复的数，比如
+3、5、5、5、7，你可以用<code>multiset</code>来妥善管理它们。与<code>set</code>不同的是，<code>set</code>不会允许重复的元素，而<code>multiset</code>非常欢迎重复元素的加入。</p>
 <p>可以使用统一初始化的元素来创建</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    multiset&lt;<span class="hljs-type">int</span>&gt; numbers = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">9</span>&#125;;<br><br>    <span class="hljs-comment">// 基于范围的for循环遍历multiset</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : numbers) &#123;<br>        cout &lt;&lt; num &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>注意，<code>multiset</code>会自动按升序排列元素。</strong></p>
@@ -354,26 +378,28 @@
 <p>略了</p>
 <h4 id="empty">empty()</h4>
 <p>略</p>
-<h4 id="lower-bound">lower_bound()</h4>
+<h4 id="lower_bound">lower_bound()</h4>
 <p>略 <strong>和algorithm</strong>中的不一样</p>
-<h4 id="upper-bound">upper_bound()</h4>
+<h4 id="upper_bound">upper_bound()</h4>
 <p>略 <strong>和algorithm</strong>中的不一样</p>
 </blockquote>
 <h3 id="分析题目">分析题目</h3>
-<h4 id="1-查询-x-数的排名">1. 查询 x 数的排名</h4>
+<h4 id="查询-x-数的排名">1. 查询 x 数的排名</h4>
 <p>排名，说白了就是排序之后的x的下标。</p>
 <p>我们只要用lower_bound方法，找到第一个x的位置。</p>
 <p>然后从begin开始往后遍历容器，只要达到这个位置，就输出当前下标即可。</p>
-<h4 id="2-查询排名为-x-的数">2.查询排名为 x 的数</h4>
+<h4 id="查询排名为-x-的数">2.查询排名为 x 的数</h4>
 <p>遍历容器，只要当前排名到达x，就输出当前值。</p>
 <p>（因为multiset容器无法进行随机访问）</p>
-<h4 id="3-求-x-的前驱（前驱定义为小于-x，且最大的数）">3.求 x 的前驱（前驱定义为小于 x，且最大的数）</h4>
+<h4 id="求-x-的前驱前驱定义为小于-x且最大的数">3.求 x
+的前驱（前驱定义为小于 x，且最大的数）</h4>
 <p>前驱，也就是x的前一个。</p>
 <p>我们只要用lower_bound方法找到第一个x的位置，然后输出上一个就OK了。</p>
-<h4 id="4-求-x-的后继（后继定义为大于-x，且最小的数）。">4.求 x 的后继（后继定义为大于 x，且最小的数）。</h4>
+<h4 id="求-x-的后继后继定义为大于-x且最小的数">4.求 x
+的后继（后继定义为大于 x，且最小的数）。</h4>
 <p>后继，也就是第一个大于x的数。</p>
 <p>我们可以用upper_bound方法，直接找到这个值。</p>
-<h4 id="5-插入一个数-x">5.插入一个数 x</h4>
+<h4 id="插入一个数-x">5.插入一个数 x</h4>
 <p>直接用insert方法插入即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;set&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>multiset&lt;<span class="hljs-type">int</span>&gt;q;<br><span class="hljs-type">int</span> n,t,x,order;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    q.<span class="hljs-built_in">insert</span>(<span class="hljs-number">-0x7fffffff</span>);<br>    q.<span class="hljs-built_in">insert</span>(<span class="hljs-number">0x7fffffff</span>);<br>    <span class="hljs-comment">//提前放入这两个数，避免错误</span><br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);<br>    <span class="hljs-keyword">while</span>(n--)<br>    &#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>,&amp;t,&amp;x);<br>        <span class="hljs-keyword">if</span>(t==<span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">auto</span> it=q.<span class="hljs-built_in">lower_bound</span>(x);<br>            <span class="hljs-comment">//可以写作multiset&lt;int&gt;::iterator，因为lower_bound方法返回的是迭代器</span><br>            <span class="hljs-comment">// it 取得 x 的位置</span><br>            <br>            order=<span class="hljs-number">0</span>;<br>            <span class="hljs-comment">//order为排名</span><br>            <br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i=q.<span class="hljs-built_in">begin</span>();i!=it;i++,order++);<br>            <span class="hljs-comment">//这里就处理出了x的排名——order</span><br>            <br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,order);<br>            <span class="hljs-comment">//输出order即为答案</span><br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(t==<span class="hljs-number">2</span>)<br>        &#123;<br>            order=<span class="hljs-number">-1</span>;<br>            <span class="hljs-comment">//初值为-1是因为前面有一个-0x7fffffff，所以order要多跑一步</span><br><br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:q)<br>                <span class="hljs-keyword">if</span>(++order==x)<br>                <span class="hljs-comment">//缩写，order先自增一，再判断是否与x相等</span><br>                <span class="hljs-comment">//如果是(order++==x)，那就是先判断再自增，这里要尤其注意</span><br>                    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,i);<br>                <span class="hljs-comment">//i就是容器里的值，输出i</span><br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(t==<span class="hljs-number">3</span>)<br>        &#123;<br>            <span class="hljs-keyword">auto</span> it=q.<span class="hljs-built_in">lower_bound</span>(x);<br>            <span class="hljs-comment">//取得第一个大于等于x的值</span><br>            <span class="hljs-comment">//也就是第一个x的位置</span><br>            <span class="hljs-comment">//由于我们要取得前驱，所以it要自减一</span><br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,*--it);<br>            <span class="hljs-comment">//这句是先自减，再输出，是缩写</span><br>            <span class="hljs-comment">//等价于：</span><br>            <span class="hljs-comment">/*</span><br><span class="hljs-comment">                it--;</span><br><span class="hljs-comment">                printf(&quot;%d\n&quot;,*it);</span><br><span class="hljs-comment">            */</span><br>            <span class="hljs-comment">//因为是迭代器（指针），所以输出前面加 *</span><br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(t==<span class="hljs-number">4</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,*q.<span class="hljs-built_in">upper_bound</span>(x));<br>            <span class="hljs-comment">//要取得后继，就是第一个大于x的值</span><br>            <span class="hljs-comment">//用upper_bound方法取得第一个大于x的迭代器</span><br>            <span class="hljs-comment">//输出即可</span><br>            <span class="hljs-comment">//因为是迭代器（指针），所以输出前面加 *</span><br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            q.<span class="hljs-built_in">insert</span>(x);<br>            <span class="hljs-comment">//直接添加即可</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 

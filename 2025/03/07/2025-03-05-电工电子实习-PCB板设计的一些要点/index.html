@@ -19,12 +19,12 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="PCB 设计原则 最好手动布线，自动布线分数更低 单位：1mil&#x3D;0.0245mm 设计规则$\rarr$最小线宽：    类型 宽度     一般 15mil   VCC 30mil   GND 30mil    布线：最好不用使用锐角，有天线效应，最好走成钝角 布线可以在板的顶底两面，可以交叉。 走线技巧：  附近器件比较多，可以一条线一半走顶一半走底，打个过孔就可以切换 贴片焊盘：贯穿，不能">
+    <meta name="description" content="PCB 设计原则 最好手动布线，自动布线分数更低 单位：1mil&#x3D;0.0245mm 设计规则\(\rarr\)最小线宽：    类型 宽度     一般 15mil   VCC 30mil   GND 30mil    布线：最好不用使用锐角，有天线效应，最好走成钝角 布线可以在板的顶底两面，可以交叉。 走线技巧：  附近器件比较多，可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="电工电子实习 PCB板设计的一些要点">
 <meta property="og:url" content="http://example.com/2025/03/07/2025-03-05-%E7%94%B5%E5%B7%A5%E7%94%B5%E5%AD%90%E5%AE%9E%E4%B9%A0-PCB%E6%9D%BF%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A6%81%E7%82%B9/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="PCB 设计原则 最好手动布线，自动布线分数更低 单位：1mil&#x3D;0.0245mm 设计规则$\rarr$最小线宽：    类型 宽度     一般 15mil   VCC 30mil   GND 30mil    布线：最好不用使用锐角，有天线效应，最好走成钝角 布线可以在板的顶底两面，可以交叉。 走线技巧：  附近器件比较多，可以一条线一半走顶一半走底，打个过孔就可以切换 贴片焊盘：贯穿，不能">
+<meta property="og:description" content="PCB 设计原则 最好手动布线，自动布线分数更低 单位：1mil&#x3D;0.0245mm 设计规则\(\rarr\)最小线宽：    类型 宽度     一般 15mil   VCC 30mil   GND 30mil    布线：最好不用使用锐角，有天线效应，最好走成钝角 布线可以在板的顶底两面，可以交叉。 走线技巧：  附近器件比较多，可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-07T00:48:25.000Z">
 <meta property="article:modified_time" content="2025-03-07T11:41:44.369Z">
@@ -298,10 +298,10 @@
             
               <div class="markdown-body">
                 
-                <h1>PCB 设计原则</h1>
+                <h1 id="pcb-设计原则">PCB 设计原则</h1>
 <p>最好手动布线，自动布线分数更低</p>
 <p>单位：1mil=0.0245mm</p>
-<p>设计规则$\rarr$最小线宽：</p>
+<p>设计规则<span class="math inline">\(\rarr\)</span>最小线宽：</p>
 <table>
 <thead>
 <tr>
@@ -331,17 +331,13 @@
 <li>附近器件比较多，可以一条线一半走顶一半走底，打个过孔就可以切换</li>
 <li>贴片焊盘：贯穿，不能上下走线</li>
 </ul>
-<p>设计规则$\rarr$最小间距：20mil</p>
+<p>设计规则<span class="math inline">\(\rarr\)</span>最小间距：20mil</p>
 <p>但是在单走某根线的时候，可以暂时修改一下最小间距，使之更小。</p>
 <p>可以查找过孔，使得所有过孔都高亮显示，然后修改其属性。</p>
 <p>过孔：</p>
 <ul>
-<li>
-<p>外径30mil，0.8mm</p>
-</li>
-<li>
-<p>内径15mil，0.4mm</p>
-</li>
+<li><p>外径30mil，0.8mm</p></li>
+<li><p>内径15mil，0.4mm</p></li>
 </ul>
 <p>Type-C的口，分清哪一头是对外，哪一头是对内，有两个横引脚是对内的。且稍微放出板的边界，<strong>切勿</strong>全放入板内，最好是边界与板的边界齐平且略突出。</p>
 <p>编号、阻值最好靠近电阻，要保证能看到标号。</p>

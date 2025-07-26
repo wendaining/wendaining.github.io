@@ -19,12 +19,12 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;G 来源：牛客网 题目描述 牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。 启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2, m^3, … 牛可乐想要知道">
+    <meta name="description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;G 来源：牛客网 题目描述 牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。 启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2, m^3, ....">
 <meta property="og:type" content="article">
 <meta property="og:title" content="G-一起铸最好的剑！_2025牛客寒假算法基础集训营2 题解">
 <meta property="og:url" content="http://example.com/2025/01/24/G-%E4%B8%80%E8%B5%B7%E9%93%B8%E6%9C%80%E5%A5%BD%E7%9A%84%E5%89%91%EF%BC%81_2025%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A52%20%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;G 来源：牛客网 题目描述 牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。 启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2, m^3, … 牛可乐想要知道">
+<meta property="og:description" content="链接：https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;95334&#x2F;G 来源：牛客网 题目描述 牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。 启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2, m^3, ....">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-24T01:47:25.000Z">
 <meta property="article:modified_time" content="2025-01-24T02:12:35.191Z">
@@ -299,11 +299,11 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/95334/G">https://ac.nowcoder.com/acm/contest/95334/G</a><br>
-来源：牛客网</p>
+<p>链接：https://ac.nowcoder.com/acm/contest/95334/G 来源：牛客网</p>
 <h2 id="题目描述">题目描述</h2>
-<p>牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。<br>
-启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2, m^3, …</p>
+<p>牛可乐从古籍中得知，铸剑的温度越接近n度，剑的品质越好。现在，他正在研究他家的铸剑炉，想要铸出全村最好的剑。
+启动炉子时，牛可乐已经添过了一次柴，所以铸剑炉的初始温度为m度。此后，牛可乐每次添柴可以使得铸剑炉的温度提高到原来的m倍，即温度变为m^2,
+m^3, ......</p>
 <p>牛可乐想要知道，他最少需要添多少次柴（包括启动炉子时添的那一次），才能使得铸剑炉的温度最接近n度，这样他就能铸出一把品质最好的剑。</p>
 <h2 id="输入描述">输入描述:</h2>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex">每个测试文件均包含多组测试数据。第一行输入一个整数 T(1≦T≦105)代表数据组数，每组测试数据描述如下：<br><br>在一行上输入两个整数 n,m(1≦n,m≦10<span class="hljs-built_in">^</span>9)代表最佳铸剑温度、牛可乐每次添柴可以使得铸剑炉的温度提高的倍数。<br></code></pre></td></tr></table></figure>
@@ -316,8 +316,10 @@
 <h2 id="说明">说明</h2>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">对于第一组数据，牛可乐启动炉子时，铸剑炉的温度为 666 度，如果再添一次柴，铸剑炉的温度会达到36度，显然更劣。所以牛可乐只需要初始时添一次柴即可。<br>对于第二组数据，牛可乐启动炉子时，铸剑炉的温度为 222 度，此后每次添柴会使得火炉温度变为：4,8,16,32,⋯。<br></code></pre></td></tr></table></figure>
 </blockquote>
-<h1>题解</h1>
-<p><strong>需要注意到题目的数据有1≦n,m≦10^9， 而$2^32&gt; 10^9$，因此我们只需要遍历32次即可</strong></p>
+<h1 id="题解">题解</h1>
+<p><strong>需要注意到题目的数据有1≦n,m≦10^9， 而<span
+class="math inline">\(2^32&gt;
+10^9\)</span>，因此我们只需要遍历32次即可</strong></p>
 <p>此外如何衡量ans是否合适？可以定义一个差值变量，不停的取小并更新ans</p>
 <p>代码实现如下</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ll long long</span><br><span class="hljs-type">const</span> ll inf=<span class="hljs-number">1e18</span>;<br><span class="hljs-type">int</span> T,n,m;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;T;<br>    <span class="hljs-keyword">while</span>(T--)&#123;<br>        cin&gt;&gt;n&gt;&gt;m;<br>        ll minEps=inf,ans,nowTemp=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">32</span>;i++)&#123;<br>            <span class="hljs-keyword">if</span>(nowTemp&gt;=inf/m) <span class="hljs-keyword">break</span>; <span class="hljs-comment">//如果当前温度*m要比inf大了就break防止溢出</span><br>            nowTemp*=m;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">abs</span>(n-nowTemp)&lt;minEps)&#123;<br>                minEps=<span class="hljs-built_in">abs</span>(n-nowTemp); <span class="hljs-comment">//更新最小差值</span><br>                ans=i;<br>            &#125;<br>        &#125;<br>        cout&lt;&lt;ans&lt;&lt;endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
