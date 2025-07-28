@@ -8,7 +8,7 @@
     <link href="/2025/07/28/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/"/>
     <url>/2025/07/28/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/</url>
     
-    <content type="html"><![CDATA[<p>oop：类把对象的数据和操作数据的方法作为一个整体考虑</p>]]></content>
+    <content type="html"><![CDATA[<p>oop：类把对象的数据和操作数据的方法作为一个整体考虑</p><p>类的成员可以是变量，也可以是函数。</p><p>类的成员变量也叫属性。</p><p>类的成员函数也叫方法/行为，类的成员函数可以定义在类的外面。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    string name;<br>    <span class="hljs-type">int</span> age;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>; <span class="hljs-comment">//在类中进行声明</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Student::show</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-comment">//表示是成员函数</span><br>cout&lt;&lt;name&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;age;<br>&#125;<br></code></pre></td></tr></table></figure><p>用类定义一个类的变量叫做创建（或实例化）一个对象。</p><p>类的成员变量和成员函数的作用域和生命周期与对象的作用域和生命周期相同。</p><h4 id="类的访问权限">类的访问权限</h4><p><code>public</code> <code>private</code> <code>protected</code></p><p>在类的内部（类的成员函数中），无论成员被声明为public还是private,都是可以访问。</p><p>在类的外部（定义类的代码之外），只能访问public成员，不能访问private、protected成员。</p><p>在一个类体的定义中，private和public可以出现多次。</p><p>结构体的成员缺省为public,类的成员缺省为private。</p><p>private的意义在于隐藏类的数据和实现，把需要向外暴露的成员声明为public。</p><h4 id="类的简单使用">类的简单使用</h4><p>1)类的成员函数可以直接访问该类其它的成员函数。</p><p>2)类的成员函数可以重载。</p><p>（普通函数具备的特征成员函数都具备）</p><p>3)类指针的用法与结构体指针用法相同。</p><p>4)类的成员可以是任意数据类型 (类中枚举)。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">enum</span>&#123;<br>        boy=<span class="hljs-number">1</span>,girl=<span class="hljs-number">2</span><br>    &#125;;<br>&#125;<br></code></pre></td></tr></table></figure><p>5)可以为类的成员指定缺省值(C++11标准)。</p><p>6)类可以创建对象数组</p><p>7)对象可以作为实参传递给函数，一般传引用。</p><p>8)可以用new动态创建对象，用delete释放对象。</p><p>9)在类的外部，一般不直接访问（读和写）对象的成员，而是用成员函数。</p><p>10)对象一般不用memset0清空成员变量，可以写一个专用于清空成员变量的成员函数。</p><p>11)对类和对象用sizeof运算符意义不大，一般不用。</p><p>12)用结构体描述纯粹的数据，用类描述对象。</p><p>13)类的分文件编写。</p><h4 id="构造函数与析构函数">构造函数与析构函数</h4><p><strong>构造函数</strong>：在创建对象时，自动进行初始化</p><p><strong>析构函数</strong>：在销毁对象前，自动进行清理工作</p><h5 id="构造函数">构造函数</h5><p>语法：<code>类名()&#123;&#125;</code></p><p>访问权限必须是public。</p><p>函数名必须与类名相同。</p><p>没有返回值，也不写void。</p><p>可以有参数，可以重载，可以有默认参数。</p><p>创建对象时会自动调用一次，不能手工调用。</p><p>初始化应该使用<strong>成员初始化列表</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span> &#123;<br>    <span class="hljs-type">int</span> a;<br>    string s;<br>    <span class="hljs-built_in">T</span>(<span class="hljs-type">int</span> a_, string s_) : <span class="hljs-built_in">a</span>(a_), <span class="hljs-built_in">s</span>(s_) &#123; <span class="hljs-comment">// 成员初始化列表</span><br>        <span class="hljs-comment">// 构造函数体</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p><strong>确保初始化列表中的顺序与成员变量在类中的声明顺序一致</strong></p><h5 id="析构函数">析构函数</h5><p>语法 <code>~类名()&#123;&#125;</code></p><p>访问权限必须是public</p><p>名字要在类名前面加<code>~</code></p><p>没有返回值，不写void</p><p>没有参数，无法重载</p><p>销毁对象前只会自动调用一次，但是可以手动调用</p><h4 id="拷贝构造函数">拷贝构造函数</h4><p>把某一个对象的成员变量赋值给一个新的对象，不会调用构造函数</p><p>编译器默认会提供</p><p>语法 <code>类名 (const 类名&amp; 对象名)&#123;&#125;</code></p><p>函数传对象的形参的时候会调用拷贝析构函数</p><h4 id="浅拷贝与深拷贝">浅拷贝与深拷贝</h4>]]></content>
     
     
     <categories>
@@ -833,31 +833,6 @@
   
   
   <entry>
-    <title>大物期末上复习</title>
-    <link href="/2025/01/07/%E5%A4%A7%E7%89%A9%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <url>/2025/01/07/%E5%A4%A7%E7%89%A9%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    
-    <content type="html"><![CDATA[<h2 id="机械能部分">机械能部分</h2><p>机械能守恒定律：系统只有保守内力做功，质点系的总机械能保持不变</p><p><strong>机械能包括动能和势能（如电势能）</strong></p><p>等价表述：质点组机械能的改变与保守内力无关</p><p>所受合外力为零，内力都是保守力的系统，其机械能必然守恒<strong>错误</strong></p><p>首先：合外力为零<strong>≠</strong>外力做功为零，考虑两只手拉弹簧即可</p><p>其次：即使合外力为零，系统仍可能受到<strong>外力矩</strong>的作用，外力矩会改变系统的转动动能，从而影响机械能，例如一个刚体在无摩擦的转轴上旋转时，即使合外力为零，外力矩仍可能做功，改变系统的机械能</p><p>König定理 <span class="math display">\[质点系的总动能=质心对惯性系的动能+各个质点相对于质心的动能\\E_k=\frac{1}{2}Mv_c^2+E&#39;k=\frac{1}{2}Mv^2_c+\frac{1}{2}\sum_{i=1}^{n}m_iv^2_{ir}\]</span></p><h2 id="刚体">刚体</h2><p>平行轴定理： <span class="math display">\[对某一轴的转动惯量=对质心轴的转动惯量+m*(质心到某轴的距离)^2 \\J_o=J_c+md^2\]</span></p><h2 id="振动">振动</h2><p>简谐运动的三个特征</p><ul><li><p>力学特征 <span class="math display">\[F=-kx\]</span></p></li><li><p>动力学特征 <span class="math display">\[\frac{d^2x}{dt^2}+\omega x=0\]</span></p></li><li><p>运动学特征 <span class="math display">\[x=A\cos (\omega x + \phi)\]</span></p></li></ul><p>合振动忽强忽弱（振幅忽大忽小）的现象：拍</p><p>拍频：合振动变化的频率</p><h2 id="波">波</h2><h3 id="波的方程">波的方程</h3><p><span class="math display">\[y(x,t)=A\cos[2\pi(\frac{t}{T} \mp \frac{x-x_0}{λ})+φ_0] \\取减号：波沿x轴正向传播，反之 \\x处的质元比O处的相位落后 \frac{2 \pi x}{λ}\]</span></p><h3 id="波的能量">波的能量：</h3><p>在波动过程中任一质元的动能和势能相等且同相位变化，机械能不守恒（因为不是孤立体系）</p><p>能量密度 <span class="math display">\[\omega = \frac{dE}{dV} = \rho A^2\sin^2\omega(t-\frac{x}{u})\]</span> 平均能量密度 <span class="math display">\[\bar \omega = \frac{1}{2}\rho A^2\omega^2\]</span> 能流 <span class="math display">\[P=\omega u S\]</span> 平均能流 <span class="math display">\[\bar P =\bar \omega u S\]</span> 平均能流密度 <span class="math display">\[I=\frac{\bar P}{S}=\bar \omega u =\frac{1}{2}\rho A^2\omega^2 u\]</span></p><h3 id="驻波的能量">驻波的能量</h3><p>波节处始终有Ek=0</p><p>在同段内各点通过平衡位置时，动能均最大，波节及其他点Ep=0</p><p>在同段内各点通过最大位移时，动能均趋零，波节及其他点Ep最大</p><h2 id="热力学">热力学</h2><p>等值过程<strong>不一定</strong>是可逆过程，准静态过程<strong>不一定</strong>是可逆过程，<strong>可逆过程一定是准静态过程</strong>，</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>物理</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>大学物理</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>德语大一上期末复习</title>
     <link href="/2025/01/07/%E5%A4%A7%E4%B8%80%E4%B8%8A%E6%9C%9F%E6%9C%AB%E8%AF%BE%E6%9C%AC%E5%A4%8D%E4%B9%A0/"/>
     <url>/2025/01/07/%E5%A4%A7%E4%B8%80%E4%B8%8A%E6%9C%9F%E6%9C%AB%E8%AF%BE%E6%9C%AC%E5%A4%8D%E4%B9%A0/</url>
@@ -875,6 +850,31 @@
     <tags>
       
       <tag>德语</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大物期末上复习</title>
+    <link href="/2025/01/07/%E5%A4%A7%E7%89%A9%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <url>/2025/01/07/%E5%A4%A7%E7%89%A9%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="机械能部分">机械能部分</h2><p>机械能守恒定律：系统只有保守内力做功，质点系的总机械能保持不变</p><p><strong>机械能包括动能和势能（如电势能）</strong></p><p>等价表述：质点组机械能的改变与保守内力无关</p><p>所受合外力为零，内力都是保守力的系统，其机械能必然守恒<strong>错误</strong></p><p>首先：合外力为零<strong>≠</strong>外力做功为零，考虑两只手拉弹簧即可</p><p>其次：即使合外力为零，系统仍可能受到<strong>外力矩</strong>的作用，外力矩会改变系统的转动动能，从而影响机械能，例如一个刚体在无摩擦的转轴上旋转时，即使合外力为零，外力矩仍可能做功，改变系统的机械能</p><p>König定理 <span class="math display">\[质点系的总动能=质心对惯性系的动能+各个质点相对于质心的动能\\E_k=\frac{1}{2}Mv_c^2+E&#39;k=\frac{1}{2}Mv^2_c+\frac{1}{2}\sum_{i=1}^{n}m_iv^2_{ir}\]</span></p><h2 id="刚体">刚体</h2><p>平行轴定理： <span class="math display">\[对某一轴的转动惯量=对质心轴的转动惯量+m*(质心到某轴的距离)^2 \\J_o=J_c+md^2\]</span></p><h2 id="振动">振动</h2><p>简谐运动的三个特征</p><ul><li><p>力学特征 <span class="math display">\[F=-kx\]</span></p></li><li><p>动力学特征 <span class="math display">\[\frac{d^2x}{dt^2}+\omega x=0\]</span></p></li><li><p>运动学特征 <span class="math display">\[x=A\cos (\omega x + \phi)\]</span></p></li></ul><p>合振动忽强忽弱（振幅忽大忽小）的现象：拍</p><p>拍频：合振动变化的频率</p><h2 id="波">波</h2><h3 id="波的方程">波的方程</h3><p><span class="math display">\[y(x,t)=A\cos[2\pi(\frac{t}{T} \mp \frac{x-x_0}{λ})+φ_0] \\取减号：波沿x轴正向传播，反之 \\x处的质元比O处的相位落后 \frac{2 \pi x}{λ}\]</span></p><h3 id="波的能量">波的能量：</h3><p>在波动过程中任一质元的动能和势能相等且同相位变化，机械能不守恒（因为不是孤立体系）</p><p>能量密度 <span class="math display">\[\omega = \frac{dE}{dV} = \rho A^2\sin^2\omega(t-\frac{x}{u})\]</span> 平均能量密度 <span class="math display">\[\bar \omega = \frac{1}{2}\rho A^2\omega^2\]</span> 能流 <span class="math display">\[P=\omega u S\]</span> 平均能流 <span class="math display">\[\bar P =\bar \omega u S\]</span> 平均能流密度 <span class="math display">\[I=\frac{\bar P}{S}=\bar \omega u =\frac{1}{2}\rho A^2\omega^2 u\]</span></p><h3 id="驻波的能量">驻波的能量</h3><p>波节处始终有Ek=0</p><p>在同段内各点通过平衡位置时，动能均最大，波节及其他点Ep=0</p><p>在同段内各点通过最大位移时，动能均趋零，波节及其他点Ep最大</p><h2 id="热力学">热力学</h2><p>等值过程<strong>不一定</strong>是可逆过程，准静态过程<strong>不一定</strong>是可逆过程，<strong>可逆过程一定是准静态过程</strong>，</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>物理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大学物理</tag>
       
     </tags>
     
