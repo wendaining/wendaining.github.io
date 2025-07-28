@@ -27,7 +27,7 @@
 <meta property="og:description" content="TOPSIS 法 基本思想 衡量综合条件最好：距离最好点最近&#x2F;距离最差点最远 计算多目标距离理想解与反理想解的距离，得到贴近度∈(0,1)。 步骤 将原始矩阵正向化 把所有指标都转换为越大越好    指标名称 指标特点     极大型（效益型）指标 越大（多）越好   极小型（成本型）指标 越小（少）越好   中间型指标 越接近某个值越好">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-26T08:27:00.000Z">
-<meta property="article:modified_time" content="2025-07-28T02:44:56.417Z">
+<meta property="article:modified_time" content="2025-07-28T02:59:33.650Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="数模">
 <meta property="article:tag" content="模型">
@@ -550,6 +550,12 @@ class="math inline">\(S_i&#39;=\frac{S_i}{\Sigma S_i} \times
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -740,6 +746,49 @@ class="math inline">\(S_i&#39;=\frac{S_i}{\Sigma S_i} \times
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
