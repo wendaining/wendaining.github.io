@@ -19,24 +19,23 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="洛谷一道比较有意思的题目  P3612 [USACO17JAN] Secret Cow Code S 题面翻译 奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。 给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增">
+    <meta name="description" content="模糊综合评价算法 处理现实的数学模型：  确定性数学模型 随机性数学模型 模糊性模型  模糊集合：与经典集合不同，没有互斥性与确定性 用隶属函数来刻画这个程度：$ _{A} (x) $，越接近于\(1\)代表越属于该集合，反之；\(\mu _{A}(x)&#x3D;0.5\)时，模糊性最大 模糊集合的表示方法 当论域X为有限集时，记\(X&#x3D;{x_{1}, x_{2}, ..., x_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P3612 [USACO17JAN] Secret Cow Code S题解">
-<meta property="og:url" content="http://example.com/2025/01/23/P3612%20[USACO17JAN]%20Secret%20Cow%20Code%20S%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="模糊综合评价算法">
+<meta property="og:url" content="http://example.com/2025/07/28/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="洛谷一道比较有意思的题目  P3612 [USACO17JAN] Secret Cow Code S 题面翻译 奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。 给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增">
+<meta property="og:description" content="模糊综合评价算法 处理现实的数学模型：  确定性数学模型 随机性数学模型 模糊性模型  模糊集合：与经典集合不同，没有互斥性与确定性 用隶属函数来刻画这个程度：$ _{A} (x) $，越接近于\(1\)代表越属于该集合，反之；\(\mu _{A}(x)&#x3D;0.5\)时，模糊性最大 模糊集合的表示方法 当论域X为有限集时，记\(X&#x3D;{x_{1}, x_{2}, ..., x_">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-23T11:47:25.000Z">
-<meta property="article:modified_time" content="2025-01-24T02:13:02.622Z">
+<meta property="article:published_time" content="2025-07-28T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-28T02:45:55.718Z">
 <meta property="article:author" content="Kiriao">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="题解">
+<meta property="article:tag" content="数模">
+<meta property="article:tag" content="模型">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>P3612 [USACO17JAN] Secret Cow Code S题解 - Kiriao</title>
+  <title>模糊综合评价算法 - Kiriao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="P3612 [USACO17JAN] Secret Cow Code S题解"></span>
+            <span id="subtitle" data-typed-text="模糊综合评价算法"></span>
           
         </div>
 
@@ -224,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-23 19:47" pubdate>
-          2025年1月23日 晚上
+        <time datetime="2025-07-28 10:00" pubdate>
+          2025年7月28日 上午
         </time>
       </span>
     
@@ -236,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          687 字
         
       </span>
     
@@ -247,7 +246,7 @@
         
         
         
-          10 分钟
+          6 分钟
         
       </span>
     
@@ -293,93 +292,91 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">P3612 [USACO17JAN] Secret Cow Code S题解</h1>
+            <h1 id="seo-header">模糊综合评价算法</h1>
             
             
               <div class="markdown-body">
                 
-                <p>洛谷一道比较有意思的题目</p>
-<blockquote>
-<h1 id="p3612-usaco17jan-secret-cow-code-s">P3612 [USACO17JAN] Secret
-Cow Code S</h1>
-<h2 id="题面翻译">题面翻译</h2>
-<p>奶牛正在试验秘密代码，并设计了一种方法来创建一个无限长的字符串作为其代码的一部分使用。</p>
-<p>给定一个字符串，对字符串进行一次操作（每一次正确的操作，最后一个字符都会成为新的第一个字符），然后把操作后的字符串放到操作前的字符串的后面。也就是说，给定一个初始字符串，之后的每一步都会增加当前字符串的长度。</p>
-<p>给定初始字符串和 <span
-class="math inline">\(N\)</span>，请帮助奶牛计算无限字符串中位置为 <span
-class="math inline">\(N\)</span> 的字符。</p>
-<p>第一行输入一个字符串。该字符串包含最多 <span
-class="math inline">\(30\)</span> 个大写字母，数据保证 <span
-class="math inline">\(N \leq 10^{18}\)</span>。</p>
-<p>第二行输入 一个整数 <span
-class="math inline">\(N\)</span>。请注意，数据可能很大，放进一个标准的
-<span class="math inline">\(32\)</span>
-位整数容器可能不够，所以你可能要使用一个 <span
-class="math inline">\(64\)</span> 位的整数容器（例如，在 C/C++ 中是
-<code>long long</code>）。</p>
-<p>请输出从初始字符串生成的无限字符串中的下标为 <span
-class="math inline">\(N\)</span> 的字符。第一个字符的下标是 <span
-class="math inline">\(N=1\)</span>。</p>
-<p>感谢 <span class="citation" data-cites="y">@y</span>_z_h 的翻译</p>
-<h2 id="题目描述">题目描述</h2>
-<p>The cows are experimenting with secret codes, and have devised a
-method for creating an infinite-length string to be used as part of one
-of their codes.</p>
-<p>Given a string <span class="math inline">\(s\)</span>, let <span
-class="math inline">\(F(s)\)</span> be <span
-class="math inline">\(s\)</span> followed by <span
-class="math inline">\(s\)</span> "rotated" one character to the right
-(in a right rotation, the last character of <span
-class="math inline">\(s\)</span> rotates around and becomes the new
-first character). Given an initial string <span
-class="math inline">\(s\)</span>, the cows build their infinite-length
-code string by repeatedly applying <span
-class="math inline">\(F\)</span>; each step therefore doubles the length
-of the current string.</p>
-<p>Given the initial string and an index <span
-class="math inline">\(N\)</span>, please help the cows compute the
-character at the <span class="math inline">\(N\)</span>th position
-within the infinite code string.</p>
-<h2 id="输入格式">输入格式</h2>
-<p>The input consists of a single line containing a string followed by
-<span class="math inline">\(N\)</span>. The string consists of at most
-30 uppercase characters, and <span class="math inline">\(N \leq
-10^{18}\)</span>.</p>
-<p>Note that <span class="math inline">\(N\)</span> may be too large to
-fit into a standard 32-bit integer, so you may want to use a 64-bit
-integer type (e.g., a "long long" in C/C++).</p>
-<h2 id="输出格式">输出格式</h2>
-<p>Please output the <span class="math inline">\(N\)</span>th character
-of the infinite code built from the initial string. The first character
-is <span class="math inline">\(N=1\)</span>.</p>
-<h2 id="样例-1">样例 #1</h2>
-<h3 id="样例输入-1">样例输入 #1</h3>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">COW</span> <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-1">样例输出 #1</h3>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">C</span><br></code></pre></td></tr></table></figure>
-<h2 id="提示">提示</h2>
-<p>In this example, the initial string COW expands as follows:</p>
-<p>COW -&gt; COWWCO -&gt; COWWCOOCOWWC</p>
-<p>12345678</p>
-</blockquote>
-<h1 id="题解">题解</h1>
-<p>直接暴力模拟会MLE，所以我们必须要考虑规律。</p>
-<p>设最开始，即原字符串的长度为<span
-class="math inline">\(len\)</span></p>
-<p>不难注意到，假设我们把一个字符串分割成A+B的部分，其中B是最后一个字符，那么经过一次操作之后，我们就会得到A+B+B+A的形式。</p>
-<p>我们设某一时刻字符串的长度已经扩增到了<span
-class="math inline">\(l\)</span>，且位置n恰好处于<span
-class="math inline">\(l\)</span>的后半部分，也即这个时候的<span
-class="math inline">\(l\)</span>恰好”扩增到了能够让s[n-1]有意义的情况“。</p>
-<p>考虑第n个字符处于后半部分的A的情况，这个时候根据对称性我们不难发现n处的字符==n-<span
-class="math inline">\(l\)</span>/2-1处的字符。</p>
-<p>考虑第n个字符处于后半部分的B的情况，那么根据对称性我们可以把n倒推回n-1。</p>
-<p>这样我们成功分治，把原问题转化成了多个子问题。</p>
-<p>现在我们就可以让n不断地减小，直到<span
-class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p>
-<p>也即使用一个while(len&lt;n)的循环即可</p>
-<p>代码实现如下</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ll long long</span><br>ll n,l;<br>string s;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;s&gt;&gt;n;<br>    <span class="hljs-type">int</span> len=s.<span class="hljs-built_in">length</span>();<br>    <span class="hljs-comment">//我们画个图可以发现，当字符串的长度l恰好递增到我们可以求出n的时候，有n处的字符与n-l/2-1处的相同</span><br>    <span class="hljs-comment">//并且n-l/2-1恰好就在len的范围之内</span><br>    <span class="hljs-comment">//如何实现将n不断往回倒成n-l/2-1？</span><br>    <span class="hljs-comment">//还需要特判，当n正好卡在中间的时候，也即n=l/2+1时，n往回倒成n-1（因为中间两个相同）</span><br><br>    <span class="hljs-comment">//我们需要的是一直往回倒，能倒到直接在最开始的字符串里面求出来</span><br>    <span class="hljs-comment">//也就是说，我们需要先把l求到</span><br>    <span class="hljs-comment">//然后这个时候的n-l/2-1可以保证一定是在开始的len范围之内的</span><br>    <span class="hljs-keyword">while</span>(len&lt;n)&#123;<span class="hljs-comment">//假设字符串的长度不够,n开始就超标使得我们无法直接求出</span><br>        l=len; <span class="hljs-comment">//l表示当前的字符串长度，这里开始递增</span><br>        <span class="hljs-keyword">while</span>(n&gt;l) l*=<span class="hljs-number">2</span>;<span class="hljs-comment">//当字符串的长度还不够整个包住n的时候，就一直翻倍</span><br>        <span class="hljs-comment">//上面的循环结束的时候，就是恰好能够包住n了（k&gt;=n）</span><br>        <span class="hljs-comment">//依据上面的思路，我们需要n-l/2-1</span><br>        n-=l/<span class="hljs-number">2</span><span class="hljs-number">+1</span>; <span class="hljs-comment">//这样就实现了迭代，n在不断地减小，通过外层的while循环可以反复倒回去</span><br>        <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) n=l/<span class="hljs-number">2</span>; <span class="hljs-comment">//即n=l/2+1时，n往回倒成n-1</span><br>    &#125;<br>    cout&lt;&lt;s[n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="模糊综合评价算法">模糊综合评价算法</h1>
+<p>处理现实的数学模型：</p>
+<ul>
+<li>确定性数学模型</li>
+<li>随机性数学模型</li>
+<li>模糊性模型</li>
+</ul>
+<p>模糊集合：与经典集合不同，没有互斥性与确定性</p>
+<p>用<strong>隶属函数</strong>来刻画这个程度：$ _{A} (x)
+$，越接近于<span
+class="math inline">\(1\)</span>代表越属于该集合，反之；<span
+class="math inline">\(\mu _{A}(x)=0.5\)</span>时，模糊性最大</p>
+<h2 id="模糊集合的表示方法">模糊集合的表示方法</h2>
+<p>当论域X为有限集时，记<span class="math inline">\(X={x_{1}, x_{2},
+..., x_{n}}\)</span>，则X上的模糊集A有三种表示形式</p>
+<ol type="1">
+<li><p>zadeh表示法 <span class="math display">\[
+  A=\sum_{i=1}^{n}\frac{\mu_{A}(i)}{x_{i}}=\frac{\mu_{A}(x_{1})}{x_{1}}+\frac{\mu_{A}(x_{2})}{x_{2}}+...+\frac{\mu_{A}(x_{n})}{x_{n}}
+\]</span> 注：“∑”和“+”不是求和的意思，只是概括集合的记号 <span
+class="math inline">\(\frac{\mu_{A}(i)}{x_{i}}\)</span>也不是分数，它表示点<span
+class="math inline">\(x_{i}\)</span>对模糊集A的隶属度是<span
+class="math inline">\(\mu_{A}(x)\)</span></p></li>
+<li><p>序偶表示法 <span class="math display">\[
+A=\{(x_{1}, \mu_{A}(x_{1})), (x_{2}, \mu_{A}(x_{2})), ..., (x_{n},
+\mu_{A}(x_{n}))\}
+\]</span></p></li>
+<li><p>向量表示法 <span class="math display">\[
+A=(\mu_{A}(x_{1}), \mu_{A}(x_{2}), ..., \mu_{A}(x_{n}))
+\]</span></p></li>
+</ol>
+<p><span class="math display">\[
+当论域X为无限集时，则X上的模糊集A可以写成A=\int_{x\in
+X}\frac{\mu_{A}(x)}{x} \\
+注：“∫”不是积分的意思，$\frac{\mu_{A}(x_{i})}{x}$也不是分数
+\]</span> ## 模糊集合的分类</p>
+<ul>
+<li>偏小型</li>
+<li>中间型</li>
+<li>偏大型</li>
+</ul>
+<p>类别TOPSIS法</p>
+<p>可以考虑隶属函数的单调性</p>
+<h2 id="隶属函数的确定方法">隶属函数的确定方法</h2>
+<ul>
+<li><p>借助已有的客观尺度</p>
+<p>例：衡量家庭小康：恩格尔系数</p>
+<p>如果这个指标不在[0,1]，可以归一化处理</p></li>
+<li><p>指派法：自己选一个看着顺眼的函数</p></li>
+</ul>
+<h2 id="单层次模糊评价模型step">单层次模糊评价模型：step</h2>
+<h3 id="引入三个集合">引入三个集合</h3>
+<p>在模糊综合评价中，引入三个集合：</p>
+<p>① 因素集（评价指标集） <span
+class="math inline">\(U=\{u_{1},u_{2},\cdots,u_{n}\}\)</span></p>
+<p>② 评语集（评价的结果） <span
+class="math inline">\(V=\{v_{1},v_{2},\cdots,v_{n}\}\)</span></p>
+<p>③ 权重集（指标的权重） <span
+class="math inline">\(A=\{a_{1},a_{2},\cdots,a_{n}\}\)</span></p>
+<ul>
+<li>例：评价一名学生的表现</li>
+</ul>
+<p><span
+class="math inline">\(U=\{\text{专业排名、课外实践、志愿服务、竞赛成绩}\}\)</span></p>
+<p><span class="math inline">\(V=\{\text{优、良、差}\}\)</span></p>
+<p><span class="math inline">\(A=\{0.4、0.2、0.1、0.3\}\)</span></p>
+<h3 id="确定模糊综合判断矩阵">确定模糊综合判断矩阵</h3>
+<p>对指标<span
+class="math inline">\(u_i\)</span>表说，对各个评语的隶属度为V上的模糊子集，对指标<span
+class="math inline">\(u_i\)</span>的评判记为<span
+class="math inline">\(R_i=[r_{11},r_{12},...,r_{in}]\)</span></p>
+<p>各指标的模糊综合判断矩阵为 <span class="math display">\[
+&amp;R=\begin{bmatrix}r_{11}&amp;r_{12}&amp;\cdots&amp;r_{1m}\\r_{11}&amp;r_{22}&amp;\cdots&amp;r_{2m}\\\dots&amp;\dots&amp;\ddots&amp;\dots\\r_{n4}&amp;r_{n2}&amp;\cdots&amp;r_{mm}\end{bmatrix}
+\]</span></p>
+<h3 id="进行矩阵乘法运算">进行矩阵乘法运算</h3>
+<p><span class="math display">\[
+B=A ·R，得到行向量：即该选项对于评语集的隶属度 \\
+取隶属度中最大的一个值作为最终评价
+\]</span></p>
+<h2 id="python代码">Python代码</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br>R = np.array([[]])<br>A = np.array([])<br>B = np.dot(R, a)<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -398,7 +395,7 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%A8%8B%E8%AE%BE/" class="category-chain-item">程设</a>
+  <a href="/categories/%E6%95%B0%E6%A8%A1/" class="category-chain-item">数模</a>
   
   
 
@@ -413,11 +410,9 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/" class="print-no-link">#C++</a>
+        <a href="/tags/%E6%95%B0%E6%A8%A1/" class="print-no-link">#数模</a>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
-      
-        <a href="/tags/%E9%A2%98%E8%A7%A3/" class="print-no-link">#题解</a>
+        <a href="/tags/%E6%A8%A1%E5%9E%8B/" class="print-no-link">#模型</a>
       
     </div>
   
@@ -429,8 +424,8 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>P3612 [USACO17JAN] Secret Cow Code S题解</div>
-      <div>http://example.com/2025/01/23/P3612 [USACO17JAN] Secret Cow Code S题解/</div>
+      <div>模糊综合评价算法</div>
+      <div>http://example.com/2025/07/28/模糊综合评价/</div>
     </div>
     <div class="license-meta">
       
@@ -442,7 +437,7 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月23日</div>
+          <div>2025年7月28日</div>
         </div>
       
       
@@ -474,9 +469,9 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/23/%E6%B4%9B%E8%B0%B7P1259%20%E9%BB%91%E7%99%BD%E6%A3%8B%E5%AD%90%E7%9A%84%E7%A7%BB%E5%8A%A8%20%E9%A2%98%E8%A7%A3/" title="P1259 黑白棋子的移动 题解">
+                      <a href="/2025/07/28/%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B/" title="灰色关联分析模型">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P1259 黑白棋子的移动 题解</span>
+                        <span class="hidden-mobile">灰色关联分析模型</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -484,8 +479,8 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/07/%E4%BD%BF%E7%94%A8%E9%A1%BA%E6%89%BF%E5%85%B3%E7%B3%BB%E8%AF%8D/" title="德语写作顺承关系词使用">
-                        <span class="hidden-mobile">德语写作顺承关系词使用</span>
+                      <a href="/2025/07/27/%E7%86%B5%E6%9D%83%E6%B3%95/" title="熵权法">
+                        <span class="hidden-mobile">熵权法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -542,12 +537,6 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -740,49 +729,6 @@ class="math inline">\(len\)</span>≥n的时候，就可以直接输出了。</p
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

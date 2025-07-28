@@ -1,0 +1,763 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/bg/icon_explorer.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Kiriao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="TOPSIS 法 基本思想 衡量综合条件最好：距离最好点最近&#x2F;距离最差点最远 计算多目标距离理想解与反理想解的距离，得到贴近度∈(0,1)。 步骤 将原始矩阵正向化 把所有指标都转换为越大越好    指标名称 指标特点     极大型（效益型）指标 越大（多）越好   极小型（成本型）指标 越小（少）越好   中间型指标 越接近某个值越好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TOPSIS法模型">
+<meta property="og:url" content="http://example.com/2025/07/26/TOPSIS%E6%B3%95/index.html">
+<meta property="og:site_name" content="Kiriao">
+<meta property="og:description" content="TOPSIS 法 基本思想 衡量综合条件最好：距离最好点最近&#x2F;距离最差点最远 计算多目标距离理想解与反理想解的距离，得到贴近度∈(0,1)。 步骤 将原始矩阵正向化 把所有指标都转换为越大越好    指标名称 指标特点     极大型（效益型）指标 越大（多）越好   极小型（成本型）指标 越小（少）越好   中间型指标 越接近某个值越好">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-26T08:27:00.000Z">
+<meta property="article:modified_time" content="2025-07-28T02:44:56.417Z">
+<meta property="article:author" content="Kiriao">
+<meta property="article:tag" content="数模">
+<meta property="article:tag" content="模型">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>TOPSIS法模型 - Kiriao</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kiriao&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="TOPSIS法模型"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-26 16:27" pubdate>
+          2025年7月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">TOPSIS法模型</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="topsis-法">TOPSIS 法</h1>
+<h2 id="基本思想">基本思想</h2>
+<p>衡量综合条件最好：<strong>距离最好点最近/距离最差点最远</strong></p>
+<p>计算多目标距离理想解与反理想解的距离，得到贴近度∈(0,1)。</p>
+<h2 id="步骤">步骤</h2>
+<h3 id="将原始矩阵正向化">将原始矩阵正向化</h3>
+<p>把所有指标都转换为越大越好</p>
+<table>
+<thead>
+<tr>
+<th>指标名称</th>
+<th>指标特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极大型（效益型）指标</td>
+<td>越大（多）越好</td>
+</tr>
+<tr>
+<td>极小型（成本型）指标</td>
+<td>越小（少）越好</td>
+</tr>
+<tr>
+<td>中间型指标</td>
+<td>越接近某个值越好</td>
+</tr>
+<tr>
+<td>区间型指标</td>
+<td>落在某个区间最好</td>
+</tr>
+</tbody>
+</table>
+<p>公式：</p>
+<table>
+
+<thead>
+<tr>
+<th>指标名称</th>
+<th>转换公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极大型（效益型）指标</td>
+<td>🈚️</td>
+</tr>
+<tr>
+<td>极小型（成本型）指标</td>
+<td><span class="math display">\[\hat{x} = \max x - x\]</span> ，其中
+<span class="math inline">\(\max x\)</span> 为该指标的最大值，<span
+class="math inline">\(x\)</span> 为原始指标值。</td>
+</tr>
+<tr>
+<td>中间型指标</td>
+<td><span class="math inline">\(M = \max\{|x_i -
+x_{best}|\}\)</span>，<span class="math inline">\(\hat{x}_i = 1 -
+\frac{|x_i - x_{best}|}{M}\)</span></td>
+</tr>
+<tr>
+<td>区间型指标</td>
+<td>最优区间 <span class="math inline">\([a, b]\)</span>，<span
+class="math inline">\(M = \max\{a - \min\{x_i\}, \max\{x_i\} -
+b\}\)</span>，$ _i = </td>
+</tr>
+</tbody>
+</table>
+<h3 id="正向矩阵的标准化">正向矩阵的标准化</h3>
+<p>去除量纲的影响</p>
+<p>对于原来的矩阵，设标准化后的矩阵为<span
+class="math inline">\(Z\)</span></p>
+<p>则有 <span class="math display">\[
+Z_{ij} = \frac{x_{ij}}{ \sqrt{ \sum_{i=1}^{n} x_{ij}^2 } }
+\]</span> 即为：<span
+class="math inline">\(\frac{元素}{\sqrt{所在列元素的平方和}}\)</span></p>
+<h3 id="计算得分并归一化">计算得分并归一化</h3>
+<p>最大值向量：取每一列的最大值，得到最大值向量 <span
+class="math inline">\(Z^+ = (Z_1^+, Z_2^+, ..., Z_m^+) = (\max\{z_{11},
+z_{21}, ..., z_{n1}\}, ..., \max\{z_{1m}, z_{2m}, ...,
+z_{nm}\})\)</span></p>
+<p>同理有最小值向量<span class="math inline">\(Z^-\)</span></p>
+<p>得到第i个对象与理想解距离<span
+class="math inline">\(D_i^+\)</span>，与负理想解距离<span
+class="math inline">\(D_i^-\)</span></p>
+<p>得分：<span class="math inline">\(S_i = \frac{D_i^-}{D_i^+ +
+D_i^-}\)</span></p>
+<p>贴近度（将得分归一化）：<span
+class="math inline">\(S_i&#39;=\frac{S_i}{\Sigma S_i} \times
+100\%\)</span></p>
+<h2 id="python代码">python代码</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np  <span class="hljs-comment"># 导入numpy库，用于进行科学计算</span><br><br><span class="hljs-comment"># 从用户输入中接收参评数目和指标数目，并将输入的字符串转换为数值</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;请输入参评数目：&quot;</span>)<br>n = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())  <span class="hljs-comment"># 接收参评数目</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;请输入指标数目：&quot;</span>)<br>m = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())  <span class="hljs-comment"># 接收指标数目</span><br><br><span class="hljs-comment"># 接收用户输入的类型矩阵，该矩阵指示了每个指标的类型（极大型、极小型等）</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;请输入类型矩阵：1:极大型，2：极小型，3：中间型，4：区间型&quot;</span>)<br>kind = <span class="hljs-built_in">input</span>().split(<span class="hljs-string">&quot; &quot;</span>)  <span class="hljs-comment"># 将输入的字符串按空格分割，形成列表</span><br><br><span class="hljs-comment"># 接收用户输入的矩阵并转换为numpy数组</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;请输入矩阵：&quot;</span>)<br>A = np.zeros(shape=(n, m))  <span class="hljs-comment"># 初始化一个n行m列的全零矩阵A</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>    A[i] = <span class="hljs-built_in">input</span>().split(<span class="hljs-string">&quot; &quot;</span>)  <span class="hljs-comment"># 接收每行输入的数据</span><br>    A[i] = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">float</span>, A[i]))  <span class="hljs-comment"># 将接收到的字符串列表转换为浮点数列表</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;输入矩阵为：\n&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(A))  <span class="hljs-comment"># 打印输入的矩阵A</span><br><br><span class="hljs-comment"># 极小型指标转化为极大型指标的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">minTomax</span>(<span class="hljs-params">maxx, x</span>):<br>    x = <span class="hljs-built_in">list</span>(x)  <span class="hljs-comment"># 将输入的指标数据转换为列表</span><br>    ans = [[(maxx-e)] <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> x]  <span class="hljs-comment"># 计算最大值与每个指标值的差，并将其放入新列表中</span><br>    <span class="hljs-keyword">return</span> np.array(ans)  <span class="hljs-comment"># 将列表转换为numpy数组并返回</span><br><br><span class="hljs-comment"># 中间型指标转化为极大型指标的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">midTomax</span>(<span class="hljs-params">bestx, x</span>):<br>    x = <span class="hljs-built_in">list</span>(x)  <span class="hljs-comment"># 将输入的指标数据转换为列表</span><br>    h = [<span class="hljs-built_in">abs</span>(e-bestx) <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> x]  <span class="hljs-comment"># 计算每个指标值与最优值之间的绝对差</span><br>    M = <span class="hljs-built_in">max</span>(h)  <span class="hljs-comment"># 找到最大的差值</span><br>    <span class="hljs-keyword">if</span> M == <span class="hljs-number">0</span>:<br>        M = <span class="hljs-number">1</span>  <span class="hljs-comment"># 防止最大差值为0的情况</span><br>    ans = [[(<span class="hljs-number">1</span>-e/M)] <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> h]  <span class="hljs-comment"># 计算每个差值占最大差值的比例，并从1中减去，得到新指标值</span><br>    <span class="hljs-keyword">return</span> np.array(ans)  <span class="hljs-comment"># 返回处理后的numpy数组</span><br><br><span class="hljs-comment"># 区间型指标转化为极大型指标的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">regTomax</span>(<span class="hljs-params">lowx, highx, x</span>):<br>    x = <span class="hljs-built_in">list</span>(x)  <span class="hljs-comment"># 将输入的指标数据转换为列表</span><br>    M = <span class="hljs-built_in">max</span>(lowx-<span class="hljs-built_in">min</span>(x), <span class="hljs-built_in">max</span>(x)-highx)  <span class="hljs-comment"># 计算指标值超出区间的最大距离</span><br>    <span class="hljs-keyword">if</span> M == <span class="hljs-number">0</span>:<br>        M = <span class="hljs-number">1</span>  <span class="hljs-comment"># 防止最大距离为0的情况</span><br>    ans = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)):<br>        <span class="hljs-keyword">if</span> x[i]&lt;lowx:<br>            ans.append([(<span class="hljs-number">1</span>-(lowx-x[i])/M)])  <span class="hljs-comment"># 如果指标值小于下限，则计算其与下限的距离比例</span><br>        <span class="hljs-keyword">elif</span> x[i]&gt;highx:<br>            ans.append([(<span class="hljs-number">1</span>-(x[i]-highx)/M)])  <span class="hljs-comment"># 如果指标值大于上限，则计算其与上限的距离比例</span><br>        <span class="hljs-keyword">else</span>:<br>            ans.append([<span class="hljs-number">1</span>])  <span class="hljs-comment"># 如果指标值在区间内，则直接取为1</span><br>    <span class="hljs-keyword">return</span> np.array(ans)  <span class="hljs-comment"># 返回处理后的numpy数组</span><br><br><span class="hljs-comment"># 统一指标类型，将所有指标转化为极大型指标</span><br>X = np.zeros(shape=(n, <span class="hljs-number">1</span>))<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>    <span class="hljs-keyword">if</span> kind[i]==<span class="hljs-string">&quot;1&quot;</span>:  <span class="hljs-comment"># 如果当前指标为极大型，则直接使用原值</span><br>        v = np.array(A[:, i])<br>    <span class="hljs-keyword">elif</span> kind[i]==<span class="hljs-string">&quot;2&quot;</span>:  <span class="hljs-comment"># 如果当前指标为极小型，调用minTomax函数转换</span><br>        maxA = <span class="hljs-built_in">max</span>(A[:, i])<br>        v = minTomax(maxA, A[:, i])<br>    <span class="hljs-keyword">elif</span> kind[i]==<span class="hljs-string">&quot;3&quot;</span>:  <span class="hljs-comment"># 如果当前指标为中间型，调用midTomax函数转换</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;类型三：请输入最优值：&quot;</span>)<br>        bestA = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())<br>        v = midTomax(bestA, A[:, i])<br>    <span class="hljs-keyword">elif</span> kind[i]==<span class="hljs-string">&quot;4&quot;</span>:  <span class="hljs-comment"># 如果当前指标为区间型，调用regTomax函数转换</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;类型四：请输入区间[a, b]值a：&quot;</span>)<br>        lowA = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;类型四：请输入区间[a, b]值b：&quot;</span>)<br>        highA = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())<br>        v = regTomax(lowA, highA, A[:, i])<br>    <span class="hljs-keyword">if</span> i==<span class="hljs-number">0</span>:<br>        X = v.reshape(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)  <span class="hljs-comment"># 如果是第一个指标，直接替换X数组</span><br>    <span class="hljs-keyword">else</span>:<br>        X = np.hstack([X, v.reshape(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)])  <span class="hljs-comment"># 如果不是第一个指标，则将新指标列拼接到X数组上</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;统一指标后矩阵为：\n&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(X))  <span class="hljs-comment"># 打印处理后的矩阵X</span><br><br><span class="hljs-comment"># 对统一指标后的矩阵X进行标准化处理</span><br>X = X.astype(<span class="hljs-string">&#x27;float&#x27;</span>)  <span class="hljs-comment"># 确保X矩阵的数据类型为浮点数</span><br><span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>    X[:, j] = X[:, j]/np.sqrt(<span class="hljs-built_in">sum</span>(X[:, j]**<span class="hljs-number">2</span>))  <span class="hljs-comment"># 对每一列数据进行归一化处理，即除以该列的欧几里得范数</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;标准化矩阵为：\n&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(X))  <span class="hljs-comment"># 打印标准化后的矩阵X</span><br><br><span class="hljs-comment"># 最大值最小值距离的计算</span><br>x_max = np.<span class="hljs-built_in">max</span>(X, axis=<span class="hljs-number">0</span>)  <span class="hljs-comment"># 计算标准化矩阵每列的最大值</span><br>x_min = np.<span class="hljs-built_in">min</span>(X, axis=<span class="hljs-number">0</span>)  <span class="hljs-comment"># 计算标准化矩阵每列的最小值</span><br>d_z = np.sqrt(np.<span class="hljs-built_in">sum</span>(np.square((X - np.tile(x_max, (n, <span class="hljs-number">1</span>)))), axis=<span class="hljs-number">1</span>))  <span class="hljs-comment"># 计算每个参评对象与最优情况的距离d+</span><br>d_f = np.sqrt(np.<span class="hljs-built_in">sum</span>(np.square((X - np.tile(x_min, (n, <span class="hljs-number">1</span>)))), axis=<span class="hljs-number">1</span>))  <span class="hljs-comment"># 计算每个参评对象与最劣情况的距离d-</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;每个指标的最大值:&#x27;</span>, x_max)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;每个指标的最小值:&#x27;</span>, x_min)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;d+向量:&#x27;</span>, d_z)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;d-向量:&#x27;</span>, d_f)<br><br><span class="hljs-comment"># 计算每个参评对象的得分排名</span><br>s = d_f/(d_z+d_f)  <span class="hljs-comment"># 根据d+和d-计算得分s，其中s接近于1则表示较优，接近于0则表示较劣</span><br>Score = <span class="hljs-number">100</span>*s/<span class="hljs-built_in">sum</span>(s)  <span class="hljs-comment"># 将得分s转换为百分制，便于比较</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(Score)):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;第<span class="hljs-subst">&#123;i+<span class="hljs-number">1</span>&#125;</span>个标准化后百分制得分为：<span class="hljs-subst">&#123;Score[i]&#125;</span>&quot;</span>)  <span class="hljs-comment"># 打印每个参评对象的得分</span><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%A8%A1/" class="category-chain-item">数模</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E6%A8%A1/" class="print-no-link">#数模</a>
+      
+        <a href="/tags/%E6%A8%A1%E5%9E%8B/" class="print-no-link">#模型</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>TOPSIS法模型</div>
+      <div>http://example.com/2025/07/26/TOPSIS法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Kiriao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/26/python%E8%87%AA%E5%AD%A6/" title="Python简单的自学笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python简单的自学笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/25/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" title="层次分析法模型">
+                        <span class="hidden-mobile">层次分析法模型</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
