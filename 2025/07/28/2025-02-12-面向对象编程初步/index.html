@@ -19,15 +19,15 @@
   <meta name="author" content="Kiriao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&#125;void Stude">
+    <meta name="description" content="OOP的一些基本概念 oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&amp;#12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象编程">
+<meta property="og:title" content="面向对象编程 简单的自学">
 <meta property="og:url" content="http://example.com/2025/07/28/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/index.html">
 <meta property="og:site_name" content="Kiriao">
-<meta property="og:description" content="oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&#125;void Stude">
+<meta property="og:description" content="OOP的一些基本概念 oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&amp;#12">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-28T02:47:25.000Z">
-<meta property="article:modified_time" content="2025-07-28T12:48:00.234Z">
+<meta property="article:modified_time" content="2025-07-29T16:55:24.498Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="语法">
@@ -35,7 +35,7 @@
   
   
   
-  <title>面向对象编程 - Kiriao</title>
+  <title>面向对象编程 简单的自学 - Kiriao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="面向对象编程"></span>
+            <span id="subtitle" data-typed-text="面向对象编程 简单的自学"></span>
           
         </div>
 
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          893 字
+          3.3k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          8 分钟
+          28 分钟
         
       </span>
     
@@ -292,12 +292,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">面向对象编程</h1>
+            <h1 id="seo-header">面向对象编程 简单的自学</h1>
             
             
               <div class="markdown-body">
                 
-                <p>oop：类把对象的数据和操作数据的方法作为一个整体考虑</p>
+                <h4 id="oop的一些基本概念">OOP的一些基本概念</h4>
+<p>oop：类把对象的数据和操作数据的方法作为一个整体考虑</p>
 <p>类的成员可以是变量，也可以是函数。</p>
 <p>类的成员变量也叫属性。</p>
 <p>类的成员函数也叫方法/行为，类的成员函数可以定义在类的外面。</p>
@@ -306,11 +307,11 @@
 <p>类的成员变量和成员函数的作用域和生命周期与对象的作用域和生命周期相同。</p>
 <h4 id="类的访问权限">类的访问权限</h4>
 <p><code>public</code> <code>private</code> <code>protected</code></p>
-<p>在类的内部（类的成员函数中），无论成员被声明为public还是private,都是可以访问。</p>
-<p>在类的外部（定义类的代码之外），只能访问public成员，不能访问private、protected成员。</p>
-<p>在一个类体的定义中，private和public可以出现多次。</p>
-<p>结构体的成员缺省为public,类的成员缺省为private。</p>
-<p>private的意义在于隐藏类的数据和实现，把需要向外暴露的成员声明为public。</p>
+<p>在类的内部（类的成员函数中），无论成员被声明为<code>public</code>还是<code>private</code>,都是可以访问。</p>
+<p>在类的外部（定义类的代码之外），只能访问<code>public</code>成员，不能访问<code>private</code>、<code>protected</code>成员。</p>
+<p>在一个类体的定义中，<code>private</code>和<code>public</code>可以出现多次。</p>
+<p>结构体的成员缺省为<code>public</code>,类的成员缺省为<code>private</code>。</p>
+<p><code>private</code>的意义在于隐藏类的数据和实现，把需要向外暴露的成员声明为<code>public</code>。</p>
 <h4 id="类的简单使用">类的简单使用</h4>
 <p>1)类的成员函数可以直接访问该类其它的成员函数。</p>
 <p>2)类的成员函数可以重载。</p>
@@ -321,20 +322,23 @@
 <p>5)可以为类的成员指定缺省值(C++11标准)。</p>
 <p>6)类可以创建对象数组</p>
 <p>7)对象可以作为实参传递给函数，一般传引用。</p>
-<p>8)可以用new动态创建对象，用delete释放对象。</p>
+<p>8)可以用<code>new</code>动态创建对象，用<code>delete</code>释放对象。</p>
 <p>9)在类的外部，一般不直接访问（读和写）对象的成员，而是用成员函数。</p>
-<p>10)对象一般不用memset0清空成员变量，可以写一个专用于清空成员变量的成员函数。</p>
-<p>11)对类和对象用sizeof运算符意义不大，一般不用。</p>
+<p>10)对象一般不用<code>memset()</code>清空成员变量，可以写一个专用于清空成员变量的成员函数。</p>
+<p>11)对类和对象用<code>sizeof</code>运算符意义不大，一般不用。</p>
 <p>12)用结构体描述纯粹的数据，用类描述对象。</p>
 <p>13)类的分文件编写。</p>
 <h4 id="构造函数与析构函数">构造函数与析构函数</h4>
+<p>构造函数就是在构造一个类时，将该类的所有成员初始化的函数；析构函数则是在一个类结束生命时（函数结束或者被<code>delete</code>），将所有的类成员消灭，回收它们占有的空间的函数。</p>
+<p>构造函数与类同名，没有返回类型，构造时自动调用，可以重载。可以用于初始化，不能直接调用。</p>
+<p>析构函数也没有返回类型，析构时自动调用，没有参数，不能重载。不提倡主动调用析构函数。</p>
 <p><strong>构造函数</strong>：在创建对象时，自动进行初始化</p>
 <p><strong>析构函数</strong>：在销毁对象前，自动进行清理工作</p>
 <h5 id="构造函数">构造函数</h5>
 <p>语法：<code>类名()&#123;&#125;</code></p>
-<p>访问权限必须是public。</p>
+<p>访问权限必须是<code>public</code>。</p>
 <p>函数名必须与类名相同。</p>
-<p>没有返回值，也不写void。</p>
+<p>没有返回值，也不写<code>void</code>。</p>
 <p>可以有参数，可以重载，可以有默认参数。</p>
 <p>创建对象时会自动调用一次，不能手工调用。</p>
 <p>初始化应该使用<strong>成员初始化列表</strong></p>
@@ -344,7 +348,7 @@
 <p>语法 <code>~类名()&#123;&#125;</code></p>
 <p>访问权限必须是public</p>
 <p>名字要在类名前面加<code>~</code></p>
-<p>没有返回值，不写void</p>
+<p>没有返回值，不写<code>void</code></p>
 <p>没有参数，无法重载</p>
 <p>销毁对象前只会自动调用一次，但是可以手动调用</p>
 <h4 id="拷贝构造函数">拷贝构造函数</h4>
@@ -353,6 +357,128 @@
 <p>语法 <code>类名 (const 类名&amp; 对象名)&#123;&#125;</code></p>
 <p>函数传对象的形参的时候会调用拷贝析构函数</p>
 <h4 id="浅拷贝与深拷贝">浅拷贝与深拷贝</h4>
+<p>如果让一个<code>A</code>类型的类进行<code>A b=a;</code>这样的操作，则会调用（默认的）拷贝构造函数<code>A(const A&amp;)</code>，为<code>b</code>初始化。</p>
+<p>调用拷贝构造函数产生的效果分为浅拷贝和深拷贝。浅拷贝指的是只拷贝地址，深拷贝则是拷贝了地址上的内容。</p>
+<h4 id="初始化列表">初始化列表</h4>
+<p>在构造函数函数体前面可以采用类似于<code>A():a(b),c(d)</code>的操作，称为成员初始化列表。</p>
+<p>成员初始化列表不同于赋值。赋值是在对象存在以后再进行操作，而初始化则是直接在对象构造完成前进行操作。</p>
+<p>对于引用和<code>const</code>成员的初始化，只能在成员初始化列表中实现。</p>
+<p>初始化列表与赋值有本质的区别，如果成员是类，使用初始化列表调用的是成员类的拷贝构造函数，而赋值则是先创建成员类的对象（将调用成员类的普通构造函数），然后再赋值。</p>
+<p><strong>不能在成员初始化列表中初始化静态数据成员</strong></p>
+<h4 id="const修饰成员函数"><code>const</code>修饰成员函数</h4>
+<p>在类的成员函数后面加<code>const</code>关键字，表示在成员函数中保证不会修改调用对象的成员变量。</p>
+<p>在成员变量前面加上<code>mutable</code>关键字，即使是<code>const</code>修饰过的成员函数也可以修改调用对象的成员变量。</p>
+<p>非<code>const</code>成员函数可以调用<code>const</code>成员函数和非<code>const</code>成员函数</p>
+<p><code>const</code>成员函数不能调用非<code>const</code>成员函数。</p>
+<p><code>const</code>对象只能调用<code>const</code>成员函数</p>
+<p>给构造函数和析构函数加上<code>const</code>修饰符是非法的。</p>
+<h4 id="this指针"><code>this</code>指针</h4>
+<p>如果类的成员函数中涉及多个对象，需要使用<code>this</code>指针</p>
+<p><code>this</code>指针存放了对象的地址，它被作为隐藏参数传递给了成员函数，指向调用成员函数的对象（调用者对象）。</p>
+<p>每一个成员函数（包括构造函数与析构函数）都有一个<code>this</code>指针，可以用于访问调用者对象的成员。可以解决成员变量名与函数形参名相同的问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br><span class="hljs-keyword">private</span>:<br>	<span class="hljs-type">int</span> age;<br>	string name;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Student</span>(<span class="hljs-type">int</span> _age, string _name) : <span class="hljs-built_in">age</span>(_age), <span class="hljs-built_in">name</span>(_name) &#123;&#125;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span><br><span class="hljs-function">	</span>&#123;<br>		cout &lt;&lt; age &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; name &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	&#125;<br>	<span class="hljs-function"><span class="hljs-type">const</span> Student&amp; <span class="hljs-title">pk</span><span class="hljs-params">(<span class="hljs-type">const</span> Student&amp; s)</span> <span class="hljs-type">const</span></span><br><span class="hljs-function">	</span>&#123;<br>		<span class="hljs-keyword">if</span> (s.age &gt; age) &#123;<br>			<span class="hljs-keyword">return</span> s;<br>		&#125;<br>		<span class="hljs-keyword">else</span> &#123;<br>			<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>		&#125;<br>	&#125;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-function">Student <span class="hljs-title">s1</span><span class="hljs-params">(<span class="hljs-number">18</span>, <span class="hljs-string">&quot;A&quot;</span>)</span>, <span class="hljs-title">s2</span><span class="hljs-params">(<span class="hljs-number">19</span>, <span class="hljs-string">&quot;B&quot;</span>)</span>,</span><br><span class="hljs-function">	<span class="hljs-title">s3</span><span class="hljs-params">(<span class="hljs-number">20</span>, <span class="hljs-string">&quot;C&quot;</span>)</span>, <span class="hljs-title">s4</span><span class="hljs-params">(<span class="hljs-number">21</span>, <span class="hljs-string">&quot;D&quot;</span>)</span></span>;<br>	<br>	<span class="hljs-comment">//求出年龄最大的学生</span><br>	<span class="hljs-type">const</span> Student&amp; s = s<span class="hljs-number">1.</span><span class="hljs-built_in">pk</span>(s2).<span class="hljs-built_in">pk</span>(s3).<span class="hljs-built_in">pk</span>(s4);<br>	<br>	s.<span class="hljs-built_in">show</span>();<br>	<span class="hljs-comment">//21 D</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="静态成员">静态成员</h4>
+<p>包括静态成员变量和静态成员函数</p>
+<p>可以实现多个对象之间的数据共享</p>
+<p>普通对象的成员变量要先创建对象然后才能访问，静态成员变量不创建对象也能访问，而且必须在程序的全局区进行初始化，需要使用类的命名空间。</p>
+<p><strong>如果把类的成员声明为静态的，就可以把它和类的对象独立开来。（静态成员不属于对象）</strong></p>
+<p>类的公有静态成员的性质与全局变量和全局函数相同。</p>
+<p>类的静态成员函数只能访问类的静态成员而不能访问非静态成员。</p>
+<p>静态成员函数中没有<code>this</code>指针</p>
+<p><strong>类的私有静态成员在类外无法访问</strong></p>
+<p><code>const</code>静态成员变量可以在定义类的时候初始化，而不加<code>const</code>限定符则不行。</p>
+<h4 id="简单对象模型">简单对象模型</h4>
+<p>成员函数、成员变量、静态成员函数、静态成员变量，都是在内存中分散分布的。</p>
+<p>在没有创建对象的前提下，访问非静态成员变量就是访问空指针（这个时候<code>this</code>指针是<code>nullptr</code>）</p>
+<p>为了程序的鲁棒性，可以在成员函数中增加判断<code>this</code>指针是否为空的代码</p>
+<h4 id="友元">友元</h4>
+<p>友元提供了另一种访问类的私有成员的方案</p>
+<p><strong>在 C++ 标准里，友元函数（<code>friend</code>
+function）永远不是类的成员函数</strong>，即使你在类里面写了它的定义。</p>
+<p>C++ 标准规定：</p>
+<blockquote>
+<p><strong>友元函数是授予访问权限的外部函数，不属于类的成员函数。</strong></p>
+</blockquote>
+<h5 id="友元全局函数">友元全局函数</h5>
+<p>在友元全局函数中可以访问另一个类的所有成员</p>
+<p>声明友元的代码放在类中哪个位置都可以，一般放在最上面</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span><br>&#123;<br><span class="hljs-function"><span class="hljs-keyword">friend</span> <span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span>; <span class="hljs-comment">//声明友元</span><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout &lt;&lt; a;<br>    &#125;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	T t;<br>   t.<span class="hljs-built_in">show</span>(); <span class="hljs-comment">//不会报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="友元类">友元类</h5>
+<p>友元关系不能被继承</p>
+<p>友元关系是单向的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span><br>&#123;<br><span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Y</span>; <span class="hljs-comment">//声明友元</span><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout &lt;&lt; a;<br>    &#125;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Y</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">(T t)</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout&lt;&lt;t.a;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="友元成员函数">友元成员函数</h5>
+<p>在友元成员函数中可以访问另一个类的所有成员</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span>; <span class="hljs-comment">// 提前声明，避免循环依赖</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> &#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> x;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">A</span>(<span class="hljs-type">int</span> v) : <span class="hljs-built_in">x</span>(v) &#123;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">friend</span> <span class="hljs-type">void</span> <span class="hljs-title">B::showA</span><span class="hljs-params">(<span class="hljs-type">const</span> A&amp; obj)</span></span>; <span class="hljs-comment">// 指定 B 的成员函数是友元</span><br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">showA</span><span class="hljs-params">(<span class="hljs-type">const</span> A&amp; obj)</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>注意两点：</strong></p>
+<ol type="1">
+<li>先前向声明类 <code>B</code>，否则无法识别 <code>B::showA</code></li>
+<li>在类 <code>A</code> 中用 <code>friend</code> 声明
+<code>B::showA</code>，使它能访问 <code>A</code> 的私有成员</li>
+</ol>
+<h4 id="运算符重载">运算符重载</h4>
+<p>语法<code>返回值 operator运算符(参数列表)</code></p>
+<p>运算符重载函数的返回值类型要与运算符本身的含义一致</p>
+<p><strong>非成员函数版本的重载运算符函数</strong>：形参个数与运算符的操作符个数相同</p>
+<p><strong>成员函数版本的重载运算符函数</strong>：多一个</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-type">int</span> x;<br>	<span class="hljs-built_in">T</span>(<span class="hljs-type">int</span> _x):<span class="hljs-built_in">x</span>(_x)&#123;&#125;<br>	T&amp; <span class="hljs-keyword">operator</span>+(<span class="hljs-type">int</span> a) <span class="hljs-comment">//注意，这里默认第一个参数是this指针</span><br>	&#123;<br>		x+=a;<br>		<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>	&#125;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-function">T <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;<br>	a=a<span class="hljs-number">+1</span>; <span class="hljs-comment">//正确</span><br>	<span class="hljs-comment">//a=1+a 错误</span><br>	cout&lt;&lt;a.x;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>如果想要实现1+a，就必须写成<strong>非成员函数（或友元）重载</strong></p>
+<p>而且这里的+的重载也不太对，应该重载+=更合适</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> x;<br><br>    <span class="hljs-comment">// 构造函数</span><br>    <span class="hljs-built_in">T</span>(<span class="hljs-type">int</span> _x): <span class="hljs-built_in">x</span>(_x) &#123;&#125;<br><br>    <span class="hljs-comment">// 1️⃣ += 运算符（修改自身）</span><br>    T&amp; <span class="hljs-keyword">operator</span>+=(<span class="hljs-type">const</span> T&amp; other) &#123;<br>        x += other.x;<br>        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 2️⃣ + 运算符（T + T）</span><br>    T <span class="hljs-keyword">operator</span>+(<span class="hljs-type">const</span> T&amp; other) <span class="hljs-type">const</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">T</span>(x + other.x); <span class="hljs-comment">// 返回新对象</span><br>    &#125;<br><br>    <span class="hljs-comment">// 3️⃣ + 运算符（T + int）</span><br>    T <span class="hljs-keyword">operator</span>+(<span class="hljs-type">int</span> a) <span class="hljs-type">const</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">T</span>(x + a); <span class="hljs-comment">// 返回新对象</span><br>    &#125;<br><br>    <span class="hljs-comment">// 4️⃣ + 运算符（int + T）—— 必须是非成员</span><br>    <span class="hljs-keyword">friend</span> T <span class="hljs-keyword">operator</span>+(<span class="hljs-type">int</span> lhs, <span class="hljs-type">const</span> T&amp; rhs) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">T</span>(lhs + rhs.x); <span class="hljs-comment">// 返回新对象</span><br>    &#125;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-function">T <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;<br><br>    <span class="hljs-comment">// 1. 支持 T + int</span><br>    cout &lt;&lt; (a + <span class="hljs-number">3</span>).x &lt;&lt; endl;  <span class="hljs-comment">// 输出 4</span><br><br>    <span class="hljs-comment">// 2. 支持 int + T</span><br>    cout &lt;&lt; (<span class="hljs-number">3</span> + a).x &lt;&lt; endl;  <span class="hljs-comment">// 输出 4</span><br><br>    <span class="hljs-comment">// 3. 支持 T + T</span><br>    cout &lt;&lt; (a + a).x &lt;&lt; endl;  <span class="hljs-comment">// 输出 2</span><br><br>    <span class="hljs-comment">// 4. 支持 a += (a + 3)</span><br>    a += (a + <span class="hljs-number">3</span>);               <span class="hljs-comment">// a = 1 + (1+3) = 5</span><br>    cout &lt;&lt; a.x &lt;&lt; endl;        <span class="hljs-comment">// 输出 5</span><br><br>    <span class="hljs-comment">// 5. 支持 a += (a + (a + 3))</span><br>    a += (a + (a + <span class="hljs-number">3</span>));         <span class="hljs-comment">// 计算步骤: a+(a+3)=5+(5+3)=13, a+=13 -&gt; 18</span><br>    cout &lt;&lt; a.x &lt;&lt; endl;        <span class="hljs-comment">// 输出 18</span><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><code>this</code> 是 <code>T*</code>，所以 <code>*this</code>
+是一个左值</p>
+<p>返回类型如果是 <code>T&amp;</code>，<code>return *this</code>
+就是返回当前对象的引用</p>
+<blockquote>
+<p>C++
+里<strong>左值（lvalue）</strong>和<strong>右值（rvalue）</strong>是表达式分类的核心概念，理解这个概念后，你就能明白为什么
+<code>return *this</code>
+能返回引用、为什么某些表达式可以取地址而有些不行。下面我帮你用简单的语言和例子详细解释。</p>
+<hr />
+<h2 id="定义">1️⃣ 定义</h2>
+<h3 id="左值lvalue"><strong>左值（lvalue）</strong></h3>
+<ul>
+<li><strong>lvalue = location value</strong></li>
+<li>可以表示<strong>内存中有明确地址</strong>、<strong>可以取地址</strong>的对象</li>
+<li>通常可以出现在赋值号左边（所以叫左值）</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> x = <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span>* p = &amp;x; <span class="hljs-comment">// ✅ x是左值，有地址</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="右值rvalue"><strong>右值（rvalue）</strong></h3>
+<ul>
+<li><strong>rvalue = read value</strong></li>
+<li>临时值或字面量，<strong>没有稳定的内存地址</strong>（无法取地址）</li>
+<li>通常只能出现在赋值号右边</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> x = <span class="hljs-number">10</span>;<br><span class="hljs-number">10</span> = x;      <span class="hljs-comment">// ❌ 10是右值，不能赋值</span><br><span class="hljs-type">int</span>* p = &amp;<span class="hljs-number">10</span>; <span class="hljs-comment">// ❌ 字面量没有可取的地址</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h2 id="常见示例">2️⃣ 常见示例</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a = <span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> b = <span class="hljs-number">10</span>;<br><br>a = b;       <span class="hljs-comment">// ✅ a是左值，b是左值（表达式结果是右值）</span><br>a = a + b;   <span class="hljs-comment">// a是左值，(a+b)是右值</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>左值表达式</strong>：变量名、解引用
+<code>*p</code>、返回引用的函数调用</li>
+<li><strong>右值表达式</strong>：字面量、算术表达式、返回值（非引用）的函数调用</li>
+</ul>
+<hr />
+<h2 id="左值右值与函数返回">3️⃣ 左值、右值与函数返回</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> x = <span class="hljs-number">5</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span>&amp; <span class="hljs-title">foo1</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-keyword">return</span> x; &#125;  <span class="hljs-comment">// 返回左值引用</span><br><span class="hljs-function"><span class="hljs-type">int</span>  <span class="hljs-title">foo2</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-keyword">return</span> x; &#125;  <span class="hljs-comment">// 返回值</span><br><br><span class="hljs-built_in">foo1</span>() = <span class="hljs-number">10</span>; <span class="hljs-comment">// ✅ 返回左值引用，可以赋值</span><br><span class="hljs-built_in">foo2</span>() = <span class="hljs-number">10</span>; <span class="hljs-comment">// ❌ 返回右值，临时对象不可赋值</span><br></code></pre></td></tr></table></figure>
+<p>这也解释了为什么<strong>运算符重载</strong>中：</p>
+<ul>
+<li><code>operator+=</code> 返回
+<code>T&amp;</code>，因为我们希望它是左值，支持链式赋值</li>
+<li><code>operator+</code> 返回
+<code>T</code>，因为结果是临时值，应该是右值</li>
+</ul>
+<h2 id="总结口诀">总结口诀</h2>
+<ul>
+<li><strong>左值：能取地址，有名字，能放在<code>=</code>左边</strong></li>
+<li><strong>右值：临时值，没稳定地址，通常只能放在<code>=</code>右边</strong></li>
+<li>返回引用 → 左值</li>
+<li>返回值 → 右值（除非是 <code>static</code> 局部或优化）</li>
+</ul>
+</blockquote>
 
                 
               </div>
@@ -400,7 +526,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>面向对象编程</div>
+      <div>面向对象编程 简单的自学</div>
       <div>http://example.com/2025/07/28/2025-02-12-面向对象编程初步/</div>
     </div>
     <div class="license-meta">
