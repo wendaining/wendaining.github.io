@@ -27,7 +27,7 @@
 <meta property="og:description" content="OOP的一些基本概念 oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&amp;#12">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-05T08:18:25.000Z">
-<meta property="article:modified_time" content="2025-08-05T08:18:28.709Z">
+<meta property="article:modified_time" content="2025-08-06T09:47:10.713Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="语法">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.4k 字
+          6.4k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          37 分钟
+          54 分钟
         
       </span>
     
@@ -307,6 +307,15 @@
 <p>类的成员变量和成员函数的作用域和生命周期与对象的作用域和生命周期相同。</p>
 <h4 id="类的访问权限">类的访问权限</h4>
 <p><code>public</code> <code>private</code> <code>protected</code></p>
+<p><strong>区别体现在类的外部或派生类</strong></p>
+<ul>
+<li><strong><code>public</code></strong>：
+外部可以访问（通过对象），派生类可以访问。</li>
+<li><strong><code>protected</code></strong>： 外部
+<strong>不能访问</strong>，派生类 <strong>可以访问</strong>。</li>
+<li><strong><code>private</code></strong>： 外部
+<strong>不能访问</strong>，派生类 <strong>也不能直接访问</strong>。</li>
+</ul>
 <p>在类的内部（类的成员函数中），无论成员被声明为<code>public</code>还是<code>private</code>,都是可以访问。</p>
 <p>在类的外部（定义类的代码之外），只能访问<code>public</code>成员，不能访问<code>private</code>、<code>protected</code>成员。</p>
 <p>在一个类体的定义中，<code>private</code>和<code>public</code>可以出现多次。</p>
@@ -533,6 +542,130 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
 <p>[!WARNING]</p>
 <p>应谨慎地使用隐式转换</p>
 </blockquote>
+<h4 id="类的继承">类的继承</h4>
+<p>继承：一个类从另一个类获得成员的过程</p>
+<p>被继承的类：基类或父类</p>
+<p>继承的类：派生类或子类</p>
+<p>语法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&#123;<br> <span class="hljs-comment">/*</span><br><span class="hljs-comment"> */</span><br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">G</span>:<span class="hljs-keyword">public</span> T<br>&#123;<br>...<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="继承方式">继承方式</h5>
+<p><code>public</code> <code>protected</code> <code>private</code></p>
+<blockquote>
+<p>当类 B <strong>继承</strong> 自类 A
+时，<strong>基类成员在派生类中的权限会受到继承方式的影响：</strong></p>
+<table style="width:100%;">
+
+<thead>
+<tr>
+<th>基类成员</th>
+<th>public继承</th>
+<th>protected继承</th>
+<th>private继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>派生类中仍是 <code>public</code></td>
+<td>派生类中变成 <code>protected</code></td>
+<td>派生类中变成 <code>private</code></td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>派生类中仍是 <code>protected</code></td>
+<td>派生类中仍是 <code>protected</code></td>
+<td>派生类中变成 <code>private</code></td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>无法继承（不可见）</td>
+<td>无法继承（不可见）</td>
+<td>无法继承（不可见）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📌 注：无论什么继承方式，<strong>基类的 <code>private</code>
+成员永远不会被继承到派生类中</strong>（即使继承了也访问不到）。</p>
+</blockquote>
+</blockquote>
+<p>由于private和protected继承方式会改变基类成员在派生类中的访问权限，导致继承关系复杂，所以，在实际开发中，一般使用public。</p>
+<p>在派生类中，可以通过基类的公有成员函数间接访问基类的私有成员。</p>
+<p><strong>使用using关键字可以改变基类成员在派生类中的访问权限。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> a;<br><span class="hljs-keyword">protected</span>:<br>    <span class="hljs-type">int</span> b;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> c;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> : <span class="hljs-keyword">public</span> A<br>&#123;<br><span class="hljs-comment">//原本来说，a是public的，b是protected的，c是不可见的</span><br><span class="hljs-comment">//现在使用using进行调整</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-keyword">using</span> A::b;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-keyword">using</span> A::a;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>注意：using只能改变基类中public和protected成员的访问权限，不能改变private成员的访问权限，因为基类中private成员派生类中是不可见的，根本不能使用。</p>
+</blockquote>
+<h5 id="类继承的对象模型">类继承的对象模型</h5>
+<p>创建派生类对象时，先调用基类的构造函数，再调用派生类的构造函数。</p>
+<p>销毁派生类对象时，先调用派生类的析构函数，再调用基类的析构函数。</p>
+<p>创建派生类对象时只会申请一次内存，派生类对象包含了基类对象的内存空间，this指针是相同的。</p>
+<p>创建派生类对象时，先初始化基类对象，再初始化派生类对象。</p>
+<h5 id="如何构造基类">如何构造基类</h5>
+<p>派生类构造函数的要点如下：</p>
+<ol type="1">
+<li><p>创建派生类对象时，程序首先调用基类构造函数，然后再调用派生类构造函数。</p></li>
+<li><p>如果没以指定基类构造函数，将使用基类的默认构造函数。</p></li>
+<li><p>可以用初始化列表指明要使用的基类构造函数。</p></li>
+<li><p>基类构造函数负责初始化被继承的数据成员；派生类构造函数主要用于初始化新增的数据成员。</p></li>
+<li><p>派生类的构造函数总是调用一个基类构造函数，包括拷贝构造函数。</p></li>
+</ol>
+<p>基类的成员变量必须由基类的构造函数初始化！</p>
+<h5 id="名字遮蔽与类作用域">名字遮蔽与类作用域</h5>
+<p>如果派生类中的成员（包括成员变量和成员函数）和基类中的成员重名，通过派生类对象或者在派生类的成员函数中使用该成员时，将使用派生类新增的成员，而不是基类的。</p>
+<p>基类的成员函数和派生类的成员函数不会构成重载，如果派生类有同名函数，那么就会遮蔽基类中的<strong>所有同名函数</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;a&quot;</span>;<br>    &#125;<br>    <span class="hljs-comment">//重载成员函数</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout &lt;&lt; x;<br>    &#125;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> : <span class="hljs-keyword">public</span> A<br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">20</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;b&quot;</span>;<br>    &#125; <span class="hljs-comment">//注释掉这个函数就不会报错（不会遮蔽）</span><br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    B b;<br>    b.<span class="hljs-built_in">func</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">//会报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>在成员名前面加类名和域解析符可以访问对象的成员。如果不存在继承关系，类名和域解析符可以省略不写。</p>
+<p>当存在继承关系时，基类的作用域嵌套在派生类的作用域中。如果成员在派生类的作用域已经找到，就不会在基类作用域中继续查找；如果没有找到，则继续在基类作用域中查找。<strong>（为什么会有名字遮蔽）</strong></p>
+<p>如果在成员的前面加上类名和域解析符，就可以直接使用该作用域的成员。</p>
+<h5 id="继承的特殊关系">继承的特殊关系</h5>
+<p>派生类和基类之间有一些特殊关系：</p>
+<p>如果继承方式是公有的，派生类对象可以使用基类成员。</p>
+<p>可以把派生类对象赋值给基类对象（包括私有成员），但是，会舍弃非基类的成员。</p>
+<p>基类指针可以在不进行显式转换的情况下指向派生类对象。</p>
+<p>基类引用可以在不进行显式转换的情况下引用派生类对象。</p>
+<h5 id="多继承与虚继承">多继承与虚继承</h5>
+<p><code>class C : public A, public B &#123;&#125;;</code></p>
+<p>菱形继承：</p>
+<p>A有两个子类B, C，D继承了B, C</p>
+<p>会有二义性，冗余</p>
+<p>加上<code>virtual</code>关键字</p>
+<p><code>class C : virtual public A, virtual public B &#123;&#125;;</code></p>
+<h4 id="类的多态">类的多态</h4>
+<p>基类指针只能调用基类的成员函数，不能调用派生类的成员函数。</p>
+<p>如果在基类的成员函数前加virtual关键字，把它声明为虚函数，基类指针就可以调用派生类中同名的成员函数，通过派生类中同名的成员函数，就可以访问派生对象的成员变量。</p>
+<p>有了虚函数，基类指针指向基类对象时就使用基类的成员函数和数据，指向派生类对象时就使用派生类的成员函数和数据，基类指针表现出了多种形式，这种现象称为多态。</p>
+<p>基类引用也可以使用多态。</p>
+<blockquote>
+<p>[!CAUTION]</p>
+<ol type="1">
+<li><p>只需在基类的函数声明中加上virtual关键字，函数定义时不能加。</p></li>
+<li><p>在派生类中重定义虚函数时，函数特征要相同。</p></li>
+<li><p>当在基类中定义了虚函数时，如果派生类没有重定义该函数，那么将使用基类的虚函数。</p></li>
+<li><p>名字遮蔽和重载函数的规则也适用于虚函数。</p></li>
+<li><p>在派生类中重定义了虚函数的情况下，如果想使用基类的函数，可以加类名和域解析符。</p></li>
+<li><p>如果要在派生类中重新定义基类的函数，则将它设置为虚函数；否则，不要设置为虚函数，有两方面的好处：首先效率更高；其次，指出不要重新定义该函数。</p></li>
+</ol>
+</blockquote>
+<h5 id="多态的应用场景">多态的应用场景</h5>
+<ul>
+<li>基类的虚函数实现基本功能</li>
+<li>派生类重定义虚函数，扩展功能、提升性能、实现个性化功能</li>
+</ul>
+<h5 id="如何析构派生类">如何析构派生类</h5>
+<p>派生类的析构函数在执行完后，会自动执行基类的析构函数</p>
+<p>为了实现多态的稳定性，把<strong>基类的析构函数设置为虚函数</strong></p>
+<p><strong>构造函数和析构函数不能继承</strong></p>
+<p><strong>赋值运算符函数和友元函数不能继承</strong></p>
+<p>析构函数可以手动调用，如果对象中有堆内存，析构函数中此代码是必要的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">delete</span> ptr;<br>ptr = <span class="hljs-literal">nullptr</span>;<br></code></pre></td></tr></table></figure>
+<p>对于基类而言，即使它不需要析构函数，也应该提供一个空的虚析构函数</p>
+<h5 id="纯虚函数与抽象类">纯虚函数与抽象类</h5>
+<p>纯虚函数：基类中的函数不需要任何缺省与功能</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<p>含有纯虚函数的类被称为<strong>抽象类</strong>，不能实例化对象，可以创建指针和引用</p>
+<p><strong>纯虚析构函数一定要有代码实现</strong>，意义在于有时候想让一个类成为抽象类，但是又刚好没有任何纯虚函数，怎么办？方法：在想要成为抽象类的类中声明一个纯虚析构函数。</p>
 
                 
               </div>
@@ -624,6 +757,12 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2025/08/05/Web%E5%9F%BA%E7%A1%80/" title="Web基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Web基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
