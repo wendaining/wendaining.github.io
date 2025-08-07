@@ -22,12 +22,12 @@
     <meta name="description" content="OOP的一些基本概念 oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象编程 简单的自学">
-<meta property="og:url" content="http://example.com/2025/08/05/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/index.html">
+<meta property="og:url" content="http://example.com/2025/08/07/2025-02-12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5/index.html">
 <meta property="og:site_name" content="Kiriao">
 <meta property="og:description" content="OOP的一些基本概念 oop：类把对象的数据和操作数据的方法作为一个整体考虑 类的成员可以是变量，也可以是函数。 类的成员变量也叫属性。 类的成员函数也叫方法&#x2F;行为，类的成员函数可以定义在类的外面。 12345678910class Student&#123;public:    string name;    int age;    void show(); &#x2F;&#x2F;在类中进行声明&amp;#12">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-05T08:18:25.000Z">
-<meta property="article:modified_time" content="2025-08-06T09:47:10.713Z">
+<meta property="article:published_time" content="2025-08-07T04:18:25.000Z">
+<meta property="article:modified_time" content="2025-08-07T07:52:26.510Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="语法">
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-05 16:18" pubdate>
-          2025年8月5日 下午
+        <time datetime="2025-08-07 12:18" pubdate>
+          2025年8月7日 中午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.4k 字
+          7.4k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          54 分钟
+          63 分钟
         
       </span>
     
@@ -666,6 +666,85 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
 <p>含有纯虚函数的类被称为<strong>抽象类</strong>，不能实例化对象，可以创建指针和引用</p>
 <p><strong>纯虚析构函数一定要有代码实现</strong>，意义在于有时候想让一个类成为抽象类，但是又刚好没有任何纯虚函数，怎么办？方法：在想要成为抽象类的类中声明一个纯虚析构函数。</p>
+<h4
+id="运行阶段类型识别与dynamic_cast关键字">运行阶段类型识别与<code>dynamic_cast</code>关键字</h4>
+<p>运行阶段类型识别(RTTI RunTime Type
+Identification)为程序在运行阶段确定对象的类型，只适用于包含虚函数的类。</p>
+<p><code>dynamic_cast</code>运算符将指向基类的指针生成指向派生类的指针</p>
+<p>语法
+<code>派生类指针 = dynamic_cast&lt;派生类类型 *&gt; (基类指针)</code></p>
+<p><code>dynamic_cast</code>只适用于包含虚函数的类</p>
+<h4
+id="typeid运算符与type_info类"><code>typeid</code>运算符与<code>type_info</code>类</h4>
+<p><strong><code>typeid</code> 运算符</strong></p>
+<ul>
+<li>是 C++ 提供的一个<strong>运行时类型识别（RTTI）机制</strong>。</li>
+<li>用法：<code>typeid(expression)</code></li>
+<li>返回一个 <code>const std::type_info&amp;</code>
+对象，描述表达式的<strong>真实类型</strong>。</li>
+</ul>
+<p><strong><code>type_info</code> 类</strong></p>
+<ul>
+<li>是 <code>&lt;typeinfo&gt;</code>
+头文件中定义的一个类，封装了类型信息。</li>
+<li>你不能直接创建 <code>type_info</code> 对象，但可以通过
+<code>typeid</code> 获得它的引用。</li>
+<li>常用方法：
+<ul>
+<li><code>name()</code>：返回一个平台相关的类型名（通常是
+mangled，需要用 <code>abi::__cxa_demangle</code> 解码）。</li>
+<li><code>before()</code>：用于排序类型。</li>
+<li><code>operator==</code>、<code>operator!=</code>：比较类型是否相同。</li>
+</ul></li>
+</ul>
+<h4 id="函数模板">函数模板</h4>
+<p>函数模板是通用的数据类型，用任意数据类型（泛型）来描述函数</p>
+<p>生成函数定义的过程被称为实例化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Swap</span><span class="hljs-params">(T&amp; a, T&amp; b)</span></span><br><span class="hljs-function"></span>&#123;<br>	T temp = a;<br>	a = b;<br>	b = temp;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>	<span class="hljs-type">int</span> b = <span class="hljs-number">20</span>;<br>	<span class="hljs-built_in">Swap</span>(a, b);<br>	cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果不想让编译器自动推导数据类型，可以这样写：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a = <span class="hljs-number">10</span>;<br>	<span class="hljs-type">int</span> b = <span class="hljs-number">20</span>;<br>	Swap &lt;<span class="hljs-type">int</span>&gt; (a, b);<br>	cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="函数模板的注意事项">函数模板的注意事项</h5>
+<p>可以为类的成员函数创建模板，但不能是虚函数和析构函数。</p>
+<p>使用函数模板时，必须明确数据类型，确保实参与函数模板能匹配上。</p>
+<p>使用函数模板时，推导的数据类型必须适应函数模板中的代码。</p>
+<p>使用函数模板时，如果是自动类型推导，不会发生隐式类型转换，如果显式指定了函数模板的数据类型，可以发生隐式类型转换。</p>
+<p>函数模板支持多个通用数据类型的参数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func</span><span class="hljs-params">(T1 a, T2 b)</span></span><br><span class="hljs-function"></span>&#123;<br>	cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>函数模板支持重载，可以有非通用数据类型的参数。</p>
+<h5 id="函数模板的具体化">函数模板的具体化</h5>
+<p>可以提供一个具体化的函数定义，当编译器找到与函数调用匹配的具体化定义时，将使用该定义，不再寻找模板。</p>
+<p>语法
+<code>template &lt;&gt; 函数定义(非通用数据类型的参数列表)</code></p>
+<p>编译器使用函数的规则顺序：<strong>普通函数，函数模板，特化函数模板，重载函数</strong></p>
+<h5 id="函数模板高级-cpp11">函数模板高级 (cpp11+)</h5>
+<h6 id="decltype关键字"><code>decltype</code>关键字</h6>
+<p>操作符，用于查询表达式的数据类型</p>
+<p>语法 <code>decltype(expression) var;</code></p>
+<p>这个操作符会返回数据类型，可以用它定义变量</p>
+<p>比如<code>decltype(1+1) a;</code>等价于<code>int a;</code></p>
+<p>这个操作符只会分析类型，<strong>不会执行表达式</strong></p>
+<p>一些规则：</p>
+<ol type="1">
+<li><p>如果expression是没有用括号括起来的标识符，则var的类型与该标识符的类型相同，包括const等限定符。</p></li>
+<li><p>如果expression是函数调用，则var的类型与函数的返回值类型相同（函数不能返回void,但可以返回void*）</p></li>
+<li><p>如果expression是左值（能取地址）（要排除第一种情况）、或者用括号括起来的标识符，那么var的类型是expression的引用。</p>
+<ul>
+<li><p>左值的情况：</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">decltype</span>(++a) b; <span class="hljs-comment">//b的类型是int&amp;</span><br></code></pre></td></tr></table></figure></p></li>
+<li><p>括号的情况：</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">decltype</span>(a) b; <span class="hljs-comment">//b的类型是int</span><br><span class="hljs-keyword">decltype</span>((a)) b; <span class="hljs-comment">//b的类型是int&amp;</span><br></code></pre></td></tr></table></figure></p></li>
+</ul></li>
+<li><p>如果上面的条件都不满足，则var的类型与expression的类型相同</p></li>
+</ol>
+<h6 id="函数后置返回类型">函数后置返回类型</h6>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <br>&#125;<br><span class="hljs-comment">// 等价于</span><br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">func</span><span class="hljs-params">()</span> -&gt; <span class="hljs-type">int</span></span><br><span class="hljs-function"></span>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里的<code>auto</code>相当于一个占位符</p>
+<p>这个意义在于函数模板返回值未定的情况下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;<br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">add</span><span class="hljs-params">(T1 a, T2 b)</span> -&gt; <span class="hljs-title">decltype</span><span class="hljs-params">(a+b)</span> <span class="hljs-comment">//必须写在后面，cpp的解释是后面才是a和b的作用域</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> a+b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h6 id="c14的auto关键字">C++14的<code>auto</code>关键字</h6>
+<p>cpp14做了一个优化，函数可以直接用<code>auto</code>当返回值，不需要尾随返回类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;<br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">add</span><span class="hljs-params">(T1 a, T2 b)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> a+b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="类模板">类模板</h4>
 
                 
               </div>
@@ -714,7 +793,7 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
   <div class="license-box my-3">
     <div class="license-title">
       <div>面向对象编程 简单的自学</div>
-      <div>http://example.com/2025/08/05/2025-02-12-面向对象编程初步/</div>
+      <div>http://example.com/2025/08/07/2025-02-12-面向对象编程初步/</div>
     </div>
     <div class="license-meta">
       
@@ -726,7 +805,7 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年8月5日</div>
+          <div>2025年8月7日</div>
         </div>
       
       
@@ -758,18 +837,12 @@ function）永远不是类的成员函数</strong>，即使你在类里面写了
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/05/Web%E5%9F%BA%E7%A1%80/" title="Web基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Web基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/28/%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B/" title="灰色关联分析模型">
-                        <span class="hidden-mobile">灰色关联分析模型</span>
+                      <a href="/2025/08/05/Web%E5%9F%BA%E7%A1%80/" title="Web基础">
+                        <span class="hidden-mobile">Web基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
