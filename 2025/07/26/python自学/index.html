@@ -27,7 +27,7 @@
 <meta property="og:description" content="split方法用于将一个字符串分割成多个小的子字符串，并返回一个列表 123persons &#x3D; &quot;Mike Jerry Tom&quot;result &#x3D; persons.split()  # 将字符串使用默认分隔符（空格）拆分成多个小的子字符串print(result)  # 输出: [&#x27;Mike&#x27;, &#x27;Jerry&#x27;, &#x27;Tom&amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-26T09:50:25.000Z">
-<meta property="article:modified_time" content="2025-08-06T10:25:53.773Z">
+<meta property="article:modified_time" content="2025-08-07T11:39:50.263Z">
 <meta property="article:author" content="Kiriao">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Python">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.2k 字
+          5.8k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          44 分钟
+          49 分钟
         
       </span>
     
@@ -466,6 +466,101 @@ math模块会把参数转换成浮点数。</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">max</span>(<span class="hljs-params">a,b</span>):<br>    <span class="hljs-keyword">if</span> (a&gt;b):<br>        <span class="hljs-keyword">return</span> a<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> b<br></code></pre></td></tr></table></figure>
 <p>一个将小写字母转成大写字母的函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">changeChar</span>(<span class="hljs-params">a</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;a&#x27;</span>&lt;=a&lt;=<span class="hljs-string">&#x27;z&#x27;</span>:<br>        a=<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(a)-<span class="hljs-number">32</span>)<br>    <span class="hljs-keyword">return</span> a<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>你问的这个 <code>-&gt; int</code> 是 Python 中的
+<strong>类型注解（type
+hint）</strong>，表示这个函数的<strong>返回值类型是
+<code>int</code></strong>，即返回一个整数。</p>
+<hr />
+<h2 id="完整解释">✅ 完整解释：</h2>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php">python<br><br><br>复制编辑<br>def <span class="hljs-title function_ invoke__">maxVowels</span>(<span class="hljs-built_in">self</span>, <span class="hljs-attr">s</span>: str, <span class="hljs-attr">k</span>: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span>:<br></code></pre></td></tr></table></figure>
+<p>这里的语法是 Python 的
+<strong>函数签名注解</strong>，逐部分解释如下：</p>
+<table>
+
+<thead>
+<tr>
+<th>部分</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self</code></td>
+<td>表示这个函数是类的方法，第一个参数是对象自身（只能在类中定义）</td>
+</tr>
+<tr>
+<td><code>s: str</code></td>
+<td>表示参数 <code>s</code> 是一个字符串</td>
+</tr>
+<tr>
+<td><code>k: int</code></td>
+<td>表示参数 <code>k</code> 是一个整数</td>
+</tr>
+<tr>
+<td><code>-&gt; int</code></td>
+<td>表示这个函数<strong>最终返回一个整数</strong>（return 的值是 int
+类型）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="举个对比例子">🔁 举个对比例子：</h2>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">python复制编辑def <span class="hljs-title function_ invoke__">add</span>(<span class="hljs-attr">a</span>: <span class="hljs-keyword">int</span>, <span class="hljs-attr">b</span>: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span>:<br>    <span class="hljs-keyword">return</span> a + b<br></code></pre></td></tr></table></figure>
+<p>表示 <code>add</code> 是一个接受两个整数并返回一个整数的函数。</p>
+<p>等价于 Java 中的：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">java复制编辑<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> a + b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h2 id="注意事项">⚠️ 注意事项：</h2>
+<ul>
+<li><strong>类型注解不会强制执行类型检查</strong>（解释器不报错），但可以被静态检查工具使用，如
+<code>mypy</code>、<code>pyright</code>、VSCode 提示等。</li>
+<li>也可以写更复杂的类型，比如 <code>List[str]</code>,
+<code>Optional[int]</code>, <code>Dict[str, int]</code>，需要导入
+<code>typing</code>。</li>
+</ul>
+<hr />
+<h2 id="总结">🧠 总结：</h2>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>参数名: 类型</code></td>
+<td>注解参数类型</td>
+</tr>
+<tr>
+<td><code>-&gt; 返回类型</code></td>
+<td>注解函数的返回值类型</td>
+</tr>
+<tr>
+<td><strong>不强制类型检查</strong></td>
+<td>靠工具或开发者自行维护</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p>是的，<strong>Python
+中变量也可以使用类型注解</strong>，就像函数参数一样。这就是 Python 的
+<strong>类型提示（Type Hints）</strong>
+的一部分，虽然解释器不会强制检查，但它对你、IDE 和静态检查工具（如
+<code>mypy</code>, <code>pyright</code>）都有很大帮助。</p>
+<hr />
+<h2 id="变量类型注解的基本语法">✅ 变量类型注解的基本语法：</h2>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">python</span><br><span class="hljs-attr"></span><br><span class="hljs-attr"></span><br><span class="hljs-attr">复制编辑</span><br><span class="hljs-attr">变量名: 类型 </span>=<span class="hljs-string"> 值</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h2 id="示例">🧪 示例：</h2>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">python复制编辑<span class="hljs-type">name</span>: str = &quot;Alice&quot;<br>age: <span class="hljs-type">int</span> = <span class="hljs-number">30</span><br>price: <span class="hljs-type">float</span> = <span class="hljs-number">99.99</span><br>is_valid: <span class="hljs-type">bool</span> = <span class="hljs-keyword">True</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h2 id="也可以只标注类型不赋值">🧠 也可以只标注类型，不赋值：</h2>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs fortran">python<br><br><br>复制编辑<br><span class="hljs-keyword">data</span>: list[<span class="hljs-built_in">int</span>]<br></code></pre></td></tr></table></figure>
+<p>此时 <code>data</code> 只是被声明了类型，但还未赋值。</p>
+</blockquote>
 <p><strong>元组</strong></p>
 <p>元组也是一种序列，元组是一种不可变的结构，除此之外，它的使用几乎和列表类似。</p>
 <p>创建元组<code>tuple</code>很简单，只需要在括号中添加元素，元素与元素之间使用逗号分隔。</p>
@@ -526,7 +621,8 @@ math模块会把参数转换成浮点数。</li>
 <p>如果想要删除字典中的键值对可以使用<code>del()</code>或者<code>clear()</code>方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">del</span> my_dict[<span class="hljs-string">&quot;mike&quot;</span>] <span class="hljs-comment"># 删除对应的键值对</span><br>my_dict.clear() <span class="hljs-comment"># 清空字典</span><br><span class="hljs-keyword">del</span> my_dict <span class="hljs-comment"># 删除字典</span><br></code></pre></td></tr></table></figure>
 <p>检查字典中的键是否存在也是使用<code>in</code>来判断，
-如果键在字典中返回 true, 否则 返回 false 。</p>
+如果键在字典中返回 true, 否则 返回 false。</p>
+<p><strong>字符串也可以这样判断是否是一个子字符串</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-string">&quot;mike&quot;</span> <span class="hljs-keyword">in</span> my_dict:<br>      <span class="hljs-built_in">print</span>(my_dict[<span class="hljs-string">&quot;mike&quot;</span>])<br><span class="hljs-keyword">else</span>:<br>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;mike doesn&#x27;t exist in the dictionary&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>字典的遍历需要搭配使用<code>for</code>和<code>dict.items()</code>,
 <code>items()</code>方法返回了字典中的所有键值对的视图对象。这个视图对象可以用于迭代字典中的键值对。</p>
@@ -567,6 +663,36 @@ math模块会把参数转换成浮点数。</li>
 <code>shapes</code>，然后循环遍历该列表并调用
 <code>calculate_area</code>
 方法，尽管方法名称相同，但实际调用的方法是根据对象的类型动态确定的，这其实就是多态的概念。</p>
+<blockquote>
+<p>这是 Python 中非常常用的一种遍历写法，使用 <code>enumerate()</code>
+来<strong>同时获得元素的索引和值</strong>。我们来逐步解释这句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i, x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br></code></pre></td></tr></table></figure>
+<hr />
+<h2 id="拆解解释">🧠 拆解解释：</h2>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nums</code></td>
+<td>一个可迭代对象（如列表）</td>
+</tr>
+<tr>
+<td><code>enumerate(nums)</code></td>
+<td>把 <code>nums</code> 转换成 <code>(索引, 元素)</code>
+组成的迭代器</td>
+</tr>
+<tr>
+<td><code>for i, x in ...</code></td>
+<td>同时获取每一项的索引 <code>i</code> 和元素值 <code>x</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 
                 
               </div>
